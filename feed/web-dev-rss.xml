@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>https://vanessa-luna.github.io/</link><description></description><lastBuildDate>Thu, 19 Oct 2017 00:00:00 -0400</lastBuildDate><item><title>Overriding templates in Pelican when using multiple configs</title><link>https://vanessa-luna.github.io/posts/2017-10-19-pelican-template-overriding.html</link><description>&lt;p&gt;This website and all its pieces now needs 4 pelican config files. And the latest addition requires different direct templates than the others. So I needed a way to override the direct templates without royally fucking anything else up. This is what I came up with.&lt;/p&gt;
+<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>https://vanessa-luna.github.io/</link><description></description><lastBuildDate>Mon, 01 Jan 2018 00:00:00 -0500</lastBuildDate><item><title>Integrating a CDN for image hosting part 1</title><link>https://vanessa-luna.github.io/posts/2018-01-01-cdn.html</link><description>&lt;p&gt;Super excited. I recently created an account at Cloudinary.com for their free account.&lt;/p&gt;
+&lt;p&gt;I really want to switch over to a CDN for image hosting because my git project should not host all those images.&lt;/p&gt;
+&lt;p&gt;Here's what I accomplished:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I created an account which gives me enough free space to be fine for another good while.&lt;/li&gt;
+&lt;li&gt;I wrote a python script that allows me to parse through all my images and thumbnails and uploads them to the CDN.&lt;/li&gt;
+&lt;li&gt;Then I created a plugin for Pelican that parses all my files and replaces image references with the CDN domain.&lt;/li&gt;
+&lt;li&gt;If you are reading this article, then all images are being served from the CDN :D&lt;/li&gt;
+&lt;li&gt;Integrate img upload script into build process&lt;/li&gt;
+&lt;li&gt;Update .gitignore to never add the images again.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here's what's left:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove all images from the git repo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Okay, so I've been symlinking into .dev-output with push into prod because I needed to push the images to git. But now I don't have to push to git, so they only need to live in .dev-output for testing. Even then, they don't need to. They can be symlinked like the newest version.&lt;/p&gt;
+&lt;p&gt;PROD - links all images to CDN
+DEV - links all images to CDN? Oh fuck... NO. I need to do it only for prod...&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Mon, 01 Jan 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2018-01-01:/posts/2018-01-01-cdn.html</guid></item><item><title>Overriding templates in Pelican when using multiple configs</title><link>https://vanessa-luna.github.io/posts/2017-10-19-pelican-template-overriding.html</link><description>&lt;p&gt;This website and all its pieces now needs 4 pelican config files. And the latest addition requires different direct templates than the others. So I needed a way to override the direct templates without royally fucking anything else up. This is what I came up with.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
 &lt;p&gt;I have 4 pelican configs. The main config &lt;code&gt;blog_conf.py&lt;/code&gt; is what builds this  website. The second one 'secret_conf.py' builds my secret portion of the website. The third &lt;code&gt;thumbs_conf.py&lt;/code&gt; builds only the thumbnails so I do not waste space on my HDD by using symlinks. The fourth &lt;code&gt;product.py&lt;/code&gt; builds the product page I am working on now, which relies on the css and general templates I have already created.&lt;/p&gt;
@@ -474,12 +491,4 @@ listen to this cool song!
 &lt;p&gt;You can see that I'm simply adding a background, a border, and making it a certain size. On hover, it highlights the border. In hindsight, I coudl have done this very differently, however I tried to start with a css only method, but upon failure, I opted for the easiest next solution. &lt;/p&gt;
 &lt;h2 id="future-updates"&gt;Future updates&lt;/h2&gt;
 &lt;p&gt;I plan to write a plugin that allows me to place custom tag inside my content to put the soundcloud widget where I please in the document. At the moment, it always appears in the same place: the end of the content.&lt;/p&gt;
-&lt;p&gt;I also hope to find a way to do with without js since, if it can be done, it should, to benefit users who have js turned off. However I don't know what would happen if you load the widget without js. So I'm merely speculating about its worth.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-04-adding-soundloud-widget-to-pelican-using-jinja.html</guid></item><item><title>Using Tables in markdown with Pelican</title><link>https://vanessa-luna.github.io/posts/2017-05-12-05-using-tables-in-markdown-in-pelican.html</link><description>&lt;p&gt;This is a small silly one, however when I first tried to use Markdown tables, they did not render in pelican.
-&lt;/p&gt;
-&lt;p&gt;To fix this, add this to your Pelican settings file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MARKDOWN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="s1"&gt;&amp;#39;extension_configs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="s1"&gt;&amp;#39;markdown.extensions.tables&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:{},&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-05-using-tables-in-markdown-in-pelican.html</guid></item></channel></rss>
+&lt;p&gt;I also hope to find a way to do with without js since, if it can be done, it should, to benefit users who have js turned off. However I don't know what would happen if you load the widget without js. So I'm merely speculating about its worth.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-04-adding-soundloud-widget-to-pelican-using-jinja.html</guid></item></channel></rss>

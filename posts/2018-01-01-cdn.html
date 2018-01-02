@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>A comment on recovery | Vanessa & Luna</title>
+	<title>Integrating a CDN for image hosting part 1 | Vanessa & Luna</title>
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -146,16 +146,28 @@
 	<div class="content">
  <div class="min-height-full pad-content">
 	<div class="post">
-		<h1 class="post-title">A comment on recovery</h1>
-		<span class="post-date">recovery ~ 2016-05-25</span>
+		<h1 class="post-title">Integrating a CDN for image hosting part 1</h1>
+		<span class="post-date">web-dev ~ 2018-01-01</span>
 		<br><br>
 
-		<p>Three and a half years since I said "enough". Just over two years on hormones. I finally feel.. grounded. I am no longer plagued by intrusive, self debasing thoughts.</p>
-<p>I worked my spirit so hard during this time, confronting nearly every inch of my life. I devoured new information, about healing, love, psychology, cultural studies, vulnerability, awareness, habits, sexual identity, self expression. I pushed myself to write, reflect, share, connect, empathize. I knew I had a long road ahead. It always had been a long road, but something changed.</p>
-<p>Something bumped me and told me it was time to do it. Time to stop laying down and own that road. The time will pass no matter what I do. For me it took the stark awareness that I may have chronic pain my whole life, so I might as well stop hiding. One form of a "fuck it" statement. Fuck it, I'll try. Most likely you will be at a dark place when that moment will strike, and each time it happens you'll try harder to grasp it, permanently.</p>
-<p>You hold on so long that you'll get through it. You know that one stumble does not make you a failure, but you've got to yell at yourself to believe it. You'll realize that it doesn't get better, YOU get better. You'll come to sit quietly and let the negative thoughts pass on through because they happen, and what's more important is the work you got to do. You'll cycle in and out of progress, everyone needs rest. And you'll sit back in awe just frequently enough to be energized again with pride.</p>
-<p>You're doing it. Wait... you're not a human doing, you're a human being. So be! Be the person who kicks old habits in the butt. Be who you are today. Aim for a new way to be for tomorrow. Respect the process. It takes time. You'll get there.</p>
-<p><strong>2017-05-02:</strong> I could have told you a year ago how much bullshit this is. It's always bullshit. Don't ever believe a thing I say.</p>
+		<p>Super excited. I recently created an account at Cloudinary.com for their free account.</p>
+<p>I really want to switch over to a CDN for image hosting because my git project should not host all those images.</p>
+<p>Here's what I accomplished:</p>
+<ul>
+<li>I created an account which gives me enough free space to be fine for another good while.</li>
+<li>I wrote a python script that allows me to parse through all my images and thumbnails and uploads them to the CDN.</li>
+<li>Then I created a plugin for Pelican that parses all my files and replaces image references with the CDN domain.</li>
+<li>If you are reading this article, then all images are being served from the CDN :D</li>
+<li>Integrate img upload script into build process</li>
+<li>Update .gitignore to never add the images again.</li>
+</ul>
+<p>Here's what's left:</p>
+<ul>
+<li>Remove all images from the git repo.</li>
+</ul>
+<p>Okay, so I've been symlinking into .dev-output with push into prod because I needed to push the images to git. But now I don't have to push to git, so they only need to live in .dev-output for testing. Even then, they don't need to. They can be symlinked like the newest version.</p>
+<p>PROD - links all images to CDN
+DEV - links all images to CDN? Oh fuck... NO. I need to do it only for prod...</p>
 
 	</div>
 
@@ -169,192 +181,190 @@
       <div class="pagination">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="pagination-item">
-    <a class="box" href="/posts/2016-11-06-and-on.html">
-        <span class="newer">Newer</span>
-    </a>
+    <span class="empty-box newer"></span>
 </div>
 
 
         <span class="pagination-spacer"></span>
 
         <div class="pagination-item">
-    <a class="box" href="/posts/2016-05-02-lifeismoreinterestingthanthat.html">
+    <a class="box" href="/posts/2017-12-26-long-overdue.html">
         <span class="older">Older</span>
     </a>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -412,7 +422,7 @@ hcb_user = {
 
     //SETTINGS
     MAX_CHARS: 8192,
-    PAGE:"posts/2016-05-25-on-recovery.html",
+    PAGE:"posts/2018-01-01-cdn.html",
     RELATIVE_DATES:true
 };
 </script>

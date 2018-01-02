@@ -32,13 +32,13 @@
           curSize.abs = Math.abs(h - curSize.h);
           if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
         }
-        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+        return "url(http://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
       }
     </script>
 </head>
 <body>
 	<div class="sidebar">
-		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('http://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/25cover.jpg')">
 			<!-- dynamically load a different bg image -->
 			<script type="text/javascript">
 			    document.addEventListener("DOMContentLoaded", function (e) {
@@ -53,7 +53,7 @@
 		<div class="headline">
 			<a id="secret" href='/s' tabindex="-1"></a>
 			<a id="home" href="/">
-				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<img class="profile-picture" src="http://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
 				<h1>Vanessa &#xe80a; Luna</h1>
 			</a>
 			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
@@ -164,6 +164,20 @@
   </span>
 
   <dl id='period-archives'>
+        <!-- <dl><dt class=year>2018</dt>
+ -->
+          <dl><dt class=month>January 2018</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">1</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2018-01-01-cdn.html'>
+Integrating a CDN for image hosting part 1
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+        </dl>
         <!-- <dl><dt class=year>2017</dt>
  -->
           <dl><dt class=month>October 2017</dt>
