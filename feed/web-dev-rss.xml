@@ -9,14 +9,15 @@
 &lt;li&gt;If you are reading this article, then all images are being served from the CDN :D&lt;/li&gt;
 &lt;li&gt;Integrate img upload script into build process&lt;/li&gt;
 &lt;li&gt;Update .gitignore to never add the images again.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Here's what's left:&lt;/p&gt;
-&lt;ul&gt;
 &lt;li&gt;Remove all images from the git repo.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Okay, so I've been symlinking into .dev-output with push into prod because I needed to push the images to git. But now I don't have to push to git, so they only need to live in .dev-output for testing. Even then, they don't need to. They can be symlinked like the newest version.&lt;/p&gt;
-&lt;p&gt;PROD - links all images to CDN
-DEV - links all images to CDN? Oh fuck... NO. I need to do it only for prod...&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Mon, 01 Jan 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2018-01-01:/posts/2018-01-01-cdn.html</guid></item><item><title>Overriding templates in Pelican when using multiple configs</title><link>https://vanessa-luna.github.io/posts/2017-10-19-pelican-template-overriding.html</link><description>&lt;p&gt;This website and all its pieces now needs 4 pelican config files. And the latest addition requires different direct templates than the others. So I needed a way to override the direct templates without royally fucking anything else up. This is what I came up with.&lt;/p&gt;
+&lt;p&gt;Whats left:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;upgrade to new verion of Pelican to utilize symlink feature&lt;/li&gt;
+&lt;li&gt;update thumbnail creation script to account for symlink&lt;/li&gt;
+&lt;li&gt;Make sure I only have one copy of image on my harddrive finally!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I feel very good I finally did this. It's been a long time coming. I don't think there are any other real big ticket items to do now :) OR I'm just high on pain and can't think more than the moment. Woo.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Mon, 01 Jan 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2018-01-01:/posts/2018-01-01-cdn.html</guid></item><item><title>Overriding templates in Pelican when using multiple configs</title><link>https://vanessa-luna.github.io/posts/2017-10-19-pelican-template-overriding.html</link><description>&lt;p&gt;This website and all its pieces now needs 4 pelican config files. And the latest addition requires different direct templates than the others. So I needed a way to override the direct templates without royally fucking anything else up. This is what I came up with.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
 &lt;p&gt;I have 4 pelican configs. The main config &lt;code&gt;blog_conf.py&lt;/code&gt; is what builds this  website. The second one 'secret_conf.py' builds my secret portion of the website. The third &lt;code&gt;thumbs_conf.py&lt;/code&gt; builds only the thumbnails so I do not waste space on my HDD by using symlinks. The fourth &lt;code&gt;product.py&lt;/code&gt; builds the product page I am working on now, which relies on the css and general templates I have already created.&lt;/p&gt;

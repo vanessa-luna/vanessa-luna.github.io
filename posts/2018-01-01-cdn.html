@@ -160,14 +160,15 @@
 <li>If you are reading this article, then all images are being served from the CDN :D</li>
 <li>Integrate img upload script into build process</li>
 <li>Update .gitignore to never add the images again.</li>
-</ul>
-<p>Here's what's left:</p>
-<ul>
 <li>Remove all images from the git repo.</li>
 </ul>
-<p>Okay, so I've been symlinking into .dev-output with push into prod because I needed to push the images to git. But now I don't have to push to git, so they only need to live in .dev-output for testing. Even then, they don't need to. They can be symlinked like the newest version.</p>
-<p>PROD - links all images to CDN
-DEV - links all images to CDN? Oh fuck... NO. I need to do it only for prod...</p>
+<p>Whats left:</p>
+<ul>
+<li>upgrade to new verion of Pelican to utilize symlink feature</li>
+<li>update thumbnail creation script to account for symlink</li>
+<li>Make sure I only have one copy of image on my harddrive finally!</li>
+</ul>
+<p>I feel very good I finally did this. It's been a long time coming. I don't think there are any other real big ticket items to do now :) OR I'm just high on pain and can't think more than the moment. Woo.</p>
 
 	</div>
 
@@ -189,10 +190,11 @@ DEV - links all images to CDN? Oh fuck... NO. I need to do it only for prod...</
         <span class="pagination-spacer"></span>
 
         <div class="pagination-item">
-    <a class="box" href="/posts/2017-12-26-long-overdue.html">
+    <a class="box" href="/posts/2018-01-01-new-year.html">
         <span class="older">Older</span>
     </a>
 </div>
+
 
 
 
