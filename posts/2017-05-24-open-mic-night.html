@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>My first violin performance in ten years | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">My first violin performance in ten years</h1>
+		<span class="post-date">chronograph ~ 2017-05-24</span>
+		<br><br>
+
+		<p>The universe put an open mic at a local cafe where my friend's roommate works in front of me. Given how I'd performed for one person a few days ago, then the couple I bought the stove from, it seemed like I was supposed to play here now. A real audience, active listeners, and more than two. Shit.
+</p>
+<p>I had been to the cafe before, when I was visiting here two months ago. That calmed me some as I knew the venue. Earlier that day I had gone to the violin shop my friend works at and tried out some new chinrests, hoping I might find a improvement in pain management for my playing.</p>
+<p>I was exhausted. I had played through nearly all my songs in the morning, spent almost a half hour or more trying out the chinrests, and my shoulder were on fire. I knew I was going to play poorly. But I knew I had to go to this open mic.</p>
+<p>Upon arriving, I was kind enough to my body to try and put some of my salve on my shoulders. I also dropped a tiny amount of tincture hoping it would take the edge off. I want to think they helped but I knew my adrenaline and anxiety probably went a long way to helping me ignore my pain signals.</p>
+<h2 id="the-performance">The performance</h2>
+<p>After tuning I just went right into it. "How much is that doggy in the window" inspired someone to woof at the right time. I goofed around the main "Super Mario" theme. I trickled through "Kokori forest" from Zelda. And finally "Mike Tyson Punch Out" themes.</p>
+<p>What I had not anticipated, since this was a cafe, serving food to the audience, that the crowd would go silent when I began playing. NO. Keep chatting to yourselves! I felt okay with them doing their thing, like while listening to the other musicians, but fuck. Crickets while I played. That alone is likely what made playing so difficult. Fuck.</p>
+<p>In between songs I made a few interjections. "I haven't played in front of a crowd like this in ten years" brought clapping of encouragement that was very warming. How odd it is to not also have anxiety pressing at my skills but, unbeknownst to the audience, significant pain which was almost a bigger hurdle for me. I also squeezed in a "Don't worry the classical is coming" comment, which made me smile.</p>
+<p>The classical pieces were a wash. At least I felt so. I played "Boy Paganini", what I feel is my hardest piece first. Mixed with technical challenges, I also have the highest expectations of myself while playing it. I moved on to "Concerto no5 3rd Movement" by Seitz. Which went a little better. That was my plan. But I felt up to playing one more. So I romped into "Concerto no5 1st Movement" by Seitz. This was my best played. My bow arm had relaxed some, and it's not as difficult.</p>
+<h2 id="encore">Encore</h2>
+<p>After a few more songs by other musicians, the host got up and asked if anyone had anything else to play. And he almost immediately turned to me. I wanted to play more violin but I knew I shouldn't. So I offered to read some poetry. WHY NOT RIGHT? ugh.</p>
+<p>So I went up and drew the two poems I read a couple weeks ago at the open mic poetry from my bag. What luck I had simply left the paper in there. This seemed to prompt another person to read a poem too. He told us his girlfriend coaxed him to do it. I am also choosing to think that my willingness to do it helped her want to coax him. I have no idea what the first half of this open mic night included.</p>
+<h2 id="finally">Finally</h2>
+<p>I am super proud. The lack of social anxiety in me that night was holy fuck. The performance anxiety was not connected to anything other than my perfectionism and pain. How different I have become in such a short time.</p>
+<p>I really feel I will find the confidence to try busking soon. </p>
+
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-05-25-goofyness-violin-video.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-05-23-learning-lessons.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-05-24-open-mic-night.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>This is real life. I am real. | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">This is real life. I am real.</h1>
+		<span class="post-date">recovery ~ 2017-05-26</span>
+		<br><br>
+
+		<p>I'm here. I did it. This is such a new feeling I do not know what to do with myself. I am real. I am REAL.</p>
+<p>I have spent my entire life feeling detached from my body and my life. Always an observer, watching someone else's life. At age three I was petrified by my gender preferences knowing I dare not speak of it. My mother claiming I was never comfortable in my own skin could also have been indicative of my connective tissue disorder. By age eight I was using my intellect and empathy to turn myself down to avoid unwanted attention. By puberty, I was bullied, suicidal, and began tearing apart any sense of identity I had left. I have never felt real. Until now.
+</p>
+<h2 id="dawn">Dawn</h2>
+<p>I know it's easy to get wrapped up in a good day, thinking you've made significant change only to find a week later you've slipped. This is not one of those days. This is something more.</p>
+<p>I truly understood the feeling when my friend and I went atop a large hill in the city and watched the sun go down. I took my violin out and played delicately at first in fear of disturbing the locals. As the light began to fade I allowed myself to go all out. But I played so confidently. The bow glided across the strings as if on silk, my body not overreacting to the performance. My skills were on fire. I played the best I have since I reconnected with my violin. Some people stopped, some took pictures, a small dog came up and licked my legs. Oh if you could have heard me. I hardly remember feeling this good while playing in my youth. IS this a totally new sensation?</p>
+<p>Since that moment I have been on a wild ride inside my mind trying to understand where I am. It wasn't until I was in bed with my friend watching Sense8 that I realized I am real.</p>
+<h2 id="feeling-real">Feeling real</h2>
+<p>If you read my previous posts, I've had quite the week here with my friend. In the past three days I bought a new chinrest for my violin, performed violin and poetry at a local open mic, walked a railroad bridge, and climbed a twelve story construction crane. I also lightly touched on a recent rejection by an amazing person. And despite expecting it, I had to ask because something inside me needed to.</p>
+<p>I texted a friend last night while on my walk:</p>
+<blockquote>
+<p>I am starting to see the life I've been building the last five years as an acceptable life, happy it's mine, and excited to know so much about where I want to go and what I want to do.</p>
+</blockquote>
+<p>I am not in shame of who and what I am anymore. I know what I am. I know who I want to be. My desire do be that person is nothing to be afraid of.</p>
+<p>Part of this I know, comes from all the pushing I've been doing. And nothing will make you feel more alive than going right to the edge of comfort and diving in. What's different about now is that I know intrinsically that whatever the outcome, it will have been worth it.</p>
+<p>I know this feeling is the culmination of years of dedication. I have created my realness. And that makes it intensely special to me. In some ways I can find pleasure in the path it took me to get here despite it's hardships. I am what/who I am because of it. And I feel very lucky that my path has always put me on the side of empathy and kindness. I can only imagine how much harder it might be to come to terms with realizing you have been cruel and horrible.</p>
+<h2 id="how-i-got-here">How I got here</h2>
+<p>I know everyone's path is different. But regardless of that I feel like sharing the concepts I explored to find my way here. Partly for my own benefit, and a hope it may help you.</p>
+<blockquote>
+<p>If I am going to be in chronic pain my whole life I might as well stop hiding.</p>
+</blockquote>
+<p>I told myself over five years ago. Sparking my path towards gender. Experimentation, does no harm. If you try something new and you don't like it, try it again. Make sure you're not simply denying yourself a newfound pleasure out of fear/shame. But if you truly don't like something, you're one step closer to finding something you do. I also researched human expression and identity. To better understand why I struggled with it so. The universe is free to experience all kinds. Let yourself be as flexible as the universe. Play. Play with your life, your heart, and how you interact with the world.</p>
+<blockquote>
+<p>If I need to change to get better, I might as well learn as much as I can about what change is.</p>
+</blockquote>
+<p>Oh how much time I spent understanding change. The process of experiential normalization, in how we come to find a new part of life not so new anymore. How in order to find a new reality you must be willing to let go of the one you are in. Change is a process which is non-linear. Finding a way to accept and roll with your setbacks is a must if you hope to maintain progress in the end. And finally, Chronos is on your side. Chronos, being the greek god of infinite time, favors those who stand with him. Always remember to look beyond today, tomorrow, next year. Imagine where you could be if you keep working towards your goals.</p>
+<blockquote>
+<p>Since I don't trust others with my thoughts and mind, I'm going to have to work on myself.</p>
+</blockquote>
+<p>I began writing regularly in 2011. If I had not learned the habit of asking myself questions, investigating why I thought the way I thought. Only I can truly change myself. No one can save me but me. If I asked you to make a list of the things you love, when would yourself appear on that list? This also prompted me to find Narrative Therapy. Which to me seems like one of the healthiest approaches to therapy.</p>
+<blockquote>
+<p>Vulnerability and Shame.</p>
+</blockquote>
+<p>Brene Brown. She makes understanding these two issues so plain. If you are to get out of the hole you are in, you must be willing to let go of shame and embrace vulnerability. It seems our culture wants us to think vulnerability is weakness, but it's not. And if you begin exploring these concepts through Brene Brown you will not regret it.</p>
+<blockquote>
+<p>Learn to listen to your inner voice.</p>
+</blockquote>
+<p>I recently stumbled across an open mic poetry night and my gut said "GO and PERFORM". Despite the anxiety, I pushed myself to do it. It was awesome. A man came into the coffee shop and warned me my van lights were on. After realizing he also lives in a van, I sparked a conversation which turned into an amazing weekend and dinner with the most spectacular man I have ever met. My gut tells me to play my violin even though I know I was not in practice, in Key West Florida, at a state park, with many other people nearby watching the sun go down. I did it. I was so happy. When my eyes met the giant construction crane only a few days ago, my body urged me to climb. I obliged. I felt the most alive that night than any other night in the past year. You MUST find a way to lean into those feelings and run with it. It is a primary factor in my recovery.</p>
+<h2 id="enough-already-you-wordy-bitch">Enough already you wordy bitch</h2>
+<p>I know I know. But for the first time in my life I feel confident, whole, proud, happy, real, all at once. I want to hold on to this as best I can. To make sure the lessons I have learned stick. So I write.</p>
+<p>I CANNOT WAIT to keep moving forward.</p>
+<p>There is so much to be done. And I will do it.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-05-28-hanging-rock.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-05-25-feeding-my-soul.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-05-26-this-is-real-life.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

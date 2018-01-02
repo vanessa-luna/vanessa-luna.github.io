@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>If only I could recover | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">If only I could recover</h1>
+		<span class="post-date">recovery ~ 2017-06-18</span>
+		<br><br>
+
+		<p>If ever I thought I could be here, I trusted the fact that it would only happen should I allow myself to. Letting go. Imagining a possible future and the steps to reach it.</p>
+<p>I ask myself this a lot:</p>
+<blockquote>
+<p>If someone like me -- in all my traumas, fucked-up-ness, hurdles, intelligences, talents, gifts -- were to recover, to find their whole self, what would it look like?</p>
+</blockquote>
+<p>This question has led me for years now. I trust it. Maybe you will too.</p>
+<p></p>
+<blockquote>
+<p>Starting from today, acknowledging my past, and imagining a future, fill in the blanks from today to recovery. What kind of things might you need to learn? What kind of experiences might help in your recovery? How long might it take to conquer some of these issues which may have effected you for years, decades?</p>
+</blockquote>
+<p>This question leads to a lot more questions. And should you find answers that feel good to you, it may take a long time to move from here to there. That is okay. Part of this exercise is acknowledging your whole story. Accepting that your road to recovery is your own, unique, and however slow it needs to be.</p>
+<p>I'm going to expand on this with how my own process looked over the last five years. Hopefully this will shed some light on how your might find your own.</p>
+<h2 id="questions">questions</h2>
+<p>Questions are super important. I started with a question, which only surfaces more. The more of these questions we can uncover and answer, the more likely we might be to crossing each one.</p>
+<p>I was a hyper anxious, scared, closet transsexual with repressed pain. To begin, I was only fully aware of the anxieties. I knew I was hiding something, my transsexuality, but didn't have the words for it. I had so deeply repressed my pain I thought it was more anxiety. So I began here:</p>
+<blockquote>
+<p>I don't want to be anxious, I want to feel comfortable in my own skin and around other people. What am I anxious about? What can I do about that anxiety so I can overcome it?</p>
+</blockquote>
+<p>Notice the structure of this. First, is a future goal/hope: "I don't want to be anxious". Then, an acknowledgement of the present: "What am I anxious about?". Finally, questions to explore the steps from here to there: "What can I do about that anxiety so I can overcome it?"</p>
+<p>As I began to understand my transsexuality, I asked myself</p>
+<blockquote>
+<p>If I was a transsexual who fully accepted herself and was not ashamed of it, how might that person act? What would they believe? How might they see the world? In what ways do I see the world now that conflict with this possibility?</p>
+</blockquote>
+<p>Gosh were there so many hurdles to this one. Breaking down gender and shame took so long. But it was totally worth it. I am allowed to be someone who loves themself for who they are. To like the things I like. But in order to fight through the crap that held me back I had to dive right in. I had to go shopping. I had to wear new kinds of clothes, in public! I had to keep reminding myself that these preferences do not hurt anyone.</p>
+<h2 id="the-whole-story">The whole story</h2>
+<p>I mentioned the idea of accepting your whole story. Your you is all you have. Your story is yours to write.</p>
+<blockquote>
+<p>It's you against the world, and you will not win. But I'm going to make my own damn choices.</p>
+</blockquote>
+<p>You are worthy of recovery. You are worthy of love and belonging. You are worthy of happiness. IF you believe that, and you can imagine that future you wish to hold, I believe you can make it there. And during the process, you can accept where you are in your story. It is okay to be on the path of recovery. You don't need to be perfect in order to be worthy.</p>
+<p>I cannot change the fact that I am transsexual. Or that I played the violin for fifteen years. Or that I spent over a decade hiding in the world of software programming because I was too afraid to be myself. Nor that I spent so many years believing that if I was "no thing", no one would be able to make fun of me.</p>
+<h4 id="i-cannot-change-my-past-i-can-only-accept-it">I cannot change my past. I can only accept it.</h4>
+<p>By accepting my past, I can finally take hold of today, and direct my future. To be free to imagine the possible outcome of my story and find a way to make it so.</p>
+<p>I believe as we accept our story, we find more power to explore, experiment, experience, research, learn, change.</p>
+<h2 id="time-is-on-your-side">Time is on your side</h2>
+<p>Recovery is non-linear. It takes time to find the tipping points which shift our feeling towards reality. We have built habits within ourselves we wish to overcome. Those habits will never leave. Only new habits to overpower the old. And those old ones may trickle in sometimes. Normally at all the wrong times. But that is okay. Because you are taking those steps. You are committed to engaging in YOUR life.</p>
+<p>Today will end. Tomorrow will rise. Allow yourself to move through the darkness, aiming for the light. Trying to never enter darkness will only make you more likely to grasp for air when you do slip in eventually.</p>
+<blockquote>
+<p>I am okay, and when I'm not, I'm learning something.</p>
+</blockquote>
+<p>Zoom out from the moment sometimes. Acknowledge the time period you are in. Consider how different this time is compared to your parents time. Consider how old you are. How much time do you have left? Consider all you have experienced and what you'd like to experience.</p>
+<p>Zoom back in. What's eating at you today? How does that issue line up with the zoomed out view? Is it a minor issue? Is it touching roots with bigger issues?</p>
+<h2 id="losing-grip">Losing grip</h2>
+<p>Since I am new to writing like this. I am beginning to lose grasp of my points, or hopefully writing in a compelling manner. But I do hope there are some sentences which ring for you. And hopefully I will get better in time. So long as I keep writing.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-06-20-catskill-mountains.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-06-16-bristol-pa.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-06-18-if-only-i-could-recover.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

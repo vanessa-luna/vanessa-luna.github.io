@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Archive | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/archives.min.css?6d3a4caf">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="pad-content min-height-full">
+  <h1> Archives</h1>
+
+  <span class="byCategory">
+    by category:
+<b>		<a href="https://vanessa-luna.github.io/archives/">all</a>
+</b>,
+
+      <a href="https://vanessa-luna.github.io/archives/chronograph/">chronograph</a>
+,       <a href="https://vanessa-luna.github.io/archives/drawings/">drawings</a>
+,       <a href="https://vanessa-luna.github.io/archives/media/">media</a>
+,       <a href="https://vanessa-luna.github.io/archives/music/">music</a>
+,       <a href="https://vanessa-luna.github.io/archives/recovery/">recovery</a>
+,       <a href="https://vanessa-luna.github.io/archives/sun/">sun</a>
+,       <a href="https://vanessa-luna.github.io/archives/vandwelling/">vandwelling</a>
+,       <a href="https://vanessa-luna.github.io/archives/web-dev/">web-dev</a>
+,       <a href="https://vanessa-luna.github.io/archives/writing/">writing</a>
+  </span>
+
+  <dl id='period-archives'>
+        <!-- <dl><dt class=year>2017</dt>
+ -->
+          <dl><dt class=month>December 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-26-long-overdue.html'>
+A long overdue update. The world is a weird place
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">25</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-25.html'>
+St. Augustine Beach Pier [rise]
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">23</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-23.html'>
+Orlando FL Resort [set]
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-21-orlando-downtown.html'>
+<i class="fa fa-picture"></i> Downtown Orlando with a friend
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">19</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-19-box-comfort.html'>
+Two days of comfort and I'm already unhappy
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">17</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-17.html'>
+Orlando FL Resort [set]
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">15</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-15.html'>
+Orlando Fl Resort [clouds]
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">10</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-10-concert.html'>
+MindBlown 2
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">9</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-09-rehearsal.html'>
+The Rehearsal...
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">8</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-08-deja-vu-friends.html'>
+A friendly deja vu
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">7</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-07-ringhaver-park.html'>
+Ringhaver park
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">6</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-06-another-friend.html'>
+Another friend
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">5</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-05-good-hair.html'>
+The secret to good hair in Florida: Don't use tap water
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">5</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-05-oh-fuck.html'>
+WHAT THE FUCK! I've been invited to perform my violin on Sunday!!!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">4</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-04.html'>
+Mandarin Riverfront Jax FL [rise]
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">2</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-02.html'>
+Riverside Jax, FL [rise & set]
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">2</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-02-new-friend-while-sick.html'>
+<i class="fa fa-picture"></i> I'm sick, but I met someone new anyway :)
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">1</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-01-kinder-joy.html'>
+<i class="fa fa-picture"></i> Kinder Joy candy
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">1</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-12-01-sun-intro.html'>
+A new category: Sun
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>November 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">30</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-30-fear-2.html'>
+Reunion with KC, overcoming fear
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">28</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-28-amelia-island.html'>
+<i class="fa fa-picture"></i> Amelia Island
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">28</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-28-silence-ends.html'>
+"Our lives begin to end the day we become silent about things that matter"
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">27</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-27-saving-is-over.html'>
+Days of saving are over
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-26-drinking-coffee.html'>
+The last few sips
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-26-six-months-real.html'>
+I am 6 months real now
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">25</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-25-marine-museum.html'>
+<i class="fa fa-picture"></i> National Museum of the Marine Corps
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">22</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-22-dinner-with-fam.html'>
+Dinner with my bro and grandmother
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">22</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-22-dress.html'>
+I wore a dress again :)
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-21-alapacas-lancaster-pa.html'>
+<i class="fa fa-picture"></i> Alpacas in Lancaster, PA
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-21-fault-in-our-stars.html'>
+Reading "The Fault in our Stars"
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">19</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-19-sunset-at-warehouse.html'>
+<i class="fa fa-picture"></i> Sunset in abandoned warehouse
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">17</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-17-definition-of-hope.html'>
+The definition of hope
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">17</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-17-the-exiles.html'>
+<i class="fa fa-picture"></i> Movie Night: The Exiles
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">12</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-12-harpers-ferry.html'>
+<i class="fa fa-picture"></i> Harper's Ferry with a friend
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">10</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-10-pain-is-not-pleasue.html'>
+pain is not pleasure
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">9</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-09-york-pa.html'>
+<i class="fa fa-picture"></i> York PA
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">8</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-08-reading-pa.html'>
+<i class="fa fa-picture"></i> Reading, PA
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">7</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-07-surprise-detour.html'>
+<i class="fa fa-picture"></i> Surprise! Spent the day in Delaware Water Gap
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">6</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-06-first-encounter.html'>
+First day, first encounter, feeling good
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">6</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-06-the-fall.html'>
+Trip 4: The Fall
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">5</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-05-i-have-come-far.html'>
+I have come farther than I give myself credit
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">2</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-11-02-waking-up.html'>
+Filling in the void a little bit more
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>October 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">31</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-31-halloween.html'>
+Another hollow Halloween, another sad fucking Halloween.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">30</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-30-your-knowledge.html'>
+You own your knowledge
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">28</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-28-trying-to-acknoweldge.html'>
+Been letting myself feel too depressed lately.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-26-theme-song-lyrics.html'>
+Vanessa & Luna Lyrics
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">25</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-25-accepting-what-i-am.html'>
+Finishing Re:Zero - another acknowledgement
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">24</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-24-self-transformation.html'>
+The Psychology of Self Transformation
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">22</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-22-chronic-pain.html'>
+Chronic Pain
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">19</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-19-pelican-template-overriding.html'>
+Overriding templates in Pelican when using multiple configs
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">18</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-18-cold.html'>
+It's getting cold
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">14</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-14-i-never-thought-i-would-get-this-far.html'>
+I never thought I would get this far
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">11</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-11-national-coming-out-day.html'>
+National Coming Out Day
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">10</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-10-line-rider.html'>
+A peek inside the Line Rider community
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">6</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-10-06-jim-carrey-inspiration.html'>
+Jim Carrey - Let the armor go
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>September 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">28</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-28-new-drawers-for-vanessa.html'>
+<i class="fa fa-picture"></i> New drawers for Vanessa!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-26-vanessa-brakes-fixed.html'>
+Vanessa's brakes are fixed!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">23</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-23-the-slow-crawl.html'>
+The slow crawl of recovery
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">16</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-16-modern-stoics.html'>
+Modern Stoics
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">16</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-16-updating-configs-for-space.html'>
+I updated my build process to save 2gb of space lol
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">14</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-14-burning-memorabilia.html'>
+On burning memorabilia
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">13</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-13-minor-improvements.html'>
+Minor improvements to the website
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">12</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-12-leaving-reddit.html'>
+I'm leaving Reddit
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">12</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-12-vanessa-brake-update.html'>
+Update on Vanessa's brakes
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">8</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-08-life-is-love.html'>
+Life is Love, Love is Blind, Blind we go through life.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">5</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-05-keeping-those-i-love-at-distance.html'>
+Am I right to keep those I love at a distance?
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">5</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-05-vanessa-is-dead.html'>
+Is Vanessa dead?
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">4</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-09-04-injection-day.html'>
+Injection day.
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>August 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">31</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-31-config-consolidation-redoing-build.html'>
+Testing script update for Pelican project
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">31</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-31-pain-management-appointment.html'>
+Tomorrow I have an appointment about pain management
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">31</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-31-pelican-config-consolidation.html'>
+Pelican Config Consolidation
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">27</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-27-brake-fluid-leak.html'>
+<i class="fa fa-picture"></i> Vanessa is leaking brake fluid
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">27</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-27-eclipse-coming-home.html'>
+<i class="fa fa-picture"></i> Coming home from the eclipse
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-26-belt-progress.html'>
+Vanessa's drive belt update
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">23</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-23-open-mic-at-plant-zero.html'>
+Open mic night at the same place from four months ago
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">22</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-22-fixing-vanessa-belt-pulley.html'>
+I fixed Vanessa's pulley and belt ^_^
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-21-injections-update.html'>
+First injection entirely on my own
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-21-solar-eclipse.html'>
+Solar Eclipse
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-21-vanessa-update.html'>
+Stuck in NC, Vanessa's parts are coming
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">20</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-20-bra-police.html'>
+The Bra Police is real; My friend is a prophet
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">19</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-19-tie-rod-ac-failure.html'>
+An idler pulley shattered and threw my drive belt. YAY!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">18</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-18-tipping-points.html'>
+Tipping points. Have I crossed the most important one?
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">18</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-18-virginia-beach.html'>
+<i class="fa fa-picture"></i> Sunrise and Virginia Beach
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">16</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-16-eclipse-trip-2.html'>
+<i class="fa fa-picture"></i> First full day together
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">15</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-15-off-to-the-eclipse.html'>
+Off to the eclipse
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">14</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-14-a-new-world.html'>
+Today I see a whole new world. With self worth, acceptance, love.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">13</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-13-age-song.html'>
+I don't want to grow up. I don't want to stay young. I just want to be me forever.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">10</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-10-injection-prescription.html'>
+Injection prescription
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">2</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-08-02-i-am-fine.html'>
+I am fine. When I am not fine I'm learning something
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>July 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">30</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-30-paying-attention-to-hormones.html'>
+3y & 4m into Hormone Replacement Therapy
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">24</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-24-injections-2.html'>
+I injected myself today!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">22</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-22-i-am-not-my-body.html'>
+I am not my body. I am not my thoughts. I am something more than this.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">18</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-18-poem-worthy.html'>
+[poem] You are worthy.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">18</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-18-questions-of-a-year.html'>
+Questions from a year ago
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">14</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-14-vanessa-failed-inspection.html'>
+Vanessa Failed State Inspection
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">12</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-12-get-on-with-it.html'>
+Get On With IT!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">11</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-11-context-this-is-water.html'>
+David Foster Wallace - This is Water
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">10</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-10-injections.html'>
+I started injections!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">8</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-08-pinnacle-miracle.html'>
+<i class="fa fa-picture"></i> Route 100 & Pinnacle View in VT
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">7</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-07-this-one-problem.html'>
+This one problem. An old journal entry.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">6</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-06-burlington-vt.html'>
+<i class="fa fa-picture"></i> Burlington VT for a friend and nostalgia
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">4</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-04-firefly-accident.html'>
+As in The Alchemist: Omens
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">3</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-03-swimming.html'>
+<i class="fa fa-picture"></i> I went swimming!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">3</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-03-you-got-out.html'>
+You Got Out.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">2</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-02-lake-rise.html'>
+<i class="fa fa-picture"></i> Sunrise at a Lake in NH
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">1</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-07-01-this-nh-cop-was-nice.html'>
+This NH cop was nice.
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>June 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">29</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-29-june-end-sunsets.html'>
+<i class="fa fa-picture"></i> June's end Sunsets
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">23</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-23-revisiting-halibut-point.html'>
+<i class="fa fa-picture"></i> Revisiting an old place.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">22</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-22-arriving-home.html'>
+<i class="fa fa-picture"></i> Returning Home.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-21-mount-grelyock.html'>
+<i class="fa fa-picture"></i> Rolling into MA and Mount Greylock.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">20</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-20-catskill-mountains.html'>
+<i class="fa fa-picture"></i> My time in the Catskills
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">18</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-18-if-only-i-could-recover.html'>
+If only I could recover
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">16</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-16-bristol-pa.html'>
+<i class="fa fa-picture"></i> Bristol PA, and the people you meet.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">14</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-14-hiccups-developing-site.html'>
+Gap in posting due to challenges programming
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">14</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-14-leaving-maryland.html'>
+<i class="fa fa-picture"></i> My time in Elkton MD
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">10</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-10-90-days.html'>
+90 days in Vanessa.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">10</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-10-surprise-visit.html'>
+<i class="fa fa-picture"></i> Surprise visit from a new friend
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">5</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-05-baltimore-md.html'>
+<i class="fa fa-picture"></i> Baltimore MD with a new friend
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">2</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-02-park-playing-introductions.html'>
+Another violin-in-park conversation
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">1</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-06-01-virginia-mountains.html'>
+<i class="fa fa-picture"></i> My day in the Virginia Mountains
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>May 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">31</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-31-rocky-knob.html'>
+A day atop Rocky Knob
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">28</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-28-hanging-rock.html'>
+Hanging Rock Raptor Observatory
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-26-this-is-real-life.html'>
+This is real life. I am real.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">25</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-25-feeding-my-soul.html'>
+<i class="fa fa-picture"></i> The most epic night I've had this whole trip
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">25</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-25-goofyness-violin-video.html'>
+Watch me play my violin and be goofy
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">24</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-24-open-mic-night.html'>
+My first violin performance in ten years
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">23</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-23-learning-lessons.html'>
+A lesson learned about how my inner pain affects how I am perceived
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-21-alcohol-stove-purchase.html'>
+Buying an alcohol stove for my friend through craigslist
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">19</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-19-playing-on-the-pier.html'>
+<i class="fa fa-picture"></i> Playing my violin on the pier
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">17</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-17-minimizing-font-size.html'>
+Minimizing icon font size in Pelican
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">17</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-17-people-watching.html'>
+People watching in a coffee shop
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">16</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-16-finally-clean.html'>
+Today was a clean day. Plus a small performance.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">16</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-16-pelicanconf.html'>
+A helpful pelican configuration file
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">15</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-15-fear-is-the-only-sin.html'>
+Fear is the only Sin
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">14</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-14-back-on-the-road.html'>
+Back on the road
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">13</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-13-vanessa-birthday.html'>
+<i class="fa fa-heart"></i> Happy Birthday Vanessa <i class="fa fa-heart"></i>
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">12</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-12-01-finishing-this-website.html'>
+Version 1 of this website
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">12</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-12-02-dynamic-image-sizes.html'>
+Dynamic image size loading in Pelican using javascript
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">12</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html'>
+Using WebAssets in Pelican to serve small css files
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">12</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-12-04-adding-soundloud-widget-to-pelican-using-jinja.html'>
+Adding SoundCloud embed widget to Pelican using Jinja and Javascript
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">12</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-12-05-using-tables-in-markdown-in-pelican.html'>
+Using Tables in markdown with Pelican
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">7</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-07-laptop-charger-amperage-tests.html'>
+Laptop charger amperage tests :)
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">6</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-06-the-grey-lifted-truck.html'>
+I saw a cool pickup truck.
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">5</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-05-volt-charger-laptop.html'>
+<i class="fa fa-picture"></i> I finally got a 12 volt power cord for my laptop! and my starter battery died xD
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">4</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-04-the-basketball-feud.html'>
+Visualizing a feud between Michael Jordan and Kobe Bryant
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">3</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-03-vanessa-decorations-update.html'>
+<i class="fa fa-picture"></i> Vanessa got a little bit prettier
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">1</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-01-surrender-rain.html'>
+Surrender Rain
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">1</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-05-01-testing-css.html'>
+CSS Testing Page
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>April 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">30</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-04-30-open-mic-poetry-two.html'>
+Open Mic Poetry 2
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">28</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-04-28-this-moment-in-mine.html'>
+This Moment In Mine
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-04-26-poem-for-open-mic-poetry.html'>
+A short intentional poem for open mic Poetry
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">25</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-04-25-cockpit-light-update.html'>
+<i class="fa fa-picture"></i> Cockpit light Update
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">18</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-04-18-daily-struggle.html'>
+Daily
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">6</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-04-06-new-cockpit-light.html'>
+I installed a new cockpit light in Vanessa
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">5</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-04-05-bird-poop-on-my-windshield.html'>
+The bird atop the pole
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">3</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-04-03-fixed-charging-port-of-bluetooth.html'>
+<i class="fa fa-picture"></i> I fixed the charging port on my bluetooth speaker!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">1</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-04-01-new-license.html'>
+I got a new license today!
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>March 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-03-26-open-mic-poetry.html'>
+Open Mic Poetry
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-03-21-magcraft-pricing-table.html'>
+Magcraft Pricing Table
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-03-21-magnets-in-vanessa.html'>
+<i class="fa fa-picture"></i> Magnets are your friend: How I use them in Vanessa
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">17</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-03-17-sonder.html'>
+Sonder - Dictionary of Obscure Sorrows
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">11</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-03-11-lutallica.html'>
+Lutallica - Dictionary of Obscure Sorrows
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">7</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-03-07-change-gender.html'>
+Today I changed my gender on my license
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">3</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-03-03-chronos.html'>
+Chronos is on your Side
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>February 2017</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-02-26-first-dress.html'>
+I got a new dress!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">24</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-02-24-cabochon.html'>
+Cabochon
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">18</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-02-18-klexos.html'>
+Klexos - Dictionary of Obscure Sorrows
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">17</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-02-17-filesystem-structure.html'>
+My filesystem structure
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">16</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2017-02-16-feeling-from-2010.html'>
+Feeling from 2010
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+        </dl>
+        <!-- <dl><dt class=year>2016</dt>
+ -->
+          <dl><dt class=month>December 2016</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">22</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2016-12-22-not-my-time.html'>
+Not my time
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>November 2016</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">6</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2016-11-06-and-on.html'>
+And on and on
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>May 2016</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">25</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2016-05-25-on-recovery.html'>
+A comment on recovery
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">2</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2016-05-02-lifeismoreinterestingthanthat.html'>
+#lifeismoreinterestingthanthat
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+        </dl>
+        <!-- <dl><dt class=year>2015</dt>
+ -->
+          <dl><dt class=month>October 2015</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">25</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2015-10-25-luna-umbra.html'>
+Luna Inanis Umbra
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">7</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.github.io/posts/2015-10-07-finding-the-girl-in-the-reflection.html'>
+Finding the girl in the reflection
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+        </dl>  </dl>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

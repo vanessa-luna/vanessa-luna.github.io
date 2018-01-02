@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dynamic image size loading in Pelican using javascript | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">Dynamic image size loading in Pelican using javascript</h1>
+		<span class="post-date">web-dev ~ 2017-05-12</span>
+		<br><br>
+
+		<p>I don't really know what to call this. But for the background images, I load the smallest size that fits close enough to the height of the page. Hoping to save bandwidth for mobile users.
+</p>
+<p>This was fun to write since the code was linked from the Pelican settings file, into the template, so the javascript can run properly without me editing multiple files.</p>
+<p>I used a plugin for Pelican called <a class="external" href="https://github.com/getpelican/pelican-plugins/tree/master/thumbnailer">thumbnailer</a>. There are many plugins to help you compress your images into different file formats, however this one was standalone and seemed to fit my idea the easiest.</p>
+<h5 id="pelican-settings-file">Pelican settings file</h5>
+<div class="highlight"><pre><span></span><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;plugins&#39;</span><span class="p">]</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;thumbnailer&#39;</span><span class="p">]</span>
+
+<span class="n">IMAGE_PATH</span> <span class="o">=</span> <span class="s1">&#39;images&#39;</span>
+<span class="n">THUMBNAIL_DIR</span> <span class="o">=</span> <span class="s1">&#39;thumb&#39;</span>
+<span class="n">THUMBNAIL_KEEP_NAME</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">THUMBNAIL_KEEP_TREE</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">THUMBNAIL_SIZES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;tiny&#39;</span><span class="p">:</span> <span class="s1">&#39;?x144&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;smaller&#39;</span><span class="p">:</span> <span class="s1">&#39;?x240&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;small&#39;</span><span class="p">:</span> <span class="s1">&#39;?x360&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;medium&#39;</span><span class="p">:</span> <span class="s1">&#39;?x480&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;large&#39;</span><span class="p">:</span> <span class="s1">&#39;?x720&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;huge&#39;</span><span class="p">:</span> <span class="s1">&#39;?x1080&#39;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Above, I am telling the plugin 'thumbnailer' to take my 'images' folder and create thumbnail versions of all the images.</p>
+<p>The <code>THUMBNAIL_DIR</code> is the root folder for all thumbs.</p>
+<p>The <code>THUMBNAIL_KEEP_TREE</code> tells the plugin to keep the same directory structure found inside <code>IMAGE_PATH</code></p>
+<p>The 'key' in <code>THUMBNAIL_SIZES</code> is the name of the sub folder that contains all the images at that size.</p>
+<p>The '?' in front of each implies that it will keep the aspect ratio of the original file.</p>
+<p>Putting all these together, I can access thumbnail version by changing the root image folder to thumb, and adding the appropriate size key as a prefix. But everything else about the filename stays the same. Here is an example of how the URL shifts</p>
+<div class="highlight"><pre><span></span>/images/background/cover0.jpg
+/thumb/tiny/background/cover0.jpg
+/thumb/huge/background/cover0.jpg
+</pre></div>
+
+
+<h5 id="jinja-template-file">Jinja template file</h5>
+<div class="highlight"><pre><span></span><span class="x">&lt;script type=&quot;text/javascript&quot;&gt;</span>
+<span class="x">  // array of possible images sizes built off config filename</span>
+<span class="x">  var imageSizes = [];</span>
+<span class="x">  </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span><span class="o">,</span> <span class="nv">dim</span> <span class="k">in</span> <span class="nv">THUMBNAIL_SIZES.iteritems</span><span class="o">()</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    imageSizes[ </span><span class="cp">{{</span> <span class="nb">loop</span><span class="nv">.index</span><span class="o">-</span><span class="m">1</span> <span class="cp">}}</span><span class="x"> ] = {</span>
+<span class="x">      name: &quot;</span><span class="cp">{{</span><span class="nv">name</span><span class="cp">}}</span><span class="x">&quot;,</span>
+<span class="x">      size:&quot;</span><span class="cp">{{</span> <span class="nv">dim</span> <span class="cp">}}</span><span class="x">&quot;,</span>
+<span class="x">      width: parseInt(&quot;</span><span class="cp">{{</span><span class="nv">dim</span><span class="cp">}}</span><span class="x">&quot;.replace(/x.+/, &#39;&#39;)),</span>
+<span class="x">      height: parseInt(&quot;</span><span class="cp">{{</span><span class="nv">dim</span><span class="cp">}}</span><span class="x">&quot;.replace(/.+x/, &#39;&#39;))</span>
+<span class="x">    }</span>
+<span class="x">  </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  // sorted largest to smallest so if two sizes match abs, it choses the smaller</span>
+<span class="x">  imageSizes.sort(function(a,b) {return (a.height &gt; b.height) ? -1 : ((b.height &gt; a.height) ? 1 : 0);} );</span>
+
+<span class="x">  function imgUrlByHeight(filename, height) {</span>
+<span class="x">    var chosenSize = imageSizes[0]; //start at smallest size</span>
+<span class="x">    for (var i = 0; i &lt; imageSizes.length; i++){ // redo smallest to calculate abs</span>
+<span class="x">      var curSize = imageSizes[i];</span>
+<span class="x">      curSize.abs = Math.abs(height - curSize.height);</span>
+<span class="x">      if (curSize.abs &lt;= chosenSize.abs) chosenSize = curSize;</span>
+<span class="x">    }</span>
+<span class="x">    return &quot;url(</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">THUMBNAIL_DIR</span><span class="cp">}}</span><span class="x">/&quot; + chosenSize.name + &quot;/&quot; + filename;</span>
+<span class="x">  }</span>
+<span class="x">&lt;/script&gt;</span>
+</pre></div>
+
+
+<p>This may be a bit hard to unpack since it's Jinja and JS combined. However I have left the Jinja highlighted. What's important here is near the top.</p>
+<p>The for loop through <code>THUMBNAIL_SIZES</code> allows me to build an array in javascript to be used by the rest of the code.</p>
+<p>I parse out the value of the key using js function replace since I cannot do this kind of string manipulation in Jinja.</p>
+<p>At the bottom I build the URL using the appropriate settings from the Pelican settings file, and thumbnailer options.</p>
+<h4 id="finally">Finally</h4>
+<p>I could use this function anywhere, but it's currently only being used by the background code. I will eventually place it elsewhere but I need to stop focusing on this and move on. I have to go north!</p>
+
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-05-12-01-finishing-this-website.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-05-12-02-dynamic-image-sizes.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

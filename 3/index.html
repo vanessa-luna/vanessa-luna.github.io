@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Posts | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/index.min.css?6cf087a5">
+    <script>
+      function prettyDate(time) {
+        var date = new Date((time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")),
+            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400), y = date.getFullYear(), m = date.getMonth()+1, d = date.getDate();
+        if (isNaN(dd) || dd < 0 || dd >= 31)
+            return (y.toString()+'-'+((m<10) ? '0'+m.toString() : m.toString())+'-'+((d<10) ? '0'+d.toString() : d.toString()));
+        var r = ((dd == 0 && "Today") || (dd == 1 && "Yesterday") || (dd < 7 && dd + " days") || (dd < 31 && ( (dd < 14 && "1 week") || (dd < 21 && "2 weeks") || (dd < 28 && "3 weeks") || (dd < 25 && "4 weeks") ) ) );
+        if (dd > 7 && dd % 7) r += " & " + dd % 7 + " days"
+        return r;
+      }
+      document.addEventListener("DOMContentLoaded", function () { updateTimes(); setInterval(updateTimes, 60000);})
+      function updateTimes() {
+        var times = document.querySelectorAll("time");
+        for (var i = 0; i < times.length; i++) {
+          var s = prettyDate(times[i].getAttribute("datetime"));
+          if (s) times[i].innerHTML = s
+        }
+      }
+    </script>	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ 	<div class="index pad-content">
+		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-22-dinner-with-fam.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-22 00:00:00-05:00 title="2017-11-22">2017-11-22</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-22-dinner-with-fam.html">Dinner with my bro and grandmother</a>
+				</h1>
+				<p>
+					<p>Last night, as we prepare for dinner, my brother asked if I had a nicer shirt to wear. Apparently the place was on the fancier side. And sure it was! I rummaged through my clothes thinking I don't have formal clothes!</p>
+<p>But wait! You doofus! You have some dresses... lol …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-11-22-dinner-with-fam.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-22-dress.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-22 00:00:00-05:00 title="2017-11-22">2017-11-22</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-22-dress.html">I wore a dress again :)</a>
+				</h1>
+				<p>
+					<p>So I rarely ware dresses. Mostly because I am still not ready to conquer self expression. However today I was told by my brother I should put on a "nice shirt" for dinner with him and my grandmother. I spent a minute searching my freshly laundered clothing before realizing. Wait …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-11-22-dress.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-21-alapacas-lancaster-pa.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-21 00:00:00-05:00 title="2017-11-21">2017-11-21</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-21-alapacas-lancaster-pa.html">Alpacas in Lancaster, PA</a>
+				</h1>
+				<p>
+					<p>I saw Alpacas with my bro and grandmother. One of the babes nibbled on my fingers :)</p>
+				</p>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-21-fault-in-our-stars.html">
+					<div class='post-meta'><div class="inner-meta box">
+						recovery<br>
+						<time class="post-date" datetime=2017-11-21 00:00:00-05:00 title="2017-11-21">2017-11-21</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-21-fault-in-our-stars.html">Reading "The Fault in our Stars"</a>
+				</h1>
+				<p>
+					<blockquote>
+<p>The fault is not in our stars, but in ourselves.</p>
+</blockquote>
+<p>So much of what I'm learning is that it's okay for me to love, to be loved, and to feel worthy of it all.</p>
+<p>I once believed so strongly I did not deserve to be me. Because I have always …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-11-21-fault-in-our-stars.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-19-sunset-at-warehouse.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-19 00:00:00-05:00 title="2017-11-19">2017-11-19</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-19-sunset-at-warehouse.html">Sunset in abandoned warehouse</a>
+				</h1>
+				<p>
+					<p>We walked through an abandoned warehouse and caught the sunset in my photosensitive electronics. Look 0.0</p>
+				</p>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-17-definition-of-hope.html">
+					<div class='post-meta'><div class="inner-meta box">
+						recovery<br>
+						<time class="post-date" datetime=2017-11-17 00:00:00-05:00 title="2017-11-17">2017-11-17</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-17-definition-of-hope.html">The definition of hope</a>
+				</h1>
+				<p>
+					<blockquote>
+<p>Today was not great, but tomorrow might be!</p>
+</blockquote>
+<p><img alt="" src="/images/inspiration/hope.gif"></p>
+<p>I wish I could remember who suggested this be the definition of hope. Likely Brene Brown. However this image has been adorable  and helpful for me.</p>
+<p>How you get to that point of believing tomorrow might be better, will probably take a …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-11-17-definition-of-hope.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-17-the-exiles.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-17 00:00:00-05:00 title="2017-11-17">2017-11-17</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-17-the-exiles.html">Movie Night: The Exiles</a>
+				</h1>
+				<p>
+					<p>Pocahontas reframed. The Exiles, about Native Americans in LA during 1961. What a crazy theater.</p>
+				</p>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-12-harpers-ferry.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-12 00:00:00-05:00 title="2017-11-12">2017-11-12</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-12-harpers-ferry.html">Harper's Ferry with a friend</a>
+				</h1>
+				<p>
+					<p>I spent two days with a friend camping at a place called Harper's Ferry riht on the border of Maryland, Virginia, and West Virginia. It was too cold, and too much, but it was worth it. Just look at the sweet photos!</p>
+				</p>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-10-pain-is-not-pleasue.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-10 00:00:00-05:00 title="2017-11-10">2017-11-10</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-10-pain-is-not-pleasue.html">pain is not pleasure</a>
+				</h1>
+				<p>
+					<p>I hate this title. As much as I want to rage about how I would never want to experience pain during sexy times, I'll bet I don't fully understand what it really means to give in to those acts.</p>
+<p>Nonetheless, FUCK PAIN. I spent my entire life in shame, humiliation …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-11-10-pain-is-not-pleasue.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-09-york-pa.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-09 00:00:00-05:00 title="2017-11-09">2017-11-09</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-09-york-pa.html">York PA</a>
+				</h1>
+				<p>
+					<p>Today was wild. I couldn't sleep and woke up so early. So I tried to go watch the sunrise at this nearby hilltop park thing. No sunrise, but I found a strange little park in northern York.</p>
+<p>It was hunting season in this park, but as I learned from a …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-11-09-york-pa.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-08-reading-pa.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-08 00:00:00-05:00 title="2017-11-08">2017-11-08</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-08-reading-pa.html">Reading, PA</a>
+				</h1>
+				<p>
+					<p>I woke slow today. Way too much yesterday. I wasn't moving until noon. Ugh. But I found a road called skyline drive with public land. So I went.</p>
+<p>Atop the ridge was a fire tower. There I spoke with Mike for a while, a retired navy vet with a hobby …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-11-08-reading-pa.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-07-surprise-detour.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-07 00:00:00-05:00 title="2017-11-07">2017-11-07</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-07-surprise-detour.html">Surprise! Spent the day in Delaware Water Gap</a>
+				</h1>
+				<p>
+					<p>Today I kinda pushed myself too much. But I guess I was determined to make something of this trip. Anyway, a friend suggested I see the Delaware Water Gap, confusingly, in Pennsylvania/New Jersey.</p>
+<p>I stopped at the Pennsylvania welcome center for info and I just went on. I saw …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-11-07-surprise-detour.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-11-06-first-encounter.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-06 00:00:00-05:00 title="2017-11-06">2017-11-06</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-11-06-first-encounter.html">First day, first encounter, feeling good</a>
+				</h1>
+				<p>
+					<p>Quick story about the universe.</p>
+<p>I stopped at a rest stop for a break. After being there for almost an hour, after a rest and phone call, a jeep pulled up next to me. The occupants got out trying to fix their head light. IT was pretty busted. The whole …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-11-06-first-encounter.html">continue »</a>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+        <div class="pagination-item">
+    <a class="box" href="/2/">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <div class="pagination-list">
+          <a class='box ' href="/">1</a>
+          <a class='box ' href="/2/">2</a>
+          <a class='box current-page' href="/3/">3</a>
+          <a class='box ' href="/4/">4</a>
+          <a class='box ' href="/5/">5</a>
+          <a class='box ' href="/6/">6</a>
+          <a class='box ' href="/7/">7</a>
+          <a class='box ' href="/8/">8</a>
+          <a class='box ' href="/9/">9</a>
+          <a class='box ' href="/10/">10</a>
+          <a class='box ' href="/11/">11</a>
+          <a class='box ' href="/12/">12</a>
+          <a class='box ' href="/13/">13</a>
+          <a class='box ' href="/14/">14</a>
+        </div>
+
+        <div class="pagination-item">
+    <a class="box" href="/4/">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+      </div>	</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna <i class="fa fa-star"></i> <a href="https://vanessa-luna.github.io/feed/rss.xml"><i class='fa fa-rss'></i> RSS</a>
+
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

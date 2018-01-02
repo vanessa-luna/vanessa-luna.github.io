@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CSS Testing Page | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">CSS Testing Page</h1>
+		<span class="post-date">web-dev ~ 2017-05-01</span>
+		<br><br>
+
+		<ol>
+<li>Make this page showing off all the styles</li>
+<li>Update the styles to have better abstractions DRY!</li>
+<li>Marvel in all its glory</li>
+<li>Sleep it off.</li>
+</ol>
+<p>This page is dedicated to me testing out all the features of this website. I despised html and css for a long time. So this is a helpful page for me to explore my hierarchies, abstractions, and implementations of style. This may be updated a lot. It's just a play page for me.</p>
+<ul>
+<li><strong>Block Elements</strong><ul>
+<li>Headers</li>
+<li>Paragraphs and Line Breaks</li>
+<li>Blockquotes</li>
+<li>Horizontal Rules</li>
+<li>Lists</li>
+<li>Code Blocks</li>
+</ul>
+</li>
+<li><strong>Inline Elements</strong><ul>
+<li>Links</li>
+<li>Emphasis</li>
+<li>Code</li>
+<li>Images</li>
+</ul>
+</li>
+</ul>
+<h1 id="heading-level-1">Heading Level 1</h1>
+<h2 id="heading-level-2">Heading Level 2</h2>
+<h3 id="heading-level-3">Heading Level 3</h3>
+<h4 id="heading-level-4">Heading Level 4</h4>
+<h5 id="heading-level-5">Heading Level 5</h5>
+<h6 id="heading-level-6">Heading Level 6</h6>
+<p>This is paragraph text. It contains many words and many sentences. If it didn't, it wouldn't really be much of a paragraph. In this paragraph we may see things like <strong>bold text</strong>, <em>italic text</em>, <a class="internal" href="#">anchor links</a>, and even boops &#xE80F;.</p>
+<hr>
+<p><strong>Bold text is used for many reasons.</strong> Like to emphasis a particular word or phrase within a paragraph. Sometimes it is used simply to <strong>add a thickness</strong> to to the text of titles, headers, or more stylistic uses of words outside of paragraphs. In HTML, bold is normally indicated with a <code>&lt;strong&gt;</code> tag.</p>
+<p><em>Italic text is used less often nowadays.</em> Maybe that's my own perception, however, it tends to not provide enough pop to be useful, unless used in an entire paragraph. I think it's odd that the HTML code is <code>&lt;em&gt;</code> standing for <em>emphasis</em>, where it should be spelt out completely. Why they short hand?</p>
+<blockquote>
+<p>NOTE: This is a blockquote. These are awesome and I cannot wait to show you their other styles.</p>
+</blockquote>
+<p>Finally, let's finish these off with <a class="internal" href="#">Anchor links</a>. Links are the foundation of the internets content! Without links we would load one page and run away. Harhar ugh. <a class="internal" href="#">Really long links can sometimes be annoying, but it's worth looking at how they look</a>. Since I use this a lot, let's look at my styles for my links.</p>
+<h4 id="images">Images</h4>
+<p>Lastly, it's time to show off images and the styles I have created for them.</p>
+<p>DO THIS PART</p>
+<h2 id="boxes">BOXES</h2>
+<p>Boxes are the foundation of my style. Without them, the theme of this site is essentially just markdown. I recently went through and standardized the css for using them and I will explain their usage here.</p>
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">box</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#333</span><span class="p">;</span>
+    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h4 id="inline-boxes">Inline Boxes</h4>
+<p>Inline boxes are not used often. Maybe ever, however they are implemented in case of emergency. All this effort is in part to learn this shit, and also avoid my life. So, we can have a <span class="box">span box</span> which is created using <code>&lt;span&gt;</code>. And <a class="box">link boxes</a> created using an <code>&lt;a&gt;</code> tag. I tried very hard to avoid excess assumptions in my css, such as nested styles. Extra sentence to ensure multiline after boxes to show inline nature.</p>
+<div class="highlight"><pre><span></span><span class="nt">span</span><span class="p">.</span><span class="nc">box</span><span class="o">,</span> <span class="nt">a</span><span class="p">.</span><span class="nc">box</span><span class="o">,</span> <span class="p">.</span><span class="nc">inline</span><span class="p">.</span><span class="nc">box</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mf">.5</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h4 id="block-boxes">Block Boxes</h4>
+<p>The next example is a <code>&lt;div&gt;</code> box. Which is obviously a block element.</p>
+<div class="box">This is a div box</div>
+
+<p>And an <code>&lt;a class="block box"&gt;</code></p>
+<p><a class="block box">Box Button!</a></p>
+<div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">.</span><span class="nc">box</span><span class="o">,</span> <span class="p">.</span><span class="nc">block</span><span class="p">.</span><span class="nc">box</span>  <span class="p">{</span>
+    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h4 id="special-boxes">Special Boxes</h4>
+<p>Notably, <code>&lt;a&gt;</code> get special styling. Here is the code for link boxes.</p>
+<div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">.</span><span class="nc">box</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#e78d9f</span><span class="p">;</span>
+    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="k">border-color</span><span class="p">:</span> <span class="mh">#e78d9f</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span><span class="p">.</span><span class="nc">box</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span> <span class="nt">a</span><span class="p">.</span><span class="nc">box</span><span class="p">:</span><span class="nd">focus</span><span class="o">,</span> <span class="nt">a</span><span class="p">.</span><span class="nc">box</span><span class="p">:</span><span class="nd">active</span> <span class="p">{</span>
+    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#f7e8e8</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h5 id="multi-content-boxes">multi content boxes</h5>
+<p>Sometimes I need a special kind of box because of the content inside, where the outer is a <code>div</code> and the inner a <code>&lt;a&gt;</code> and padding needs to be swapped so I can get full link coverage. You'll see what I mean.</p>
+<style>
+.multi-content-flex {
+    display:flex;
+    justify-content:space-around;
+}
+.category {
+    display: inline-block;
+}
+.category-count {
+    float:right;
+    position: relative;
+    top: .4em;
+    right: .5em;
+    pointer-events: none;
+}
+.multi-content-flex .box {
+    padding: 2rem;
+    margin: 0;
+}
+</style>
+
+<div class="multi-content-flex">
+    <div style="margin: 1rem; text-align:center;">
+        <a class="category">
+          <div class="category-count">(15)</div>
+          <div class="box">category</div>
+        </a>
+    </div>
+    <div style="margin: 1rem; text-align:center;">
+        <a class="box category">
+          <div class="category-count">(15)</div>
+          <div>category</div>
+        </a>
+    </div>
+</div>
+
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;category&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;category-count&quot;</span><span class="p">&gt;</span>(15)<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box&quot;</span><span class="p">&gt;</span>category<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box category&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;category-count&quot;</span><span class="p">&gt;</span>(15)<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>category<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">category</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">category-count</span> <span class="p">{</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+    <span class="k">top</span><span class="p">:</span> <span class="mf">.4</span><span class="kt">em</span><span class="p">;</span>
+    <span class="k">right</span><span class="p">:</span> <span class="mf">.5</span><span class="kt">em</span><span class="p">;</span>
+    <span class="n">pointer-events</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">box</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<ul>
+<li>Make <code>&lt;a&gt; display:inline-block;</code> so the count will sit inside.</li>
+<li>ensure no padding on outer elements so anchor can take it</li>
+<li>only padding and margins because everything is taken care of deeper</li>
+</ul>
+<p>There is more than one way to make it look correct. But as you can see, if the padding exists on the <code>&lt;a&gt;</code> then it changes how the count positions during float.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-05-01-surrender-rain.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-04-30-open-mic-poetry-two.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-05-01-testing-css.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

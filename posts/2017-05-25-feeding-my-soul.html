@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The most epic night I've had this whole trip | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">The most epic night I've had this whole trip</h1>
+		<span class="post-date">chronograph ~ 2017-05-25</span>
+		<br><br>
+
+		<p>Yesterday, my exhaustion from the performance the night before kept my horizontal most of the day. Emotionally and physically spent.</p>
+<p>I had planned to go on a night walk to commemorate the day and feed myself in a way I haven't been able to in a while. It turned into the most epic night I've had since starting this trip.
+</p>
+<p><br></p>
+<blockquote>
+<p>I am writing a lot more in these posts. I probably shouldn't but I guess I am getting quite comfortable laying myself bare here. I hope at least it is a compelling read despite how it's directly a journal entry. I take no offense to people who dislike this part of my content :)</p>
+</blockquote>
+<p><br></p>
+<h2 id="it-begins">It begins</h2>
+<p>We drove down to the river's edge to gain access to the railroad bridge near my friend's house. Passing through a muddy construction zone we walked to the beginning of a railroad bridge. Overcautious, we hung out for a bit and talked while I tried to gather information about whether this bridge would be active at night. I am very conscious of the risk of trainwalking. After hearing a train, getting paranoid, and consulting google maps I determined that this bridge would not be in use past normal business hours. I was right.</p>
+<p>The waters of this river are quite fast and loud. The bed rocky and shallow enough to cause rapids everywhere, the bridge's sleepers spaced quite far apart and ununiformly. It was a rush to walk the first long section. There are many small islands that the bridge passes over and each section of the bridge is different. We passed some locked up bicycles which my friend determined might be owned by homeless people who sleep out here. Crossing another section, this one with trusses, we eventually landed on an island which we could actually access. The drop from the bridge platform to land was short enough. We climbed down and sat on some rocks at the waters edge. After some time, some of which I went off on my own, we finished the length of the bridge. In total the bridge is about one mile long.</p>
+<h2 id="going-back">Going back</h2>
+<p>After resting we began the trek back which included fewer stops. The last section of the bridge, the first one we crossed, I decided to walk purely on the rail this time. Feeling deeply connected at this point to my past experiences of rail walking I wanted to push myself. I succeeded in never leaving the rail, although needed to cheat twice due to an observation my friend made and when she passed by me, throwing me off focus. Regardless, it was a tough challenge given the length and the rushing water below.</p>
+<p>Before the bridge started, there was a small water gap bridged as the train curved to meet the long bridge. This one had no railings or above rail supports. I opted to walk on the rail closest to the water. I definitely felt a rush I had never felt on a rail before since I was only a foot or two away from the true edge. Thankfully it was very short.</p>
+<p>Passing back through the construction zone I spied the twelve story crane and felt the urge to climb it. My friend interested, so we approached.</p>
+<h2 id="the-crane">The crane</h2>
+<p>We climbed three stories and stopped, then climbed another two. Laid on the steel grating, soaking up the wind, and atmosphere of being so high. But this wasn't enough for me. I needed to climb the entirety. My friend opted to not to join me so I climbed with intent.</p>
+<p>Atop the crane I towered. Twelve stories overlooking the river, south side, and the bits of downtown revealed between the scrapers. The wind was exceptional. My energy soared. I have not climbed a thing like this is ages, and never something this high. The crane was well lit in general and anyone might had glimpsed a moving shadow within a half mile radius. That element was definitely appreciated. After some pictures, deep breaths, and precarious leans, I climbed down.</p>
+<h2 id="back-to-earth">Back to earth</h2>
+<p>Despite the physical exertion of the night I felt very good, alive, and relatively pain free. Partly due to the pain pill and cannabis I took, but mostly for the feeding my soul gets while partaking in these kinds of activities. I am proud to be a nictophile. I drove back to the house in joy.</p>
+<p>I knew I was not ready for sleep so I opted to go out and purchase more cancer sticks, since I was out. After visiting three gas stations I thought to be open, I finally found myself at a Seven Eleven. Feeling calm, collected, and connected, I opted to tell the employee, Tony, that it was my birthday and I just got down from climbing the crane. His innocent response of disbelief was entertaining and cute. I asked if he wanted to see pictures so I grabbed my phone. We talked about the experience, the skydiving we shared, and my passing through. That was nice.</p>
+<p>I finally went to bed at four a.m. I drifted to sleep quite happily.</p>
+<h2 id="the-morning-after-the-dream">The morning after, the dream.</h2>
+<p>I wasn't sure if I would write about this. I had a horrific dream that woke me up in a panic, crying. No dream has ever impacted me this way before. Something in me is saying just lay it all out. Feel free to stop here if you don't like reading other people's dreams.</p>
+<p>The dream wanted to throw every bit of my life into the mix. The first portion included bits of dysphoria, and my inability to connect with some people I really care about. This first scene mostly occurred in the bathroom of a restaurant I had ordered food in. In my dysphoria, my outfit began to unravel, my internal sense of my breast size, deflating into reality when confronted by a cis women who spoke very condescendingly towards me.</p>
+<p>The next scene was about my aversion to food, and discomfort inside hunger and even starvation. The food I had ordered did not arrive and I spent what felt like hours battling with the staff to get food. Eventually I spied a pastry in the trash, perched delicately on top. I snatched it up when I thought I was alone but the manager had eyes on me and demanded I pay for it. I was outraged.</p>
+<p>In a huff I tried to leave in Vanessa, who turned into a big rig. A small child on a tricycle was in the way and we shuffled trying to figure out who would go and stay so no one was hurt. The child's desperation to not lose sight of his father finally forced him to cross my path to a final safety. Is this indicative of my own parental issues or somehow an element of my empathy for other creatures. That I am unsure of.</p>
+<p>After speaking with the father for a moment as we all sat in relief, the uncle of the child shifted into the spying grungy homeless man who had been watching me from afar as I tried to get food earlier. His eyes cut through me. He obviously entranced in delusion and obsession.</p>
+<p>Suddenly, this homeless man, Ralph, and I were on my bed, both on our backs, he half beneath me. His dirty skin, sunburnt complexion, unkempt beard and rough hair consumed my vision as he gripped around my body tighter and tighter. His lack of empathy, and total immersion in sexuality grossed me out to no end. I squirmed trying to find a way to break his spell. His fingers digging in to me sharply, my body screaming in pain.</p>
+<p>I slowly came to realize as he tried to consume my body, that the pain he was inflicting on my body was located where all my most common pain points are in real life. My body personifying and visualizing the pain I endure. I was slowly coming too. It was this realization, that my elation and relief from the night before had slipped right back to the torture of my daily life that rocked me awake.</p>
+<p>I left Vanessa and ran inside almost hyperventilating and cried into my friends hug.</p>
+
+
+<noscript>
+    <div class="warning-block">
+        Enable javascript to use the fancy gallery viewer.<br>
+        Instead, clicking an image will load the image in a new page.
+    </div>
+</noscript>
+<div class='album' id="crane-climb">
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/crane-climb/20170526_023324.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 0)"
+          src="https://vanessa-luna.github.io/thumb/small/crane-climb/20170526_023324.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/crane-climb/20170526_023327.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 1)"
+          src="https://vanessa-luna.github.io/thumb/small/crane-climb/20170526_023327.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/crane-climb/20170526_023331.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 2)"
+          src="https://vanessa-luna.github.io/thumb/small/crane-climb/20170526_023331.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/crane-climb/20170526_023540.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 3)"
+          src="https://vanessa-luna.github.io/thumb/small/crane-climb/20170526_023540.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/crane-climb/20170526_023550.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 4)"
+          src="https://vanessa-luna.github.io/thumb/small/crane-climb/20170526_023550.jpg">
+        <noscript></a></noscript>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/gallery-article.min.css?1a48c320">
+
+<script>
+    var items = []
+      items [0] = {
+        src: 'https://vanessa-luna.github.io/images/crane-climb/20170526_023324.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/crane-climb/20170526_023324.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [1] = {
+        src: 'https://vanessa-luna.github.io/images/crane-climb/20170526_023327.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/crane-climb/20170526_023327.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [2] = {
+        src: 'https://vanessa-luna.github.io/images/crane-climb/20170526_023331.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/crane-climb/20170526_023331.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [3] = {
+        src: 'https://vanessa-luna.github.io/images/crane-climb/20170526_023540.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/crane-climb/20170526_023540.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [4] = {
+        src: 'https://vanessa-luna.github.io/images/crane-climb/20170526_023550.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/crane-climb/20170526_023550.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+</script>
+
+    <script type="text/javascript" src="https://vanessa-luna.github.io/theme/js/photoswipe.js?90d5a5ff"></script>
+    <script type="text/javascript" src="https://vanessa-luna.github.io/theme/js/photoswipe_ui.js?1a0dc471"></script>
+    <link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/fragments/photoswipe.min.css?a7796261">
+
+<style>
+    .pswp__top-bar {
+        width:inherit;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .pswp__counter { position: static; }
+    .pswp img { max-height: 100vh; }
+</style>
+<script>
+    // call when you want to open the gallery
+    var photoswipe;
+    function initGallery(items, index) {
+        var options = {index: index, barsSize: {top:0, bottom:'auto'}, closeEl:false, captionEl: false, fullscreenEl: false, zoomEl: false, shareEl: false, counterEl: true, arrowEl: true, preloaderEl: true, tapToClose: true, tapToToggleControls: true, clickToCloseNonZoomable: false }
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        photoswipe = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        photoswipe.listen("gettingData", function(index, slide){
+            if (slide.doGetSlideDimensions) { setTimeout(function(){ getSlideDimensions(slide); } ,100); }
+        });
+        photoswipe.listen("imageLoadComplete", function(index, slide){ if (slide.doGetSlideDimensions) getSlideDimensions(slide); });
+        photoswipe.init();
+    }
+    // when image loads, tell photoswipe how big it is
+    function getSlideDimensions(slide) {
+        if (!slide.doGetSlideDimensions) return;
+        var img = new Image();
+        img.addEventListener('error', function(evt){ slide.doGetSlideDimensions = false; });
+        img.addEventListener('load', function(evt){
+            slide.doGetSlideDimensions = false;
+            slide.w = img.naturalWidth;
+            slide.h = img.naturalHeight;
+            photoswipe.updateSize(true);
+            photoswipe.invalidateCurrItems();
+        });
+        img.src = slide.src;
+    }
+</script>
+<div class=pswp aria-hidden=true role=dialog tabindex=-1><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close"title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"title=Share></button> <button class="pswp__button pswp__button--fs"title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left"title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right"title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div>
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-05-26-this-is-real-life.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-05-25-goofyness-violin-video.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-05-25-feeding-my-soul.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

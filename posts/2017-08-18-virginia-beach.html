@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sunrise and Virginia Beach | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">Sunrise and Virginia Beach</h1>
+		<span class="post-date">chronograph ~ 2017-08-18</span>
+		<br><br>
+
+		<p>This was a freaking day. Finally getting settled together. We began in Ocean City Maryland and ended in Virginia Beach. Read about the day and look at pics!</p>
+<p></p>
+<h2 id="ocean-city">Ocean City</h2>
+<p>I nudged us to watch the sun rise so we woke at 5:30am. Shuffled over to Ocean City and walked the boardwalk a bit. It was a cute little beach city. The inlet was small so not a lot of room for expansive commercial crap.</p>
+<p>On our way out we stumbled across a large docked sail ship boat floaty thing. Despite it being closed we went up anyway. Took a few pictures before an employee kicked us out.</p>
+<h2 id="onley">Onley</h2>
+<p>We took a brief stop here. Originally planning a run it turned merely into a coffee grab. But gosh did we stop at the right place. This was the coolest spot for coffee I've seen. It had an old bank vault and a mini library with upper floor seating. I wish I had a place like that to go to regularly.</p>
+<h2 id="chesapeake-bridge-and-tunnels">Chesapeake Bridge and Tunnels.</h2>
+<p>This was amazing. 17.6 miles of bridge, two of them tunnels. At some points it felt there was no land to be seen. Isolated on these freakish structures jutting from the water our only option is to keep moving.</p>
+<h2 id="virginia-beach">Virginia Beach</h2>
+<p>is cute. It's two mile boardwalk is not overbearing or too small. Despite the tall buildings hotels resorts it still feels homey due to the layout of the roads. Residential stuff is very very close to the water as well. I cruised the boardwalk for a bit, and spoke with an information person.</p>
+<p>Next, we went to the ocean! I swam. In the ocean! With a bathing suite and all tucked up nicely and I had no anxiety. NONE. I played and laughed and enjoyed myself with water in a way I haven't since I was a kid.</p>
+<p>After passing out and cleaning up we went out for pizza and beer. Our waitress was so nice and thought we were dating. We got a good pizza and a relaxing meal. We've done well to not over spend on food so far. And while the night sleeping was rough in humid 70+ air and rain, we weren't woken up by humans or ticketed. How luck I found a spot like that so quickly and so close to the water.</p>
+
+
+<noscript>
+    <div class="warning-block">
+        Enable javascript to use the fancy gallery viewer.<br>
+        Instead, clicking an image will load the image in a new page.
+    </div>
+</noscript>
+<div class='album' id="eclipse-day-4">
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170817_192843196_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 0)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170817_192843196_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_054330363_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 1)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_054330363_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_060335383_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 2)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_060335383_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_061612225_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 3)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_061612225_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_061622009_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 4)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_061622009_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_062102593_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 5)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_062102593_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_062400365_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 6)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_062400365_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_062415969_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 7)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_062415969_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_062431266_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 8)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_062431266_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_063343844_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 9)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_063343844_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_063637583_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 10)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_063637583_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_063644880_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 11)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_063644880_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_063957036_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 12)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_063957036_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_065548933_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 13)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_065548933_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_065631046_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 14)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_065631046_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073341528_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 15)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073341528_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073426998_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 16)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073426998_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073504407_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 17)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073504407_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073538085_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 18)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073538085_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073559343.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 19)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073559343.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073615252_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 20)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073615252_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073635645_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 21)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073635645_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091716218_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 22)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091716218_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091742107.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 23)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091742107.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091815888_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 24)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091815888_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091824274_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 25)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091824274_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091840790_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 26)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091840790_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091910506_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 27)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091910506_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_092029396_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 28)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_092029396_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_105724919_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 29)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_105724919_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_105838492_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 30)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_105838492_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_105845041_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 31)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_105845041_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_105911435_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 32)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_105911435_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_110212779_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 33)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_110212779_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_110429561_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 34)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_110429561_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_110504188_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 35)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_110504188_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_110601664.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 36)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_110601664.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_125725771_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 37)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_125725771_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_125919723_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 38)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_125919723_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_130028533_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 39)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_130028533_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_130401068_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 40)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_130401068_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_130745636_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 41)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_130745636_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_130750205_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 42)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_130750205_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_141826357_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 43)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_141826357_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_193132921_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 44)"
+          src="https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_193132921_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/gallery-article.min.css?1a48c320">
+
+<script>
+    var items = []
+      items [0] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170817_192843196_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170817_192843196_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [1] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_054330363_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_054330363_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [2] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_060335383_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_060335383_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [3] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_061612225_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_061612225_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [4] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_061622009_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_061622009_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [5] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_062102593_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_062102593_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [6] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_062400365_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_062400365_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [7] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_062415969_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_062415969_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [8] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_062431266_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_062431266_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [9] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_063343844_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_063343844_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [10] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_063637583_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_063637583_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [11] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_063644880_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_063644880_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [12] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_063957036_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_063957036_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [13] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_065548933_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_065548933_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [14] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_065631046_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_065631046_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [15] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073341528_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073341528_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [16] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073426998_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073426998_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [17] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073504407_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073504407_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [18] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073538085_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073538085_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [19] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073559343.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073559343.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [20] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073615252_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073615252_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [21] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_073635645_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_073635645_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [22] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091716218_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091716218_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [23] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091742107.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091742107.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [24] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091815888_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091815888_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [25] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091824274_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091824274_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [26] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091840790_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091840790_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [27] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_091910506_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_091910506_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [28] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_092029396_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_092029396_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [29] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_105724919_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_105724919_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [30] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_105838492_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_105838492_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [31] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_105845041_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_105845041_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [32] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_105911435_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_105911435_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [33] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_110212779_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_110212779_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [34] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_110429561_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_110429561_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [35] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_110504188_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_110504188_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [36] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_110601664.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_110601664.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [37] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_125725771_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_125725771_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [38] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_125919723_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_125919723_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [39] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_130028533_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_130028533_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [40] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_130401068_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_130401068_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [41] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_130745636_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_130745636_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [42] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_130750205_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_130750205_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [43] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_141826357_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_141826357_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [44] = {
+        src: 'https://vanessa-luna.github.io/images/eclipse-day-4/IMG_20170818_193132921_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/eclipse-day-4/IMG_20170818_193132921_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+</script>
+
+    <script type="text/javascript" src="https://vanessa-luna.github.io/theme/js/photoswipe.js?90d5a5ff"></script>
+    <script type="text/javascript" src="https://vanessa-luna.github.io/theme/js/photoswipe_ui.js?1a0dc471"></script>
+    <link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/fragments/photoswipe.min.css?a7796261">
+
+<style>
+    .pswp__top-bar {
+        width:inherit;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .pswp__counter { position: static; }
+    .pswp img { max-height: 100vh; }
+</style>
+<script>
+    // call when you want to open the gallery
+    var photoswipe;
+    function initGallery(items, index) {
+        var options = {index: index, barsSize: {top:0, bottom:'auto'}, closeEl:false, captionEl: false, fullscreenEl: false, zoomEl: false, shareEl: false, counterEl: true, arrowEl: true, preloaderEl: true, tapToClose: true, tapToToggleControls: true, clickToCloseNonZoomable: false }
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        photoswipe = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        photoswipe.listen("gettingData", function(index, slide){
+            if (slide.doGetSlideDimensions) { setTimeout(function(){ getSlideDimensions(slide); } ,100); }
+        });
+        photoswipe.listen("imageLoadComplete", function(index, slide){ if (slide.doGetSlideDimensions) getSlideDimensions(slide); });
+        photoswipe.init();
+    }
+    // when image loads, tell photoswipe how big it is
+    function getSlideDimensions(slide) {
+        if (!slide.doGetSlideDimensions) return;
+        var img = new Image();
+        img.addEventListener('error', function(evt){ slide.doGetSlideDimensions = false; });
+        img.addEventListener('load', function(evt){
+            slide.doGetSlideDimensions = false;
+            slide.w = img.naturalWidth;
+            slide.h = img.naturalHeight;
+            photoswipe.updateSize(true);
+            photoswipe.invalidateCurrItems();
+        });
+        img.src = slide.src;
+    }
+</script>
+<div class=pswp aria-hidden=true role=dialog tabindex=-1><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close"title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"title=Share></button> <button class="pswp__button pswp__button--fs"title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left"title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right"title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div>
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-08-18-tipping-points.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-08-16-eclipse-trip-2.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-08-18-virginia-beach.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

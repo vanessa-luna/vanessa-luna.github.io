@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Magcraft Pricing Table | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">Magcraft Pricing Table</h1>
+		<span class="post-date">vandwelling ~ 2017-03-21</span>
+		<br><br>
+
+		<p>This is the table I put together when researching magnets. I wanted to find the best deals for the right magnets. The cost per was a crucial element to that.
+</p>
+<p>View my post about magnets in my van <a class="internal" href="https://vanessa-luna.github.io/posts/2017-03-21-magnets-in-vanessa.html">here</a></p>
+<h3 id="notes">Notes</h3>
+<p>I suggest purchasing the magnets through Home Depot as they offer free shipping over $45 and free shipping to stores for in store pickup. Search for the id number and you'll find it easily.</p>
+<p><a class="external" href="http://www.homedepot.com/s/magcraft+magnet">Magnets @ HomeDepot</a></p>
+<p>Also, this company sells other types of magnets but I didn't imagine them as useful so I did not include them.</p>
+<h3 id="legend">Legend</h3>
+<div class="highlight"><pre><span></span>$ = I bought this
+! = I will likely buy this
++ = Seems worth buying
+
+All measurements are in inches.
+Click the id number to view product
+</pre></div>
+
+
+<h2 id="block-magnets"><img src="https://cdn2.magcraft.com/images/content/Block%20Magnets-icon-small.png" class="inline no-margin"> Block Magnets</h2>
+<p>Strong ones, but more expensive. I might buy the NSN0613 for stronger reinforcement of my shower curtain.</p>
+<div class="highlight"><pre><span></span>w = width
+h = height
+t = thickness
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th align="left">!</th>
+<th align="left">id</th>
+<th align="left">#</th>
+<th align="left">pull</th>
+<th align="left">w</th>
+<th align="left">h</th>
+<th align="left">t</th>
+<th align="right">$</th>
+<th align="right">#/$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0610">NSN0610</a></td>
+<td align="left">50</td>
+<td align="left">2.41</td>
+<td align="left">0.25</td>
+<td align="left">0.25</td>
+<td align="left">0.1</td>
+<td align="right">$12</td>
+<td align="right">$0.24</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0834">NSN0834</a></td>
+<td align="left">12</td>
+<td align="left">4.83</td>
+<td align="left">0.25</td>
+<td align="left">1</td>
+<td align="left">0.1</td>
+<td align="right">$12</td>
+<td align="right">$1.00</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0911">NSN0911</a></td>
+<td align="left">10</td>
+<td align="left">6.03</td>
+<td align="left">0.5</td>
+<td align="left">0.5</td>
+<td align="left">0.125</td>
+<td align="right">$12</td>
+<td align="right">$1.99</td>
+</tr>
+<tr>
+<td align="left">!</td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0612">NSN0612</a></td>
+<td align="left">6</td>
+<td align="left">9.05</td>
+<td align="left">0.75</td>
+<td align="left">0.75</td>
+<td align="left">0.125</td>
+<td align="right">$14</td>
+<td align="right">$2.33</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0613">NSN0613</a></td>
+<td align="left">4</td>
+<td align="left">12.06</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0.125</td>
+<td align="right">$15</td>
+<td align="right">$3.75</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0635">NSN0635</a></td>
+<td align="left">4</td>
+<td align="left">12.06</td>
+<td align="left">0.5</td>
+<td align="left">2</td>
+<td align="left">0.125</td>
+<td align="right">$15</td>
+<td align="right">$3.75</td>
+</tr>
+</tbody>
+</table>
+<h2 id="disc-magnets"><img src="https://cdn2.magcraft.com/images/content/Disc%20Magnets-icon-small.png" class="inline no-margin"> Disc Magnets</h2>
+<p>Best price and power with most variety. None of the discs are over 1 inch diameter which means they are no bigger than a US Quarter.</p>
+<p>The onces I purchased here are used to hold up my insulation panels, valence, hang drying towels, hold tools, my key, parts of my shoe rack storage. Seem to be the best one on here for price, quantity and strength.</p>
+<div class="highlight"><pre><span></span>d = diameter
+t = thickness
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th align="left">!</th>
+<th align="left">id</th>
+<th align="left">#</th>
+<th align="left">pull</th>
+<th align="left">d</th>
+<th align="left">t</th>
+<th align="left">$</th>
+<th align="left">#/$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0591">NSN0591</a></td>
+<td align="left">200</td>
+<td align="left">0.17</td>
+<td align="left">0.625</td>
+<td align="left">0.03125</td>
+<td align="left">$12</td>
+<td align="left">$0.06</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0592">NSN0592</a></td>
+<td align="left">150</td>
+<td align="left">0.33</td>
+<td align="left">0.125</td>
+<td align="left">0.03125</td>
+<td align="left">$11</td>
+<td align="left">$0.07</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0566">NSN0566</a></td>
+<td align="left">100</td>
+<td align="left">0.67</td>
+<td align="left">0.125</td>
+<td align="left">0.0625</td>
+<td align="left">$11</td>
+<td align="left">$0.10</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0657">NSN0657</a></td>
+<td align="left">80</td>
+<td align="left">1.36</td>
+<td align="left">0.25</td>
+<td align="left">0.063</td>
+<td align="left">$12</td>
+<td align="left">$0.15</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0604">NSN0604</a></td>
+<td align="left">4</td>
+<td align="left">10.69</td>
+<td align="left">1</td>
+<td align="left">0.125</td>
+<td align="left">$14</td>
+<td align="left">$3.50</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0582">NSN0582</a></td>
+<td align="left">4</td>
+<td align="left">16</td>
+<td align="left">0.75</td>
+<td align="left">0.25</td>
+<td align="left">$14</td>
+<td align="left">$3.50</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0642">NSN0642</a></td>
+<td align="left">6</td>
+<td align="left">16.03</td>
+<td align="left">0.5</td>
+<td align="left">0.375</td>
+<td align="left">$14</td>
+<td align="left">$2.33</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0732">NSN0732</a></td>
+<td align="left">40</td>
+<td align="left">2.02</td>
+<td align="left">0.375</td>
+<td align="left">0.0625</td>
+<td align="left">$13</td>
+<td align="left">$0.33</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0601">NSN0601</a></td>
+<td align="left">50</td>
+<td align="left">2.14</td>
+<td align="left">0.25</td>
+<td align="left">0.1</td>
+<td align="left">$12</td>
+<td align="left">$0.24</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0640">NSN0640</a></td>
+<td align="left">24</td>
+<td align="left">2.69</td>
+<td align="left">0.5</td>
+<td align="left">0.0625</td>
+<td align="left">$12</td>
+<td align="left">$0.50</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0683">NSN0683</a></td>
+<td align="left">10</td>
+<td align="left">4</td>
+<td align="left">0.75</td>
+<td align="left">0.0625</td>
+<td align="left">$12</td>
+<td align="left">$1.20</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0573">NSN0573</a></td>
+<td align="left">30</td>
+<td align="left">4.01</td>
+<td align="left">0.375</td>
+<td align="left">0.125</td>
+<td align="left">$14</td>
+<td align="left">$0.47</td>
+</tr>
+<tr>
+<td align="left">!</td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0802">NSN0802</a></td>
+<td align="left">14</td>
+<td align="left">5.3</td>
+<td align="left">0.5</td>
+<td align="left">0.125</td>
+<td align="left">$13</td>
+<td align="left">$0.93</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0749">NSN0749</a></td>
+<td align="left">6</td>
+<td align="left">5.39</td>
+<td align="left">1</td>
+<td align="left">0.0625</td>
+<td align="left">$12</td>
+<td align="left">$2.00</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0674">NSN0674</a></td>
+<td align="left">8</td>
+<td align="left">6.68</td>
+<td align="left">0.625</td>
+<td align="left">0.125</td>
+<td align="left">$12</td>
+<td align="left">$1.50</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0575">NSN0575</a></td>
+<td align="left">12</td>
+<td align="left">8.02</td>
+<td align="left">0.375</td>
+<td align="left">0.25</td>
+<td align="left">$13</td>
+<td align="left">$1.08</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0703">NSN0703</a></td>
+<td align="left">6</td>
+<td align="left">8.02</td>
+<td align="left">0.75</td>
+<td align="left">0.125</td>
+<td align="left">$13</td>
+<td align="left">$2.17</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0669">NSN0669</a></td>
+<td align="left">4</td>
+<td align="left">9.35</td>
+<td align="left">0.875</td>
+<td align="left">0.125</td>
+<td align="left">$12</td>
+<td align="left">$3.00</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cube-magnets"><img src="https://cdn2.magcraft.com/images/content/Cube%20Magnets-icon-small.png" class="inline no-margin"> Cube Magnets</h2>
+<p>Purchased the second item. Lots of magnets with enough force to do some helpful things. These are useful since block magnets don't come as small or as cheap.</p>
+<div class="highlight"><pre><span></span>s = size. remember, cubes have equal length sides :)
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th align="left">!</th>
+<th align="left">id</th>
+<th align="left">#</th>
+<th align="left">pull</th>
+<th align="left">s</th>
+<th align="right">$</th>
+<th align="right">#/$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0570">NSN0570</a></td>
+<td align="left">100</td>
+<td align="left">1.51</td>
+<td align="left">0.125</td>
+<td align="right">$11</td>
+<td align="right">$0.11</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0571">NSN0571</a></td>
+<td align="left">50</td>
+<td align="left">3.38</td>
+<td align="left">0.1875</td>
+<td align="right">$13</td>
+<td align="right">$0.26</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0606">NSN0606</a></td>
+<td align="left">20</td>
+<td align="left">6.03</td>
+<td align="left">0.25</td>
+<td align="right">$12</td>
+<td align="right">$0.60</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0607">NSN0607</a></td>
+<td align="left">4</td>
+<td align="left">24.13</td>
+<td align="left">0.5</td>
+<td align="right">$15</td>
+<td align="right">$3.75</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ring-magnets"><img src="https://cdn2.magcraft.com/images/content/Ring%20Magnets-icon-small.png" class="inline no-margin"> Ring Magnets</h2>
+<p>I have not purchased any of these. However they may be useful since they have a hole in them. You can tie things to it, or run a rod through it, which may have applications for you. The pull force is weaker than disc magnet equivalents. The one disc magnet that matches outer diameter and thickness has double the pull force. NSN0814 vs NSN0802</p>
+<div class="highlight"><pre><span></span>out = outer diameter
+in  = inner diameter
+t   = thickness
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th align="left">!</th>
+<th align="left">id</th>
+<th align="left">#</th>
+<th align="left">pull</th>
+<th align="left">out</th>
+<th align="left">in</th>
+<th align="left">t</th>
+<th align="left">$</th>
+<th align="left">#/$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0814">NSN0814</a></td>
+<td align="left">12</td>
+<td align="left">2.67</td>
+<td align="left">0.5</td>
+<td align="left">0.25</td>
+<td align="left">0.125</td>
+<td align="left">$11</td>
+<td align="left">$0.91</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0590">NSN0590</a></td>
+<td align="left">12</td>
+<td align="left">3.20</td>
+<td align="left">0.5</td>
+<td align="left">0.15</td>
+<td align="left">0.125</td>
+<td align="left">$12</td>
+<td align="left">$1.00</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0586">NSN0586</a></td>
+<td align="left">12</td>
+<td align="left">3.20</td>
+<td align="left">0.5</td>
+<td align="left">0.15</td>
+<td align="left">.0125</td>
+<td align="left">$12</td>
+<td align="left">$1.00</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0615">NSN0615</a></td>
+<td align="left">6</td>
+<td align="left">4.01</td>
+<td align="left">0.75</td>
+<td align="left">0.375</td>
+<td align="left">0.125</td>
+<td align="left">$12</td>
+<td align="left">$2.00</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0616">NSN0616</a></td>
+<td align="left">4</td>
+<td align="left">5.35</td>
+<td align="left">1</td>
+<td align="left">0.5</td>
+<td align="left">0.125</td>
+<td align="left">$12</td>
+<td align="left">$3.00</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0587">NSN0587</a></td>
+<td align="left">6</td>
+<td align="left">5.8</td>
+<td align="left">0.75</td>
+<td align="left">0.2</td>
+<td align="left">0.125</td>
+<td align="left">$12</td>
+<td align="left">$2.00</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-NSN0589">NSN0589</a></td>
+<td align="left">6</td>
+<td align="left">5.80</td>
+<td align="left">0.75</td>
+<td align="left">0.2</td>
+<td align="left">0.125</td>
+<td align="left">$12</td>
+<td align="left">$2.00</td>
+</tr>
+</tbody>
+</table>
+
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-03-26-open-mic-poetry.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-03-21-magnets-in-vanessa.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-03-21-magcraft-pricing-table.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

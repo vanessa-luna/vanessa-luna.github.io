@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>My filesystem structure | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">My filesystem structure</h1>
+		<span class="post-date">chronograph ~ 2017-02-17</span>
+		<br><br>
+
+		<p>I love organizing. Which means I also love containers. Which means I love knowing where everything is without needing to think twice. I have been working on this design for a very long time.</p>
+<h2 id="high-level">High Level</h2>
+<p>I like having a small number of folders for the main structure. The idea is to have a tree like, branching concept of organization of things. More than seven items makes it difficult to navigate conceptually. Have you heard of the <a class="external" href="https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two">"humans can remember seven digits"</a> thing?</p>
+<div class="highlight"><pre><span></span>.temp         - downloads, sort
+employee      - resumes, student-work, paid-work, taxes
+forge         - personal projects
+knowledge     - things I have learned
+media         - all things entertaining
+perception    - record of my life
+</pre></div>
+
+
+<p>There is a place for:</p>
+<ul>
+<li>The work your do for others</li>
+<li>The work you do for yourself</li>
+<li>The stuff you have learned</li>
+<li>The others work you consume</li>
+<li>The place to capture who you are.</li>
+</ul>
+<h2 id="media">Media</h2>
+<p>Media is the only folder that has a consistent structure across my storage devices. Since the internals of the other folders are much more discretionary, I figured I would detail a few things here.</p>
+<div class="highlight"><pre><span></span>media
+ ├ auditory    - sound files
+ ├ imagery     - image files
+ ├ interactive - games
+ ├ software    - programs
+ ├ textual     - text, books, pdf
+ └ visual      - video files
+</pre></div>
+
+
+<ul>
+<li><strong>software:</strong> I put fonts, icons, installs, standalones, git repos here. Having a separate folder at root for software got me no where. And by viewing software as media, it changed how I interacted with software in a good way.</li>
+<li><strong>interactive:</strong> In the same vein, placing video games in an "interactive" folder, and seeing it is another form of "media" changed how I identified with games.</li>
+<li><strong>the rest:</strong> I have no valuable recommendations here. Organize your shit how you see fit. I know some of you may find it valuable to ignore this structure, and organize via artist, regardless of media type. But likely with a view exceptions, like, putting all porn in one place.</li>
+</ul>
+<h2 id="perception">Perception</h2>
+<p>This is a wiki. I use <a class="external" href="http://zim-wiki.org/">Zim wiki</a> a lot! I also use it sometimes for large projects in the forge. It is very simple, small, customizable.</p>
+<div class="highlight"><pre><span></span>perception
+  ├ chronograph
+  ├ context
+  ├ kith
+  ├ motive
+  ├ play
+  └ windows
+</pre></div>
+
+
+<ul>
+<li><strong>chronograph:</strong> My journal! Organized down to the day.</li>
+<li><strong>context</strong>: That contextual box where you put things that make sense to organize them that way. lol hence the name.</li>
+<li><strong>kith:</strong> one's friends, acquaintances, and relations. For it's purpose I also include kin in here. Whenever I mention another person within this wiki, I try to backlink to them in kith. It's a great way to track how often I write about people.</li>
+<li><strong>motive:</strong> not too special here, but I keep it outside of context since it is a higher level, global concept. What I want to do before I die, what I want for my future, and some happy reminders that I can make it.</li>
+<li><strong>play:</strong> A place to store lists of fun playful things you can do with your time. Important to play in life apparently.</li>
+<li><strong>windows:</strong> We all go through phases in life. Sometimes we care about certain things, or certain projects. We identify in different ways. These identity specific elements can live here. So far I have 4 elements in here.</li>
+</ul>
+<p>Below is a more detailed look into what goes in this wiki. The context portion is the most flexible and should suit your needs. Take the bits of pieces of your life that don't fit into the other categories and structure them as you see fit.</p>
+<div class="highlight"><pre><span></span>perception
+  ├ chronograph
+  ├ context
+  │ ├ assets
+  │ ├ body
+  │ ├ health
+  │ │ ├ conditions
+  │ │ ├ doctors
+  │ │ ├ insurance
+  │ │ ├ medications
+  │ │ ├ organizations
+  │ │ └ therapists
+  │ ├ money
+  │ ├ projects
+  │ │ ├ archive
+  │ │ └ &lt;name of project&gt;
+  │ └ &lt;however else you organize parts of modern life&gt;
+  ├ kith
+  │  ├ Lending [what you&#39;ve lent to whom]
+  │  ├ &lt;name of person in life&gt;
+  │  └ [not professionals like doctors!]
+  ├ motive
+  │  ├ bucket list
+  │  ├ future hopes
+  │  └ happy thoughts
+  ├ play
+  │  ├ [creative stuff you like to do]
+  │  └ [fun stuff to do]
+  └ windows
+    └ &lt;name of chapter in life&gt;  
+</pre></div>
+
+
+<ul>
+<li><strong>context/projects:</strong> Is a special place which I have load up every time I log in to my machine. I list all my projects, with completion percentage and whatnot. A constant reminder when I open my laptop that I do not wish to use it for media consumption.</li>
+<li><strong>context/health</strong>: An example of what might go in the context area. I have a lot of medical stuff so I see lots of people and institutions. This helps me keep track of who and what I see.</li>
+<li><strong>motive</strong>: Sometimes I debate whether I should make this the page that loads on boot. However, as I become more content and happy, outside my depression, I find myself accessing this less and less.</li>
+<li><strong>windows</strong>: Further on this section, I use it less and less as I have grown into myself. Much of the content in here was from previous iterations of my organizational design. And I also used to hold more tightly to certain identities which made it easy to put stuff in places like this. Now, it seems most of what I write and do either has a place in <em>context</em> or <em>chronograph</em>. Regardless, the archivist in me approves of its labeling for nostalgic reasons.</li>
+</ul>
+<h2 id="entire-setup">Entire Setup</h2>
+<p>&lt;&gt; = may have many of these</p>
+<p>[] = comments</p>
+<div class="highlight"><pre><span></span>.temp
+
+employee
+  ├ resumes
+  ├ taxes
+  │   └ &lt;year&gt;
+  ├ &lt;institution&gt; [learning]
+  │   └ &lt;class&gt;
+  └ &lt;employer&gt;
+
+forge
+  └ &lt;project name&gt;
+
+knowledge
+  ├ crafts
+  ├ educa
+  ├ f1 (help)
+  └ games
+
+media
+  ├ auditory
+  │   ├ music
+  │   ├ other
+  │   ├ playlists
+  │   └ podcasts
+  ├ imagery
+  │   └ [on your own]
+  ├ interactive
+  │   ├ gba
+  │   ├ nes
+  │   ├ pc
+  │   ├ snes
+  │   └ &lt;platform&gt;
+  ├ software
+  │   ├ fonts
+  │   ├ git
+  │   ├ icons
+  │   ├ installs
+  │   └ &lt;standalones&gt;
+  ├ textual
+  │   ├ books
+  │   ├ docs
+  │   ├ manuals
+  │   └ [on your own]
+  └ visual
+      ├ anime
+      ├ educational
+      ├ movies
+      ├ porn
+      ├ tv
+      └ video game
+
+perception
+  ├ chronograph
+  ├ context
+  ├ kith [people]
+  ├ motive
+  ├ play [stuff to do]
+  └ windows
+    └ &lt;name of chapter in life&gt;  
+</pre></div>
+
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-02-18-klexos.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-02-16-feeling-from-2010.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-02-17-filesystem-structure.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

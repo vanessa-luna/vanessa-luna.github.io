@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sunrise at a Lake in NH | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">Sunrise at a Lake in NH</h1>
+		<span class="post-date">chronograph ~ 2017-07-02</span>
+		<br><br>
+
+		<blockquote>
+<p>I slept very little, waking at 3am. After a walk I sit here watching the sun rise by the lake. So this post is about yesterday but marked for today. Shock!</p>
+</blockquote>
+<p>So I'm spending the weekend at a lake house which belongs to my high school ex's family. For the last five years she's held a fourth of July weekend up here and this time I was invited. I knew what I was getting myself in for. And so far, it's living up to my expectations.</p>
+<p>I arrived and was greeted by my ex with what appeared to be a "hostess" air. I was introduced to people, and the dog, then tried to get myself involved. Unfortunately my body was tossed from all the driving so I went and took a nap.</p>
+<p>After waking I walked out to the beach and gazes at the view and the clouds. It had been off and on raining hard so the clouds were epic.</p>
+<h2 id="the-gayme">The Gayme</h2>
+<p>Once inside the house I found everyone playing a card game. It's called Gayme. A Gay themed card like trivia drinking game. It was sexual, filled with gender stereotypes, and it's participants seemed to enjoy the crass nature of it. I on the other hand was filled with dread and anxiety. Every question which confronted my reality caused me to question my involvement in the game.</p>
+<ul>
+<li>If you've ever grown a mustached take a drink while stroking it</li>
+<li>What would your opposite gender name be?</li>
+<li>Which testicle hangs lower? OR for women which boob is larger. (In my case I get to answer both)</li>
+<li>Act like a straight guy for a round (which I could have used my old voice for)</li>
+</ul>
+<p>I happened to be sitting on a couch, my ex beside me and her friend beside her. My ex left the couch at one point and another person arrived prompting her friend, say, Alex to slide closer to me. At some point he acknowledged my transness and how awkward this must be for me. Even went so far as to as if my ex and I dated in a past life. I ended up asking him how he knew, because I like playing dumb sometimes. And apparently she had told him. So why even ask me these questions? Because you want me to know? OF course I'm under pressure as the most isolated person in the group to not cause a "trans blowup" at anyone.</p>
+<p>A little while later I am outside helping a couple setup their tent. The male brought up my being trans. Mentioned something about not knowing what that would be like. He asked if I chose my name. Something about how he had no idea I was trans while we were speaking earlier and someone had to "fill him in". And apologized if his questions were inappropriate.</p>
+<p>The one person who wanted to talk with me seemed rather interested in talking about trans stuff and politics. Sigh.</p>
+<p>I got rather disenchanted at the thought of continuing the weekend because I had wanted it to be me as Luna. Not me as the tranny.</p>
+<h2 id="my-fault">my fault</h2>
+<p>I know my choice to I respond to the questions in the game, that people would look at me funny, which might prompt others to ask why I was drinking to that. I set myself up. I outed myself as well as my ex doing so. But the news spread. And now I feel like an enigma. Good job Luna.</p>
+<h3 id="i-wish-i-hadnt">I wish I hadn't</h3>
+<p>I could have played along and really not given any hints away. But I didn't and couldn't. Despite finally feeling real, I am still not good at "standing up for myself". Where I have my own "version of reality" or "window" to view the world from which would give me something to stand up for.</p>
+<h2 id="hopes">hopes</h2>
+<p>I wanted this to be a big weekend for me. I knew regardless of how it went down it would impact me a lot. I want to wear my bathing suit for the first time. I want to interact with strangers my own age! I want to be self sufficient. It would be nice to interact with my ex but I don't really see that happening.</p>
+
+
+<noscript>
+    <div class="warning-block">
+        Enable javascript to use the fancy gallery viewer.<br>
+        Instead, clicking an image will load the image in a new page.
+    </div>
+</noscript>
+<div class='album' id="lake-house-day-2">
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_044042518.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 0)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_044042518.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_044101508.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 1)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_044101508.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_044816149.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 2)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_044816149.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_045601664_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 3)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_045601664_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_045634984_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 4)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_045634984_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_050017543_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 5)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_050017543_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_050123907_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 6)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_050123907_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_050535834_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 7)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_050535834_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_050645325_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 8)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_050645325_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_050714678.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 9)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_050714678.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_052029596_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 10)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_052029596_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_052036806_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 11)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_052036806_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_052128035_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 12)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_052128035_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_052354368.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 13)"
+          src="https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_052354368.jpg">
+        <noscript></a></noscript>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/gallery-article.min.css?1a48c320">
+
+<script>
+    var items = []
+      items [0] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_044042518.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_044042518.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [1] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_044101508.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_044101508.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [2] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_044816149.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_044816149.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [3] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_045601664_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_045601664_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [4] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_045634984_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_045634984_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [5] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_050017543_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_050017543_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [6] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_050123907_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_050123907_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [7] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_050535834_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_050535834_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [8] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_050645325_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_050645325_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [9] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_050714678.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_050714678.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [10] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_052029596_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_052029596_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [11] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_052036806_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_052036806_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [12] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_052128035_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_052128035_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [13] = {
+        src: 'https://vanessa-luna.github.io/images/lake-house-day-2/IMG_20170702_052354368.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/lake-house-day-2/IMG_20170702_052354368.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+</script>
+
+    <script type="text/javascript" src="https://vanessa-luna.github.io/theme/js/photoswipe.js?90d5a5ff"></script>
+    <script type="text/javascript" src="https://vanessa-luna.github.io/theme/js/photoswipe_ui.js?1a0dc471"></script>
+    <link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/fragments/photoswipe.min.css?a7796261">
+
+<style>
+    .pswp__top-bar {
+        width:inherit;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .pswp__counter { position: static; }
+    .pswp img { max-height: 100vh; }
+</style>
+<script>
+    // call when you want to open the gallery
+    var photoswipe;
+    function initGallery(items, index) {
+        var options = {index: index, barsSize: {top:0, bottom:'auto'}, closeEl:false, captionEl: false, fullscreenEl: false, zoomEl: false, shareEl: false, counterEl: true, arrowEl: true, preloaderEl: true, tapToClose: true, tapToToggleControls: true, clickToCloseNonZoomable: false }
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        photoswipe = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        photoswipe.listen("gettingData", function(index, slide){
+            if (slide.doGetSlideDimensions) { setTimeout(function(){ getSlideDimensions(slide); } ,100); }
+        });
+        photoswipe.listen("imageLoadComplete", function(index, slide){ if (slide.doGetSlideDimensions) getSlideDimensions(slide); });
+        photoswipe.init();
+    }
+    // when image loads, tell photoswipe how big it is
+    function getSlideDimensions(slide) {
+        if (!slide.doGetSlideDimensions) return;
+        var img = new Image();
+        img.addEventListener('error', function(evt){ slide.doGetSlideDimensions = false; });
+        img.addEventListener('load', function(evt){
+            slide.doGetSlideDimensions = false;
+            slide.w = img.naturalWidth;
+            slide.h = img.naturalHeight;
+            photoswipe.updateSize(true);
+            photoswipe.invalidateCurrItems();
+        });
+        img.src = slide.src;
+    }
+</script>
+<div class=pswp aria-hidden=true role=dialog tabindex=-1><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close"title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"title=Share></button> <button class="pswp__button pswp__button--fs"title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left"title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right"title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div>
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-07-03-you-got-out.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-07-01-this-nh-cop-was-nice.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-07-02-lake-rise.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

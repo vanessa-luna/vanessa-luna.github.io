@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Chronograph posts | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/category.min.css?6cf087a5">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+  <h1 class="category-title pad-content">Chronograph Posts</h1> 
+	<div class="index pad-content">
+		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-31-rocky-knob.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-31 00:00:00-04:00 title="2017-05-31">2017-05-31</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-31-rocky-knob.html">A day atop Rocky Knob</a>
+				</h1>
+				<p>
+					<p>Wow I ran into some characters today. I drove up to the top of a national park and spent the day in a parking lot with an epic view over the valleys. Here are some of the interactions I had while either playing my violin or sewing.
+
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-31-rocky-knob.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-28-hanging-rock.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-28 00:00:00-04:00 title="2017-05-28">2017-05-28</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-28-hanging-rock.html">Hanging Rock Raptor Observatory</a>
+				</h1>
+				<p>
+					<blockquote>
+<p>This place is incredible. On the Appalachian trail, a small wood hut sits atop a spine with a full view of the area. A continent of clouds rolls lazily across the sky. The sun eager to say hi with us, it's tendrils gripping the ground. A blue green haze sits atop the endless view. Such a pastel wonder, my eyes could not say no. The valleys so clearly defined. The plowed fields appearing as spots on an animals hide. The only sound was the wind. And what a wind it was.</p>
+</blockquote>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-28-hanging-rock.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-25-feeding-my-soul.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-25 00:00:00-04:00 title="2017-05-25">2017-05-25</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-25-feeding-my-soul.html">The most epic night I've had this whole trip</a>
+				</h1>
+				<p>
+					<p>Yesterday, my exhaustion from the performance the night before kept my horizontal most of the day. Emotionally and physically spent.</p>
+<p>I had planned to go on a night walk to commemorate the day and feed myself in a way I haven't been able to in a while. It turned into the most epic night I've had since starting this trip.
+
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-25-feeding-my-soul.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-24-open-mic-night.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-24 00:00:00-04:00 title="2017-05-24">2017-05-24</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-24-open-mic-night.html">My first violin performance in ten years</a>
+				</h1>
+				<p>
+					<p>The universe put an open mic at a local cafe where my friend's roommate works in front of me. Given how I'd performed for one person a few days ago, then the couple I bought the stove from, it seemed like I was supposed to play here now. A real audience, active listeners, and more than two. Shit.
+
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-24-open-mic-night.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-23-learning-lessons.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-23 00:00:00-04:00 title="2017-05-23">2017-05-23</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-23-learning-lessons.html">A lesson learned about how my inner pain affects how I am perceived</a>
+				</h1>
+				<p>
+					<p>I don't normally write about the people I connect with. Partly a privacy thing, partly because it's a lot of vulnerability to handle.</p>
+<p>However, I feel I had to write about someone I met this week and the subsequent communication. What I learned about myself. And where I'm still struggling.
+
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-23-learning-lessons.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-21-alcohol-stove-purchase.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-21 00:00:00-04:00 title="2017-05-21">2017-05-21</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-21-alcohol-stove-purchase.html">Buying an alcohol stove for my friend through craigslist</a>
+				</h1>
+				<p>
+					<p>I have a friend who also lives in a van. She asked if I could buy an alcohol stove for her she found on craigslist that was on the way for me. I obliged since it was only 2 hours out the way of a total 8 hour trip.
+
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-21-alcohol-stove-purchase.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-19-playing-on-the-pier.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-19 00:00:00-04:00 title="2017-05-19">2017-05-19</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-19-playing-on-the-pier.html">Playing my violin on the pier</a>
+				</h1>
+				<p>
+					<p>Today, I left my comfort zone to head north. I have a craiglist sale on Sunday I need to get to. As I drove mindlessly, I was struck by the idea to DO something, instead of simply travel. My exhaustion can be beat with interesting stuff right?</p>
+<p>So I opted …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-19-playing-on-the-pier.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-17-people-watching.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-17 00:00:00-04:00 title="2017-05-17">2017-05-17</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-17-people-watching.html">People watching in a coffee shop</a>
+				</h1>
+				<p>
+					<p>After a late night shower, I passed out naked in the bed. I was exhausted. I awoke before 4am. Gah, but why! I couldn't get back to sleep. So I packed up and headed to a coffee shop, only after helping two guys jump-start their car xD</p>
+<p>It's only 7 …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-17-people-watching.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-16-finally-clean.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-16 00:00:00-04:00 title="2017-05-16">2017-05-16</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-16-finally-clean.html">Today was a clean day. Plus a small performance.</a>
+				</h1>
+				<p>
+					<p>Oh yes, laundry, shower, clean dishes. Prepping myself to get on the road for a couple days.</p>
+<p>I chose the best spot in a parking lot, with the best shade, protecting from the sun. This morning may have been the first time I woke up and forgot where I am …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-16-finally-clean.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-15-fear-is-the-only-sin.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-15 00:00:00-04:00 title="2017-05-15">2017-05-15</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-15-fear-is-the-only-sin.html">Fear is the only Sin</a>
+				</h1>
+				<p>
+					<p>Today I went to a small park to hang out and play my violin. I found a great shady spot and was totally alone. So I thought.</p>
+<p>An adult couple were lurking around the building, and decided to lurk closer so they could listen (apparently). Not long later a car …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-15-fear-is-the-only-sin.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-14-back-on-the-road.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-14 10:44:41-04:00 title="2017-05-14">2017-05-14</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-14-back-on-the-road.html">Back on the road</a>
+				</h1>
+				<p>
+					<p>So I finally left where I was! But likely because I overstayed my welcome. Spending over a week in the same 5 square mile area will bound to get you noticed and the cops hanging around. They did just that. So I bounced.</p>
+<p>I drove 10 miles north! I slept …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-14-back-on-the-road.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-13-vanessa-birthday.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-13 00:00:00-04:00 title="2017-05-13">2017-05-13</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-13-vanessa-birthday.html"><i class="fa fa-heart"></i> Happy Birthday Vanessa <i class="fa fa-heart"></i></a>
+				</h1>
+				<p>
+					<p>Today marks the one year anniversary of Vanessa and I being together.</p>
+<p>In a year we have managed to see lots of places from Key West Florida USA, all the way north to Halifax Nova Scotia Canada.</p>
+<p>Vanessa is a 2002 Freightliner Sprinter High top Wagon Red 140" Wheelbase with …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-13-vanessa-birthday.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-06-the-grey-lifted-truck.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-05-06 00:00:00-04:00 title="2017-05-06">2017-05-06</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-06-the-grey-lifted-truck.html">I saw a cool pickup truck.</a>
+				</h1>
+				<p>
+					<p>Thing was sweet. Kangaroo lift, monster offroad tires and a slick color. As luck would have it I was in a good enough mood that when we hit a red light next to each other, I rolled my window down.</p>
+<p>He rolled his down.</p>
+<p>"Hey I just had to tell …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-06-the-grey-lifted-truck.html">continue »</a>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+        <div class="pagination-item">
+    <a class="box" href="/categories/chronograph/5/">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <div class="pagination-list">
+          <a class='box ' href="/categories/chronograph/">1</a>
+          <a class='box ' href="/categories/chronograph/2/">2</a>
+          <a class='box ' href="/categories/chronograph/3/">3</a>
+          <a class='box ' href="/categories/chronograph/4/">4</a>
+          <a class='box ' href="/categories/chronograph/5/">5</a>
+          <a class='box current-page' href="/categories/chronograph/6/">6</a>
+          <a class='box ' href="/categories/chronograph/7/">7</a>
+        </div>
+
+        <div class="pagination-item">
+    <a class="box" href="/categories/chronograph/7/">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+      </div>	</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna <i class="fa fa-star"></i> <a href="https://vanessa-luna.github.io/feed/chronograph-rss.xml"><i class='fa fa-rss'></i> chronograph-RSS</a>
+
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

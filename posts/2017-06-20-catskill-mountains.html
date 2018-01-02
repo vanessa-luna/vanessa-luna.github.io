@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>My time in the Catskills | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">My time in the Catskills</h1>
+		<span class="post-date">chronograph ~ 2017-06-20</span>
+		<br><br>
+
+		<p>Killer. I felt like seeing more mountains since my Virginia visit. So I planned this stop at the Katskills. I was even willing to PAY for a campground night! Woah. First time I paid for a place to sleep this whole trip.</p>
+<p>Every step, things fall into place faster. Like approaching the end of a puzzle. The fewer pieces left, the quicker they go in. I can't wait to see what happens when I get home.</p>
+<p></p>
+<h2 id="sunset-rock">Sunset Rock</h2>
+<p>The first day was rainy. But! the rain stopped a couple hours before sunset. So I opted to go out to Sunset Rock. A half-ish hour walk from the campground. The campground was super quiet because of the rain, and it being a Monday. I saw no one else on the trails. When I arrived the clouds were so low, I could see very little. After some photos and walking around, the universe gave me five minutes of visibility to take some of the photos below. I felt very lucky.</p>
+<h2 id="next-morning">Next Morning</h2>
+<p>I went up to a washroom area to do dishes and shower. While there, an older man started talking with me, Rick. Interesting guy. Full life, and now ready to travel in his RV.</p>
+<p>I only mention this conversation because I felt so completely whole. I felt honest, real, and I had no doubts in my mind that I am a girl and he saw me as a girl. This is still super new to me. It gave me a good boost to prepare for the shower. Showers aren't really all that fun for me.</p>
+<h2 id="kaaterskill-falls">Kaaterskill Falls</h2>
+<p>I had no idea what I was getting myself into. These falls are epic. I started at the top. Played my violin for an older couple. The man asked if I was a professional! I went downward.</p>
+<p>At the very bottom I took out my violin for a longer session, playing my stupid heart out. Using the sound of the falls to mask my mistakes.</p>
+<p>On the way up, I happened to be walking alongside someone who was on the middle area while I played my violin. He said he could hear me! Albeit quiet. Cool to grasp a sense of how far my sound can travel.</p>
+<h2 id="north-point">North Point</h2>
+<p>After a long nap I decided to go to North Point. Another place near the campground. But oh did I underestimate the hike.</p>
+<p>The map I had, was not to scale. At all. I also had no concept of the vertical climb. It was nearly a thousand feet! I had brought my violin hoping I would play a bit, but I only got one song off before I felt I had to descend. I left a late and the sun was already going down.</p>
+<p>A remarkable thing happened while I was up there. I was so hot I yanked of my shirt and pants. Zipped up my hoody around my waist to make a skirt and ate an apple. I knew there was no risk of other people being around but it was very powerful for me to be outdoors and have no anxiety about undressing like this because it's what I felt I needed. Something is changing in me.</p>
+<p>In total I did about 4 miles in the woods. And another half mile on pavement. I was shot. Overexerted. But excited I made it.  </p>
+<p>On the pavement portion of the walk, I again took of my shirt and walked it back in my bra. I was hot from all that. And in this moment. A flood of acceptance and epiphany hit me. Taking this feeling of wholeness and casting it over my past really impacted me. Yes I am transsexual. That explains everything. This has happened before but not with this level of happiness and completeness. Elated.</p>
+
+
+<noscript>
+    <div class="warning-block">
+        Enable javascript to use the fancy gallery viewer.<br>
+        Instead, clicking an image will load the image in a new page.
+    </div>
+</noscript>
+<div class='album' id="catskill-mountains">
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/20170619_150044.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 0)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/20170619_150044.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_171849271_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 1)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_171849271_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_171915999_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 2)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_171915999_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_173755905_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 3)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_173755905_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_194122585_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 4)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_194122585_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_194251692_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 5)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_194251692_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_194729879_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 6)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_194729879_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_194825737.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 7)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_194825737.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_194910414_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 8)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_194910414_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195220291_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 9)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195220291_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195430840_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 10)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195430840_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195441345_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 11)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195441345_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195502813_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 12)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195502813_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195518363_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 13)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195518363_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195908161_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 14)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195908161_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_200635696.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 15)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_200635696.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_201129713_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 16)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_201129713_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_201314109_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 17)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_201314109_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_201413506.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 18)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_201413506.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_201506879.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 19)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_201506879.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_202635021_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 20)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_202635021_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_202827615_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 21)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_202827615_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_202836036_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 22)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_202836036_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_202847774_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 23)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_202847774_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_203054114.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 24)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_203054114.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_105056149_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 25)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_105056149_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_105124427_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 26)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_105124427_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_112745272_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 27)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_112745272_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_144053250_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 28)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_144053250_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_144431870_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 29)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_144431870_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_144553184_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 30)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_144553184_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_144801165_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 31)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_144801165_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_144837436_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 32)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_144837436_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_145248908_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 33)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_145248908_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_145259622_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 34)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_145259622_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_145325481_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 35)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_145325481_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_145340368_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 36)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_145340368_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_153048236_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 37)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_153048236_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_153300728_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 38)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_153300728_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_155534738.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 39)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_155534738.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_155611078_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 40)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_155611078_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_164047062_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 41)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_164047062_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_164133898_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 42)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_164133898_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_164137515_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 43)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_164137515_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_164458918_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 44)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_164458918_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_172634733_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 45)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_172634733_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185234422_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 46)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185234422_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185243520.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 47)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185243520.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185331266_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 48)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185331266_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185334737_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 49)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185334737_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185338385_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 50)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185338385_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185341440_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 51)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185341440_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_190931024_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 52)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_190931024_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_191024651_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 53)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_191024651_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_191140592_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 54)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_191140592_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_193210815_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 55)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_193210815_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_194606108_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 56)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_194606108_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_200547089_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 57)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_200547089_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_201401474_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 58)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_201401474_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_201447580_HDR.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 59)"
+          src="https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_201447580_HDR.jpg">
+        <noscript></a></noscript>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/gallery-article.min.css?1a48c320">
+
+<script>
+    var items = []
+      items [0] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/20170619_150044.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/20170619_150044.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [1] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_171849271_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_171849271_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [2] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_171915999_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_171915999_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [3] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_173755905_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_173755905_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [4] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_194122585_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_194122585_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [5] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_194251692_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_194251692_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [6] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_194729879_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_194729879_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [7] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_194825737.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_194825737.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [8] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_194910414_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_194910414_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [9] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195220291_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195220291_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [10] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195430840_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195430840_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [11] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195441345_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195441345_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [12] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195502813_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195502813_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [13] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195518363_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195518363_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [14] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_195908161_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_195908161_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [15] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_200635696.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_200635696.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [16] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_201129713_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_201129713_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [17] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_201314109_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_201314109_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [18] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_201413506.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_201413506.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [19] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_201506879.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_201506879.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [20] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_202635021_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_202635021_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [21] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_202827615_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_202827615_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [22] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_202836036_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_202836036_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [23] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_202847774_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_202847774_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [24] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170619_203054114.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170619_203054114.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [25] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_105056149_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_105056149_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [26] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_105124427_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_105124427_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [27] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_112745272_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_112745272_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [28] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_144053250_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_144053250_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [29] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_144431870_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_144431870_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [30] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_144553184_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_144553184_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [31] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_144801165_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_144801165_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [32] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_144837436_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_144837436_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [33] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_145248908_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_145248908_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [34] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_145259622_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_145259622_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [35] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_145325481_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_145325481_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [36] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_145340368_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_145340368_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [37] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_153048236_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_153048236_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [38] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_153300728_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_153300728_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [39] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_155534738.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_155534738.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [40] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_155611078_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_155611078_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [41] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_164047062_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_164047062_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [42] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_164133898_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_164133898_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [43] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_164137515_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_164137515_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [44] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_164458918_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_164458918_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [45] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_172634733_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_172634733_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [46] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185234422_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185234422_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [47] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185243520.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185243520.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [48] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185331266_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185331266_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [49] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185334737_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185334737_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [50] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185338385_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185338385_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [51] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_185341440_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_185341440_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [52] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_190931024_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_190931024_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [53] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_191024651_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_191024651_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [54] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_191140592_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_191140592_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [55] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_193210815_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_193210815_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [56] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_194606108_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_194606108_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [57] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_200547089_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_200547089_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [58] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_201401474_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_201401474_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [59] = {
+        src: 'https://vanessa-luna.github.io/images/catskill-mountains/IMG_20170620_201447580_HDR.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/catskill-mountains/IMG_20170620_201447580_HDR.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+</script>
+
+    <script type="text/javascript" src="https://vanessa-luna.github.io/theme/js/photoswipe.js?90d5a5ff"></script>
+    <script type="text/javascript" src="https://vanessa-luna.github.io/theme/js/photoswipe_ui.js?1a0dc471"></script>
+    <link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/fragments/photoswipe.min.css?a7796261">
+
+<style>
+    .pswp__top-bar {
+        width:inherit;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .pswp__counter { position: static; }
+    .pswp img { max-height: 100vh; }
+</style>
+<script>
+    // call when you want to open the gallery
+    var photoswipe;
+    function initGallery(items, index) {
+        var options = {index: index, barsSize: {top:0, bottom:'auto'}, closeEl:false, captionEl: false, fullscreenEl: false, zoomEl: false, shareEl: false, counterEl: true, arrowEl: true, preloaderEl: true, tapToClose: true, tapToToggleControls: true, clickToCloseNonZoomable: false }
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        photoswipe = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        photoswipe.listen("gettingData", function(index, slide){
+            if (slide.doGetSlideDimensions) { setTimeout(function(){ getSlideDimensions(slide); } ,100); }
+        });
+        photoswipe.listen("imageLoadComplete", function(index, slide){ if (slide.doGetSlideDimensions) getSlideDimensions(slide); });
+        photoswipe.init();
+    }
+    // when image loads, tell photoswipe how big it is
+    function getSlideDimensions(slide) {
+        if (!slide.doGetSlideDimensions) return;
+        var img = new Image();
+        img.addEventListener('error', function(evt){ slide.doGetSlideDimensions = false; });
+        img.addEventListener('load', function(evt){
+            slide.doGetSlideDimensions = false;
+            slide.w = img.naturalWidth;
+            slide.h = img.naturalHeight;
+            photoswipe.updateSize(true);
+            photoswipe.invalidateCurrItems();
+        });
+        img.src = slide.src;
+    }
+</script>
+<div class=pswp aria-hidden=true role=dialog tabindex=-1><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close"title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"title=Share></button> <button class="pswp__button pswp__button--fs"title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left"title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right"title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div>
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-06-21-mount-grelyock.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-06-18-if-only-i-could-recover.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-06-20-catskill-mountains.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

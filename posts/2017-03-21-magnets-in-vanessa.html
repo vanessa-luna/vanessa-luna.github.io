@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Magnets are your friend: How I use them in Vanessa | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">Magnets are your friend: How I use them in Vanessa</h1>
+		<span class="post-date">vandwelling ~ 2017-03-21</span>
+		<br><br>
+
+    <div class="toc">
+    <h3> Contents </h3>
+    <div class="toc">
+<ul>
+<li><a href="#magnets-i-bought">Magnets I bought</a><ul>
+<li><a href="#magcraft-magnets">Magcraft Magnets</a></li>
+<li><a href="#essentra-specialty-tapes">Essentra Specialty Tapes</a></li>
+</ul>
+</li>
+<li><a href="#a-quick-build-philosophy">A quick build philosophy</a></li>
+<li><a href="#how-ive-used-the-magnets">How I've used the magnets</a><ul>
+<li><a href="#insulation-panels">Insulation Panels</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#bulkhead">Bulkhead</a></li>
+<li><a href="#shower-curtain">Shower Curtain</a></li>
+<li><a href="#accessories">Accessories</a></li>
+</ul>
+</li>
+<li><a href="#final-thoughts">Final Thoughts</a></li>
+<li><a href="#image-gallery">Image Gallery</a></li>
+</ul>
+</div>
+</div>
+
+		<html><head></head><body>
+<h2 id="magnets-i-bought">Magnets I bought</h2>
+<h4 id="magcraft-magnets"><a class="external" href="https://www.rare-earth-magnets.com/magcraft-magnets">Magcraft Magnets</a></h4>
+<p></p><div class="flex no-margin" markdown="">
+<img class="contain v-align-mid" src="https://cdn2.rare-earth-magnets.com/images/primary/nsn0573-magpak.jpg?wid=150&amp;hei=0" width="150"/><p></p>
+<ul>
+<li><a class="external" href="https://www.rare-earth-magnets.com/magcraft-nsn0573">Best $</a> - 30 count, 4lb pull @ $0.47 per</li>
+<li><a class="external" href="https://www.rare-earth-magnets.com/magcraft-nsn0911">Stronger</a> - 10 count, 6lb pull @ $1.99 per</li>
+<li><a class="external" href="http://www.homedepot.com/s/magcraft+magnet">HomeDepot</a> offers free shipping &gt;$45 or ship to store for free</li>
+<li><a class="internal" href="https://vanessa-luna.github.io/posts/2017-03-21-magcraft-pricing-table.html">custom table of pricing</a>
+</li></ul></div>
+
+<h4 id="essentra-specialty-tapes"><a class="external" href="http://www.essentraspecialtytapes.com/">Essentra Specialty Tapes</a></h4>
+<p></p><div class="flex no-margin" markdown=""><img class="contain v-align-mid" src="/images/vanessa-magnets/magnet-tape.jpg" width="150"/><p></p>
+<ul>
+<li><a class="external" href="http://www.essentraspecialtytapes.com/Duraco-Magnetic-Tape-Rolls">magnet tape</a> 50 Feet worth</li>
+<li><a class="external" href="http://www.essentraspecialtytapes.com/Duraco-Magnetic-Receptive-Steel-Tape">steel tape</a> 50 Feet worth <sup>(magnet receptive)</sup></li>
+<li>$78.64 total cost incl shipping o.0</li>
+<li>I've yet to run out, but getting close...</li>
+<li>original adhesive is not amazing</li>
+</ul>
+</div>
+
+<h2 id="a-quick-build-philosophy">A quick build philosophy</h2>
+<p>I am less-abled and cannot do physically demanding work. Thus, I have had a "bare minimum, non-permanent" approach. The less permanent my fixtures the more likely I can iterate over time when I find the people to help me with things. Additionally, I know that it will be only a short time that I wish I had things different. I don't plan to have a permanent build until I've been in my home for at least six months. Then again, likely a year depending on my situation. And if I stick with it that long.</p>
+<p>I gutted the van. Nothing left. No plastic, no paneling. This means metal everywhere.</p>
+<h2 id="how-ive-used-the-magnets">How I've used the magnets</h2>
+<p>in my '02 mid length high top Sprinter</p>
+<ul>
+<li>Insulation panels</li>
+<li>Window covers</li>
+<li>Bulkhead</li>
+<li>Shower curtain</li>
+<li>Accessories</li>
+</ul>
+<h3 id="insulation-panels">Insulation Panels</h3>
+<p>After acquiring free insulation, through <a class="external" href="http://www.nextdoor.com">nextdoor</a> mostly, I taped the disc magnets to the panels using hvac tape. This creates a small air gap as well, which, if I've learned something, also makes a difference. The edge of the ceiling insulation panels keep the side wall panels in place. The small hvac tape on the left of the picture wraps around to the other side, holding the magnets in place. Each insulation board has 4 magnets. Magnets are placed towards center of van to deal with roof curvature.</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_090529.jpg"/></p>
+<h3 id="windows">Windows</h3>
+<p><strong>Iteration 1</strong> - I took small pieces of the steel tape, and put them directly on the glass in strategic locations. I put the magnet tape on the black out fabric in the same location. Stick it on the window. I then added small pieces of magnet tape to the black out fabric to go around the edge of the window to seal the light by attaching directly to the door frame.</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_090439.jpg"/></p>
+<p><strong>Iteration 2</strong> - I took the steel tape and made an entire border around the window. This allowed me to remove the second layer of magnet tape from the fabric to seal the holes and allows for a cleaner look. I did this so when the window covers were taken off the window didn't look so weird. yes I lost 2 inches from the window.</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_090403.jpg"/></p>
+<h3 id="bulkhead">Bulkhead</h3>
+<p><strong>Iteration 1</strong> - I took large sheets of white out fabric. I used a gob of the disc magnets to attach the fabric to the ceiling in two sheets. Then I placed the insulation panel. This created a decent barrier between the cockpit and the cabin. Magnets are also used to hold edges of fabric against side of van to seal light.</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_100127.jpg"/></p>
+<p><strong>Iteration 2</strong> - I finally got a curtain track, installed it with a wood spacer. Fabric now hangs from the track. The magnet and steel tape hold the two pieces together to seal them up. Magnets are still used to hold the valance in place.</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_090559.jpg"/>
+<img alt="" src="/images/vanessa-magnets/20170502_194001.jpg"/></p>
+<h3 id="shower-curtain">Shower Curtain</h3>
+<p>I used some old plastic tubing and a right-angle pvc connector to create a shower curtain holder. I took the block magnets and sewed them into some non-stretch cloth. I then tied the fabric around the plastic. Curtain can hang from ceiling beams.</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_095217.jpg"/></p>
+<p>I wish I had more magnets to distribute the weight better. Sometimes if I rub against the curtain while showering, the curtain sticks to me and I pull it down. Doh!. And sometimes when I'm wiping the curtain off after usage I pull it down.</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_095516.jpg"/></p>
+<h3 id="accessories">Accessories</h3>
+<p>I've also used magnets all over the place for small things.</p>
+<p><strong>Fan cover</strong> - I placed magnet tap around the edge of my fan directly on the insulation. Needed to use some sewing pins to hold in place because stock adhesive wasn't holding. Placed steel tape on white out fabric. Presto! Sealed light cover for fan.  Bonus - place magnets on wall so I can hold fan cover on wall when not covering fan. (remember steel tape on cover)</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_090219.jpg"/>
+<img alt="" src="/images/vanessa-magnets/20170321_090158.jpg"/></p>
+<p><strong>Tool access</strong> - Tape a magnet to a couple screwdrivers and writing utensils for easy access! Also hold your flashlight!</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_090052.jpg"/>
+<img alt="" src="/images/vanessa-magnets/20170321_090507.jpg"/>
+<img alt="" src="/images/vanessa-magnets/20170321_090450.jpg"/></p>
+<p><strong>Goal reaching</strong> - Magnet tape the backside of a small custom diary to track my eating (Be Fat!) I'm underweight :(</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_090137.jpg"/></p>
+<p><strong>Wall storage</strong> - I acquired one of those over-the-door shoe racks. I cut off a couple rows and glued the magnet tape to the backside. This lets them sit wherever I want them! Cannot hold a lot of weight with the amount of magnet I put on, but more magnet will hold more weight</p>
+<p><img alt="" src="/images/vanessa-magnets/20170321_090245.jpg"/>
+<img alt="" src="/images/vanessa-magnets/20170321_090312.jpg"/>
+<img alt="" src="/images/vanessa-magnets/20170321_090251.jpg"/></p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>The ~$110 I spent on magnets have been the most helpful thing I did. Looking at it now, the magnets provide function for so many critical things. I understand they would be way less useful if I had covered up all the metal with paneling of some kind. If I ever get to that point, I'll have to come up with another solution for holding shit.</p>
+<h2 id="image-gallery">Image Gallery</h2></body></html>
+
+
+<noscript>
+    <div class="warning-block">
+        Enable javascript to use the fancy gallery viewer.<br>
+        Instead, clicking an image will load the image in a new page.
+    </div>
+</noscript>
+<div class='album' id="vanessa-magnets">
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090052.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 0)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090052.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090137.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 1)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090137.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090158.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 2)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090158.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090219.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 3)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090219.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090245.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 4)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090245.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090251.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 5)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090251.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090312.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 6)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090312.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090403.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 7)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090403.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090439.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 8)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090439.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090450.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 9)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090450.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090507.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 10)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090507.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090529.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 11)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090529.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090559.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 12)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090559.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_095217.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 13)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_095217.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_095516.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 14)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_095516.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170321_100127.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 15)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_100127.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/20170502_194001.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 16)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170502_194001.jpg">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://vanessa-luna.github.io/images/vanessa-magnets/magnet-tape.jpg"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 17)"
+          src="https://vanessa-luna.github.io/thumb/small/vanessa-magnets/magnet-tape.jpg">
+        <noscript></a></noscript>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/gallery-article.min.css?1a48c320">
+
+<script>
+    var items = []
+      items [0] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090052.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090052.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [1] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090137.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090137.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [2] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090158.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090158.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [3] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090219.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090219.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [4] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090245.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090245.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [5] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090251.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090251.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [6] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090312.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090312.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [7] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090403.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090403.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [8] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090439.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090439.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [9] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090450.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090450.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [10] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090507.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090507.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [11] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090529.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090529.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [12] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_090559.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_090559.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [13] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_095217.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_095217.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [14] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_095516.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_095516.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [15] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170321_100127.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170321_100127.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [16] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/20170502_194001.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/20170502_194001.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+      items [17] = {
+        src: 'https://vanessa-luna.github.io/images/vanessa-magnets/magnet-tape.jpg', msrc: 'https://vanessa-luna.github.io/thumb/small/vanessa-magnets/magnet-tape.jpg', doGetSlideDimensions: true, w: 300, h:200 }
+</script>
+
+    <script type="text/javascript" src="https://vanessa-luna.github.io/theme/js/photoswipe.js?90d5a5ff"></script>
+    <script type="text/javascript" src="https://vanessa-luna.github.io/theme/js/photoswipe_ui.js?1a0dc471"></script>
+    <link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/fragments/photoswipe.min.css?a7796261">
+
+<style>
+    .pswp__top-bar {
+        width:inherit;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .pswp__counter { position: static; }
+    .pswp img { max-height: 100vh; }
+</style>
+<script>
+    // call when you want to open the gallery
+    var photoswipe;
+    function initGallery(items, index) {
+        var options = {index: index, barsSize: {top:0, bottom:'auto'}, closeEl:false, captionEl: false, fullscreenEl: false, zoomEl: false, shareEl: false, counterEl: true, arrowEl: true, preloaderEl: true, tapToClose: true, tapToToggleControls: true, clickToCloseNonZoomable: false }
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        photoswipe = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        photoswipe.listen("gettingData", function(index, slide){
+            if (slide.doGetSlideDimensions) { setTimeout(function(){ getSlideDimensions(slide); } ,100); }
+        });
+        photoswipe.listen("imageLoadComplete", function(index, slide){ if (slide.doGetSlideDimensions) getSlideDimensions(slide); });
+        photoswipe.init();
+    }
+    // when image loads, tell photoswipe how big it is
+    function getSlideDimensions(slide) {
+        if (!slide.doGetSlideDimensions) return;
+        var img = new Image();
+        img.addEventListener('error', function(evt){ slide.doGetSlideDimensions = false; });
+        img.addEventListener('load', function(evt){
+            slide.doGetSlideDimensions = false;
+            slide.w = img.naturalWidth;
+            slide.h = img.naturalHeight;
+            photoswipe.updateSize(true);
+            photoswipe.invalidateCurrItems();
+        });
+        img.src = slide.src;
+    }
+</script>
+<div class=pswp aria-hidden=true role=dialog tabindex=-1><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close"title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"title=Share></button> <button class="pswp__button pswp__button--fs"title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left"title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right"title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div>
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-03-21-magcraft-pricing-table.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2017-03-17-sonder.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2017-03-21-magnets-in-vanessa.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>

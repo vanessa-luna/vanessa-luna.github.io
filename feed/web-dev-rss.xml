@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>https://vanessa-luna.github.io/</link><description></description><lastBuildDate>Thu, 19 Oct 2017 00:00:00 -0400</lastBuildDate><item><title>Overriding templates in Pelican when using multiple configs</title><link>https://vanessa-luna.github.io/posts/2017-10-19-pelican-template-overriding.html</link><description>&lt;p&gt;This website and all its pieces now needs 4 pelican config files. And the latest addition requires different direct templates than the others. So I needed a way to override the direct templates without royally fucking anything else up. This is what I came up with.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
+&lt;p&gt;I have 4 pelican configs. The main config &lt;code&gt;blog_conf.py&lt;/code&gt; is what builds this  website. The second one 'secret_conf.py' builds my secret portion of the website. The third &lt;code&gt;thumbs_conf.py&lt;/code&gt; builds only the thumbnails so I do not waste space on my HDD by using symlinks. The fourth &lt;code&gt;product.py&lt;/code&gt; builds the product page I am working on now, which relies on the css and general templates I have already created.&lt;/p&gt;
+&lt;p&gt;Thankfully I have a few key abstractions in place that made this go surprisingly smooth.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;All of my configs inherit from the &lt;code&gt;blog_conf.py&lt;/code&gt; to be as DRY as possible which eliminates duplication of efforts. Especially in the plugins department&lt;/li&gt;
+&lt;li&gt;I use the &lt;code&gt;webassets&lt;/code&gt; plugin to handle my css and js linking&lt;/li&gt;
+&lt;li&gt;My css is broken into small pieces so it's easily manageable which styles end up which page. See &lt;a class="internal" href="https://vanessa-luna.github.io/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html"&gt;this post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;I use a &lt;code&gt;base.html&lt;/code&gt; jinja template that all other templates inherit from&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="fix"&gt;FIX:&lt;/h2&gt;
+&lt;p&gt;FIRST, update generators.py so it will search EXTRA_TEMPLATES_PATHS first. Otherwise you cannot use extra tempaltes for override&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;generators.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is what I changed to get this magic to happen... Look between the "THESE LINES" lines :p&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Generator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Baseclass generator&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;theme&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;output_path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="o"&gt;....&lt;/span&gt;
+        &lt;span class="c1"&gt;# templates cache&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_templates&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+        &lt;span class="c1"&gt;# __________THESE LINES __________&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_templates_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;EXTRA_TEMPLATES_PATHS&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_templates_path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expanduser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;theme&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;templates&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+        &lt;span class="c1"&gt;# ______________________________&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="example"&gt;Example&lt;/h2&gt;
+&lt;p&gt;Then in our extra folder we can "override" the templates we need to modify. Because of our setup with the base.html and webassets with piecemeal css it is easy to slap in the extra css needed to override styles from the original theme. Although this does kill my "one css file per page rule". Whatever.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;blog_conf.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is the main pelican conf that builds the root content&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt;                      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;theme&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;DIRECT_TEMPLATES&lt;/span&gt;           &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;index&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;archives&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;PAGINATED_DIRECT_TEMPLATES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;index&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;EXTRA_TEMPLATES_PATHS&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;product.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is the pelican conf that builds the product content in &lt;URL&gt;/product. &lt;strong&gt;Note&lt;/strong&gt; that I import the main blog conf to avoid repetition in simplify changes in the future. DRY as can be!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;blog_conf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
+&lt;span class="n"&gt;THEME&lt;/span&gt;                      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;theme&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;DIRECT_TEMPLATES&lt;/span&gt;           &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;index&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;archives&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;PAGINATED_DIRECT_TEMPLATES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;index&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;EXTRA_TEMPLATES_PATHS&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;theme/templates/product&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is my folder structure&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;theme/templates/
+    base.html
+    archives.html
+    index.html
+    fragments/
+        sidebar.html
+        footer.html
+    product/
+        base.html
+        index.html
+        fragments/
+            menu.html
+            footer.html
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;theme/templates/base.html&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is the ROOT base.html I use. Note the sidebar and footer fragments&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt; &lt;span class="na"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ DEFAULT_LANG }}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% block page_title %}{% endblock page_title %} | Main Blog&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    {% include &amp;#39;fragments/head.html&amp;#39; %}
+    {% block assets %} {% endblock %}
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    {% include &amp;#39;fragments/sidebar.html&amp;#39; %}
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        {% block title %} {% endblock %}
+        {% block content %} {% endblock %}
+        {% include &amp;#39;fragments/footer.html&amp;#39; %}
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;theme/templates/&lt;em&gt;product&lt;/em&gt;/base.html&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;NOTE: I remove the above sidebar and put in the menu. I add in another asset reference that will override some of the other default css from the original theme using the webassets plugin. Pelican plugins FTW! :+1:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt; &lt;span class="na"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ DEFAULT_LANG }}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% block page_title %}{% endblock page_title %} | Product&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    {% include &amp;#39;fragments/head.html&amp;#39; %}
+    {% block assets %} {% endblock %}
+    {% assets &amp;quot;css-product-base&amp;quot; %}
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ SITEURL }}/{{ ASSET_URL }}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    {% endassets %}
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        {% include &amp;#39;fragments/menu.html&amp;#39; %}
+        {% block title %} {% endblock %}
+        {% block content %} {% endblock %}
+        {% include &amp;#39;fragments/footer.html&amp;#39; %}
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;theme/templates/archives.html&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is where it gets awesome. While this relative url in the archive folder looks like it is pointing to the same folder, the environment picks up the base.html in the product folder first. So we need to change nothing in order to reuse the same template but get all the same benefits. The power of abstraction right? :rofl:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{% extends &amp;quot;base.html&amp;quot; %}
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 19 Oct 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-10-19:/posts/2017-10-19-pelican-template-overriding.html</guid></item><item><title>I updated my build process to save 2gb of space lol</title><link>https://vanessa-luna.github.io/posts/2017-09-16-updating-configs-for-space.html</link><description>&lt;p&gt;So I'm on a roll huh? Avoiding all the important stuff and working on my website too much... Well, when I'm stuck in bed because I hurt it's better than gaming or binge watching. I should finally internalize that. Anyway.&lt;/p&gt;
+&lt;p&gt;Until now, I had a folder that held the raw content of the website. A folder to hold the output of my testing setup. And another folder for the production output. This is bad. Because I had almost 2gb of raw images. I had all these images copied raw in all three places, plus the 250mb of resized versions. I was using too much space. So I fixed that, somewhat.&lt;/p&gt;
+&lt;h2 id="in-short"&gt;In Short&lt;/h2&gt;
+&lt;p&gt;To save space from duplicated images, I created a separate config that only handled the processing of images. This config would always output to my production output folder. Then I created symlinks from the production output to the dev-output folder. I then took out any processing of images from my other configs.&lt;/p&gt;
+&lt;p&gt;Let me show you.&lt;/p&gt;
+&lt;h2 id="thumbnail_confpy"&gt;thumbnail_conf.py&lt;/h2&gt;
+&lt;p&gt;So what's important about the below gist is that:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;* I ensure through excludes that Pelican doesn&amp;#39;t copy anything over
+* I turn off every feature I can by setting *_save_as = False
+* I ensure feeds are off
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The only things that happen now with this configuration is copy the images folder over and run the thumbnailer plugin.&lt;/p&gt;
+&lt;script src="https://gist.github.com/vanessa-luna/93b34a74f86c64cad7696cd00ed3d408.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;I imagine there are other ways to take care of this that don't force you to keep updating or copying over the folders. If I were to put my images in a different folder from the other content it might be cleaner. Maybe for another day.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note&lt;/em&gt; that the configuration of the thumbnailer plugin is not above. It still resides in the blog_conf I have. This is because I use the configruations of this plugin to generate some javascript which determines which size image to load for the sidebar. Therefore the blog_conf needs it to function. Remember, most everything is loaded from the root config blog_conf.&lt;/p&gt;
+&lt;h2 id="blog_confpy-and-second_confpy"&gt;blog_conf.py and second_conf.py&lt;/h2&gt;
+&lt;p&gt;I also turned off processing of the images in these configs by adding images to the excludes and removing the thumbnailer plugin from the list of active plugins.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;STATIC_EXCLUDES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;summary&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                  &lt;span class="c1"&gt;# specify summary in content&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;liquid_tags.img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;          &lt;span class="c1"&gt;# allows {% img %} in content&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;liquid_tags.youtube&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="c1"&gt;# allows {% youtube %} in content&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;liquid_tags.soundcloud&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;   &lt;span class="c1"&gt;# allows {% soundcloud %} in content&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;extract_toc&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;              &lt;span class="c1"&gt;# can render table of contents from post&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;pelican-linkclass&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="c1"&gt;# indicator for links leaving domain&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;pelicanfly&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;               &lt;span class="c1"&gt;# adds font awesome support&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                   &lt;span class="c1"&gt;# adds compiler for assets&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;gallery&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                  &lt;span class="c1"&gt;# adds gallery support to content&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;archives_per_category&amp;#39;&lt;/span&gt;     &lt;span class="c1"&gt;# generates archive page per category&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="devsh"&gt;dev.sh&lt;/h2&gt;
+&lt;p&gt;Inside my testing script I have made some updates.&lt;/p&gt;
+&lt;p&gt;I had to do a few things in here.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;* Add in another instance of Pelican running the thumbnail_conf
+* Ensure the output folder for the thumbnails is in production
+* Ensure the symlinks are created
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;script src="https://gist.github.com/vanessa-luna/07ee4a6c4bfa5c5e587c3fc53f72eb17.js"&gt;&lt;/script&gt;
+
+&lt;h2 id="buildsh"&gt;build.sh&lt;/h2&gt;
+&lt;p&gt;The production script was even easier to update. Simply add another instance of Pelican with the right config&lt;/p&gt;
+&lt;p&gt;I also added a condition on the git commands, if anything is passed in it won't do git stuff, so I Can make sure I like what happened when I'm making changes&lt;/p&gt;
+&lt;script src="https://gist.github.com/vanessa-luna/00e9815890b3344d2da9f81261a5fe0e.js"&gt;&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sat, 16 Sep 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-09-16:/posts/2017-09-16-updating-configs-for-space.html</guid></item><item><title>Minor improvements to the website</title><link>https://vanessa-luna.github.io/posts/2017-09-13-minor-improvements.html</link><description>&lt;p&gt;At least I'm not playing video games -_-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added per category archives (yay plugins!)&lt;/li&gt;
+&lt;li&gt;fixed archives bug (faulty logic!)&lt;/li&gt;
+&lt;li&gt;changed url scheme (why!? o.c.d.)&lt;/li&gt;
+&lt;li&gt;fixed footer on pages with minimal content (yup)&lt;/li&gt;
+&lt;li&gt;fixed minor render bugs in sidebar (&lt;em&gt;sweet jesus face&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 13 Sep 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-09-13:/posts/2017-09-13-minor-improvements.html</guid></item><item><title>Testing script update for Pelican project</title><link>https://vanessa-luna.github.io/posts/2017-08-31-config-consolidation-redoing-build.html</link><description>&lt;p&gt;I finally had the focus to rework the testing script for this project. Let me tell you what I did. OKAY!?!&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id="testing-script-update"&gt;Testing Script update&lt;/h2&gt;
+&lt;p&gt;Pelican comes with a prebuilt testing script. It turns on Pelican with autoreload and starts a local server. The script is simple and irritating to use. Since I have more than one config file for my project I needed to update the script so it could run two instances of Pelican at the same time.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I do not know Shell. I simply reworked it a bit.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I primarily did two things&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;change the input API to something more natural&lt;/li&gt;
+&lt;li&gt;Ensured both configs are run at the same time&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;They shouldn't be too difficult to follow. I think this script is much cleaner now. Without abstracting too much it lays bare the important parts of what it's doing.&lt;/p&gt;
+&lt;p&gt;Maybe I'll set it up so it loops and when you press Ctrl+C is shuts down everything, but I have no need to explore that yet.&lt;/p&gt;
+&lt;script src="https://gist.github.com/vanessa-luna/e0262e73e4da98634a20c0c04622e591.js"&gt;&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 31 Aug 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-08-31:/posts/2017-08-31-config-consolidation-redoing-build.html</guid></item><item><title>Pelican Config Consolidation</title><link>https://vanessa-luna.github.io/posts/2017-08-31-pelican-config-consolidation.html</link><description>&lt;p&gt;So in my updates to the script I also wanted to hide my config files behind a folder because it feels nice when things are clean. This caused a hiccup or two. Let me tell you what I did. OKAY!?! ugh&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;I put all the config files in a &lt;code&gt;/config&lt;/code&gt; folder. Wow. The dev.sh script that launches the local server would use the files in this new folder. But something wasn't right.&lt;/p&gt;
+&lt;p&gt;My configs now have a hierarchy. The blog_conf is the root config. All others load in a config and tweak on the values it needs to.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;blog_conf.py&lt;/strong&gt; is the base config. Everything else stems off of it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;blog_conf_dev.py&lt;/strong&gt; config loads the root config and modifies a few variables to adjust for dev environment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;second_conf.py&lt;/strong&gt; loads in the root config and modifies only a few variables.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;second_conf_dev.py&lt;/strong&gt; loads in the second_conf.py and tweaks a few things&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I won't show you blog_conf: it's huge. But I'll show how the dev confs work.&lt;/p&gt;
+&lt;script src="https://gist.github.com/vanessa-luna/4498488f9ecaca72dffd9d620dba8e8e.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;Everythign from the original blog_conf is loaded in. The other variables in this file &lt;em&gt;overwrite&lt;/em&gt; the original conf values.&lt;/p&gt;
+&lt;p&gt;The most important part is the sys.path.append I didn't fully understand it, but because the &lt;code&gt;dev.sh&lt;/code&gt; is loaded from the root dir and these configs live nested, I needed to help ensure Python could find the conf file I needed to import.&lt;/p&gt;
+&lt;p&gt;Shitty posts I know but I'm hot and tired. I hope they are helpful should you stumble across this shitpost. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 31 Aug 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-08-31:/posts/2017-08-31-pelican-config-consolidation.html</guid></item><item><title>Gap in posting due to challenges programming</title><link>https://vanessa-luna.github.io/posts/2017-06-14-hiccups-developing-site.html</link><description>&lt;p&gt;I, wanted to implement some more features on this site, and amidst my social time here, I failed to complete them, or even get close. So I reverted.&lt;/p&gt;
+&lt;p&gt;I am leaving tomorrow. So expect a recap post of my time here in Maryland in a day or so. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 14 Jun 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-06-14:/posts/2017-06-14-hiccups-developing-site.html</guid></item><item><title>Minimizing icon font size in Pelican</title><link>https://vanessa-luna.github.io/posts/2017-05-17-minimizing-font-size.html</link><description>&lt;p&gt;Looking at my assets required for this site, I knew FontAwesome was taking up bloat. I was including the whole font! But I'm using a small portion. It consumed 76kb! So I searched for how to make it smaller.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id="fontello"&gt;Fontello&lt;/h2&gt;
+&lt;p&gt;&lt;a class="external" href="http://fontello.com/"&gt;Fontello&lt;/a&gt; is a sweet little website! It has aggregated a number of icon fonts, allowing you to pick and choose the icons you want, and builds you all files you'll need to use as a WebFont.&lt;/p&gt;
+&lt;p&gt;How awesome!&lt;/p&gt;
+&lt;p&gt;So I picked away and took my first stab at switching over. I didn't do a perfect job and it needs another rework, but here's what I accomplished&lt;/p&gt;
+&lt;h4 id="fontawesome-woff2-772kb"&gt;FontAwesome .woff2 77.2kb&lt;/h4&gt;
+&lt;h4 id="myiconfont-woff2-104kb"&gt;MyIconFont .woff2 10.4kb&lt;/h4&gt;
+&lt;p&gt;Pages before assets are now roughly 20kb.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;melts&lt;/strong&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 17 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-17:/posts/2017-05-17-minimizing-font-size.html</guid></item><item><title>A helpful pelican configuration file</title><link>https://vanessa-luna.github.io/posts/2017-05-16-pelicanconf.html</link><description>&lt;p&gt;When I was beginning to learn Pelican, it benefited me intensely to copy down all the setting options in one file. This way I could see what I could do. Feel free to copy this and use it yourself as you begin to play with Pelican&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Some things I'll mention:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I put the customization and plugins at the bottom so those two could use any of the previously defined variables in them.&lt;/li&gt;
+&lt;li&gt;You could put your customizations in a separate file and load them in at the end.&lt;/li&gt;
+&lt;li&gt;It's python! so allow yourself to create holder variables and run logic to make things easier if you have to.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Below is a Gist of it.&lt;/p&gt;
+&lt;script src="https://gist.github.com/vanessa-luna/7abfd80a6774b99ddbe71101e4b9cc92.js"&gt;&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Tue, 16 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-16:/posts/2017-05-16-pelicanconf.html</guid></item><item><title>Version 1 of this website</title><link>https://vanessa-luna.github.io/posts/2017-05-12-01-finishing-this-website.html</link><description>&lt;p&gt;I have put a lot of effort into making this website over the last two weeks. I spent most of my time working on it because I'm a little depressed and trying to avoid the real problem.&lt;/p&gt;
+&lt;p&gt;Here's some interesting tidbits about it.
+&lt;/p&gt;
+&lt;h2 id="pelican-static-site-generator"&gt;Pelican - Static Site generator&lt;/h2&gt;
+&lt;p&gt;I am using &lt;a class="external" href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; to generate this website. It allows me to write my posts using Markdown and apply a theme to it.&lt;/p&gt;
+&lt;p&gt;It's written in Python and the way it's setup is quite flexible. Allowing me to sorta chunk things around as I please. Thanks Python!&lt;/p&gt;
+&lt;p&gt;Main features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pretty good &lt;a class="external" href="https://docs.getpelican.com/"&gt;documentation&lt;/a&gt;. Some minor things missing but found through google.&lt;/li&gt;
+&lt;li&gt;&lt;a class="external" href="https://jinja.pocoo.org/"&gt;Jinja Templates&lt;/a&gt; are used for writing .html templates&lt;/li&gt;
+&lt;li&gt;Plenty of &lt;a class="external" href="https://www.pelicanthemes.com/"&gt;themes&lt;/a&gt; to get you started&lt;/li&gt;
+&lt;li&gt;A bunch of really helpful &lt;a class="external" href="https://github.com/getpelican/pelican-plugins"&gt;plugins&lt;/a&gt;. I am using 11 of them! some I modified myself.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="credits"&gt;credits&lt;/h3&gt;
+&lt;p&gt;I need to point out that the theme &lt;a class="external" href="http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/"&gt;tranquilpeak&lt;/a&gt; inspired much of this website... I mean, I kinda ripped it off. I mean, creative freedom! &lt;/p&gt;
+&lt;h2 id="fun-things-i-did"&gt;Fun things I did&lt;/h2&gt;
+&lt;p&gt;Being an ex-software-programmer, I have some old habits, and that learned behavior of refactor refactor refactor. Normally as a learning experience. Definitely in this case a learning experience. So here are some extra things I did that I didn't have to.&lt;/p&gt;
+&lt;p&gt;In the following posts I write about how I:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="internal" href="https://vanessa-luna.github.io/posts/2017-05-12-02-dynamic-image-sizes.html"&gt;Served image sizes based on viewport height&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="internal" href="https://vanessa-luna.github.io/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html"&gt;Served the smallest css files I could muster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="internal" href="https://vanessa-luna.github.io/posts/2017-05-12-04-adding-soundloud-widget-to-pelican-using-jinja.html"&gt;Adding SoundCloud widget using Jinja and Javascript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="internal" href="https://vanessa-luna.github.io/posts/2017-05-12-05-using-tables-in-markdown-in-pelican.html"&gt;Using Tables in Markdown with Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="background-images"&gt;Background images&lt;/h3&gt;
+&lt;p&gt;I just wanted to comment on how fun the background images are to me. Randomly chosen at runtime, the background-position is also chosen randomly. I felt like the ever changing background was a fun representation of how I shift all the time too.&lt;/p&gt;
+&lt;p&gt;If you want to see all of them, head on over to the gallery page and look for the background album :)&lt;/p&gt;
+&lt;p&gt;I should really do some updates to make sure the site doesn't look total shit if Javascript is turned off xD&lt;/p&gt;
+&lt;h2 id="shit-what-do-i-do-now"&gt;Shit what do I do now?&lt;/h2&gt;
+&lt;p&gt;Now that I have done enough to feel like it's presentable, I am supposed to slow down on development and amp up the content right? Sigh. Hard to let go of the incessant need to keep making it better and better. Sorry the image viewing isn't amazing yet.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-01-finishing-this-website.html</guid></item><item><title>Dynamic image size loading in Pelican using javascript</title><link>https://vanessa-luna.github.io/posts/2017-05-12-02-dynamic-image-sizes.html</link><description>&lt;p&gt;I don't really know what to call this. But for the background images, I load the smallest size that fits close enough to the height of the page. Hoping to save bandwidth for mobile users.
+&lt;/p&gt;
+&lt;p&gt;This was fun to write since the code was linked from the Pelican settings file, into the template, so the javascript can run properly without me editing multiple files.&lt;/p&gt;
+&lt;p&gt;I used a plugin for Pelican called &lt;a class="external" href="https://github.com/getpelican/pelican-plugins/tree/master/thumbnailer"&gt;thumbnailer&lt;/a&gt;. There are many plugins to help you compress your images into different file formats, however this one was standalone and seemed to fit my idea the easiest.&lt;/p&gt;
+&lt;h5 id="pelican-settings-file"&gt;Pelican settings file&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;plugins&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;thumbnailer&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;IMAGE_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;images&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;THUMBNAIL_DIR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;thumb&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;THUMBNAIL_KEEP_NAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;THUMBNAIL_KEEP_TREE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;THUMBNAIL_SIZES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;tiny&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;?x144&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;smaller&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;?x240&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;small&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;?x360&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;medium&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;?x480&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;large&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;?x720&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;huge&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;?x1080&amp;#39;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Above, I am telling the plugin 'thumbnailer' to take my 'images' folder and create thumbnail versions of all the images.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;THUMBNAIL_DIR&lt;/code&gt; is the root folder for all thumbs.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;THUMBNAIL_KEEP_TREE&lt;/code&gt; tells the plugin to keep the same directory structure found inside &lt;code&gt;IMAGE_PATH&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The 'key' in &lt;code&gt;THUMBNAIL_SIZES&lt;/code&gt; is the name of the sub folder that contains all the images at that size.&lt;/p&gt;
+&lt;p&gt;The '?' in front of each implies that it will keep the aspect ratio of the original file.&lt;/p&gt;
+&lt;p&gt;Putting all these together, I can access thumbnail version by changing the root image folder to thumb, and adding the appropriate size key as a prefix. But everything else about the filename stays the same. Here is an example of how the URL shifts&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/images/background/cover0.jpg
+/thumb/tiny/background/cover0.jpg
+/thumb/huge/background/cover0.jpg
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5 id="jinja-template-file"&gt;Jinja template file&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;  // array of possible images sizes built off config filename&lt;/span&gt;
+&lt;span class="x"&gt;  var imageSizes = [];&lt;/span&gt;
+&lt;span class="x"&gt;  &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;dim&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;THUMBNAIL_SIZES.iteritems&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;    imageSizes[ &lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nb"&gt;loop&lt;/span&gt;&lt;span class="nv"&gt;.index&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt; ] = {&lt;/span&gt;
+&lt;span class="x"&gt;      name: &amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;,&lt;/span&gt;
+&lt;span class="x"&gt;      size:&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;dim&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;,&lt;/span&gt;
+&lt;span class="x"&gt;      width: parseInt(&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt;&lt;span class="nv"&gt;dim&lt;/span&gt;&lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;.replace(/x.+/, &amp;#39;&amp;#39;)),&lt;/span&gt;
+&lt;span class="x"&gt;      height: parseInt(&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt;&lt;span class="nv"&gt;dim&lt;/span&gt;&lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;.replace(/.+x/, &amp;#39;&amp;#39;))&lt;/span&gt;
+&lt;span class="x"&gt;    }&lt;/span&gt;
+&lt;span class="x"&gt;  &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endfor&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;  // sorted largest to smallest so if two sizes match abs, it choses the smaller&lt;/span&gt;
+&lt;span class="x"&gt;  imageSizes.sort(function(a,b) {return (a.height &amp;gt; b.height) ? -1 : ((b.height &amp;gt; a.height) ? 1 : 0);} );&lt;/span&gt;
+
+&lt;span class="x"&gt;  function imgUrlByHeight(filename, height) {&lt;/span&gt;
+&lt;span class="x"&gt;    var chosenSize = imageSizes[0]; //start at smallest size&lt;/span&gt;
+&lt;span class="x"&gt;    for (var i = 0; i &amp;lt; imageSizes.length; i++){ // redo smallest to calculate abs&lt;/span&gt;
+&lt;span class="x"&gt;      var curSize = imageSizes[i];&lt;/span&gt;
+&lt;span class="x"&gt;      curSize.abs = Math.abs(height - curSize.height);&lt;/span&gt;
+&lt;span class="x"&gt;      if (curSize.abs &amp;lt;= chosenSize.abs) chosenSize = curSize;&lt;/span&gt;
+&lt;span class="x"&gt;    }&lt;/span&gt;
+&lt;span class="x"&gt;    return &amp;quot;url(&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;THUMBNAIL_DIR&lt;/span&gt;&lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&amp;quot; + chosenSize.name + &amp;quot;/&amp;quot; + filename;&lt;/span&gt;
+&lt;span class="x"&gt;  }&lt;/span&gt;
+&lt;span class="x"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This may be a bit hard to unpack since it's Jinja and JS combined. However I have left the Jinja highlighted. What's important here is near the top.&lt;/p&gt;
+&lt;p&gt;The for loop through &lt;code&gt;THUMBNAIL_SIZES&lt;/code&gt; allows me to build an array in javascript to be used by the rest of the code.&lt;/p&gt;
+&lt;p&gt;I parse out the value of the key using js function replace since I cannot do this kind of string manipulation in Jinja.&lt;/p&gt;
+&lt;p&gt;At the bottom I build the URL using the appropriate settings from the Pelican settings file, and thumbnailer options.&lt;/p&gt;
+&lt;h4 id="finally"&gt;Finally&lt;/h4&gt;
+&lt;p&gt;I could use this function anywhere, but it's currently only being used by the background code. I will eventually place it elsewhere but I need to stop focusing on this and move on. I have to go north!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-02-dynamic-image-sizes.html</guid></item><item><title>Using WebAssets in Pelican to serve small css files</title><link>https://vanessa-luna.github.io/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html</link><description>&lt;p&gt;I cared a lot about mobile bandwidth usage. One of the things I focused on was condensing my css as much as possible.
+&lt;/p&gt;
+&lt;h2 id="webassets"&gt;WebAssets&lt;/h2&gt;
+&lt;p&gt;This is a cool Python tool to help manage assets in your web projects. Lol. Some made a simple &lt;a class="internal" href="(https://github.com/getpelican/pelican-plugins/tree/master/assets)"&gt;plugin for Pelican&lt;/a&gt; to integrate it into the system&lt;/p&gt;
+&lt;p&gt;Using modular css files and webassets, I can serve only the css styles that are required per page, without dumping all css selectors on every page.&lt;/p&gt;
+&lt;p&gt;Bear with me on this one.&lt;/p&gt;
+&lt;h5 id="pelican-settings-file"&gt;Pelican settings file&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;plugins&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;ASSET_SOURCE_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;src&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;helpers&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I tell the plugin which paths to look into for files I will be using later.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/base.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/fragments/sidebar.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;ASSET_CSS_CONTENT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/fragments/content.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/fragments/syntax.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;ASSET_CSS_PAGINATED&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/fragments/pagination.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;ASSET_CSS_COMMENTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/fragments/comments.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;ASSET_CSS_GALLERY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;fotorama/fotorama.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/fragments/gallery.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here I am creating some reusable, easily referenced lists containing paths to the files I will bundle together&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ASSET_BUNDLES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-base&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/base.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;})&lt;/span&gt;
+
+    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-archives&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/archives.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/archives.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-article&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;ASSET_CSS_CONTENT&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_PAGINATED&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_COMMENTS&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/article.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/article.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+        &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-fragment-gallery&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ASSET_CSS_GALLERY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/fragments/gallery-fragment.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-categories&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/categories.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/categories.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-category&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;ASSET_CSS_CONTENT&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_PAGINATED&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/index.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/category.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-index&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;ASSET_CSS_CONTENT&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_PAGINATED&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/index.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/index.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-page&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/page.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/page.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+        &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-gallery&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_GALLERY&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/pages/gallery.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+            &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/pages/gallery.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;js-gallery&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;jquery/jquery.min.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;fotorama/fotorama.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;js/gallery.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;ASSETS&lt;/code&gt; is the fun part. It accepts a Tuple of three values &lt;code&gt;(name, files, options)&lt;/code&gt; I won't go into all the details of using the plugin, but you should be able to discern how I split up my css code and only included what was necessary.&lt;/p&gt;
+&lt;p&gt;I am using font awesome for some of my icons. I may convert them to images at some point, but I did only include the css class that I needed instead of the entire library.&lt;/p&gt;
+&lt;p&gt;The biggest culprits here for filesize are of course: jquery and fotorama. I want to change lightbox/gallery library but it's turning out to be a much harder problem than I hoped for.&lt;/p&gt;
+&lt;h5 id="basehtml-jinja-template-file"&gt;base.html - Jinja template file&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;...&lt;/span&gt;
+&lt;span class="x"&gt;    &amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;      &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt; &lt;span class="nv"&gt;assets&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;      &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endblock&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Above, not all is included, but what is important is defining a block I can use to put the assets inside the head.&lt;/p&gt;
+&lt;p&gt;Inside of any page that extends base.html I can put this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt; &lt;span class="nv"&gt;assets&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;assets&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;css-index&amp;quot;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;ASSET_URL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endassets&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endblock&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Thus allowing me to reference the proper WebAssets bundle within the relevant file.&lt;/p&gt;
+&lt;h4 id="finally"&gt;Finally&lt;/h4&gt;
+&lt;p&gt;I'm pretty happy with this one. With a simple abstraction of content, and a relatively low overhead addition of process, I was able to knock off about 20k+ in bloat by only serving the css that's required.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html</guid></item><item><title>Adding SoundCloud embed widget to Pelican using Jinja and Javascript</title><link>https://vanessa-luna.github.io/posts/2017-05-12-04-adding-soundloud-widget-to-pelican-using-jinja.html</link><description>&lt;p&gt;Another little project that took me a while to figure out was getting a SoundCloud widget on the page without loading right away. This is tricker than I hoped and I wish there was a way I could do this without Javascript. I am sure there is a way, but I have not found it yet. The secret may lie it &lt;code&gt;a:target&lt;/code&gt; selector, but we'll see.
+&lt;/p&gt;
+&lt;h2 id="soundcloud-widget"&gt;SoundCloud widget&lt;/h2&gt;
+&lt;p&gt;There are three options to choose for the SoundCloud widget depending on your account type. I prefered the Smaller HTML5 one, compared to the one that loaded if I used the plugin &lt;code&gt;liquid_tags&lt;/code&gt; for soundcloud. So I set off to make my own. I'm not ready to write a full fledged plugin yet so I opted for
+Jinja&lt;/p&gt;
+&lt;h2 id="how-it-works"&gt;How it works&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;custom metadata field for content &lt;code&gt;soundcloud&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Jinja template which embeds the proper html&lt;/li&gt;
+&lt;li&gt;CSS to render things pretty&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="mypostmd"&gt;mypost.md&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Title: My post
+soundcloud: 0123456
+
+listen to this cool song!
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The soundcloud metadata variable should be simply the id of the song you want the widget to load.&lt;/p&gt;
+&lt;h5 id="fragmentssoundcloudhtml-jinja-template"&gt;fragments/soundcloud.html - Jinja template&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;article.soundcloud&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="nf"&gt;defined&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;article.soundcloud&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nf"&gt;length&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;  function loadSoundCloud() {&lt;/span&gt;
+&lt;span class="x"&gt;    document.getElementById(&amp;#39;soundcloud&amp;#39;).innerHTML = &amp;quot;&amp;lt;iframe name=&amp;#39;soundcloud2&amp;#39; width=&amp;#39;100%&amp;#39; height=&amp;#39;122px&amp;#39; scrolling=&amp;#39;no&amp;#39; frameborder=&amp;#39;no&amp;#39; src=&amp;#39;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/&lt;/span&gt;
+&lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;article.soundcloud&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt; &amp;amp;amp;color=ff5500&amp;amp;amp;auto_play=false&amp;amp;amp;hide_related=true&amp;amp;amp;show_comments=false&amp;amp;amp;show_user=false&amp;amp;amp;show_reposts=false&amp;#39;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;span class="x"&gt;  }&lt;/span&gt;
+&lt;span class="x"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;&amp;lt;div markdown id=&amp;quot;soundcloud&amp;quot; onclick=&amp;quot;loadSoundCloud()&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;  &amp;lt;div class=&amp;quot;soundcloud-loader&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endif&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Above you can see the first line ensures that there is at least some soundcloud variable in the metadata.&lt;/p&gt;
+&lt;p&gt;Next, I add some javascript that adds a function to create an iframe with the proper url&lt;/p&gt;
+&lt;p&gt;The function replaces the innerHTML of the outer &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; that holds the placeholder image.&lt;/p&gt;
+&lt;p&gt;The added div, when clicked on runs the javascript function.&lt;/p&gt;
+&lt;h5 id="soundcloud-css"&gt;soundcloud css&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;soundcloud-loader&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;box-sizing&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;border-box&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;122&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;max-height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;122&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="kc"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/images/soundcloud-loader.jpg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="k"&gt;background-position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-repeat&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;no-repeat&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;background-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;contain&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;cursor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;pointer&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;soundcloud-loader&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;hover&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="mh"&gt;#ff7256&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can see that I'm simply adding a background, a border, and making it a certain size. On hover, it highlights the border. In hindsight, I coudl have done this very differently, however I tried to start with a css only method, but upon failure, I opted for the easiest next solution. &lt;/p&gt;
+&lt;h2 id="future-updates"&gt;Future updates&lt;/h2&gt;
+&lt;p&gt;I plan to write a plugin that allows me to place custom tag inside my content to put the soundcloud widget where I please in the document. At the moment, it always appears in the same place: the end of the content.&lt;/p&gt;
+&lt;p&gt;I also hope to find a way to do with without js since, if it can be done, it should, to benefit users who have js turned off. However I don't know what would happen if you load the widget without js. So I'm merely speculating about its worth.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-04-adding-soundloud-widget-to-pelican-using-jinja.html</guid></item><item><title>Using Tables in markdown with Pelican</title><link>https://vanessa-luna.github.io/posts/2017-05-12-05-using-tables-in-markdown-in-pelican.html</link><description>&lt;p&gt;This is a small silly one, however when I first tried to use Markdown tables, they did not render in pelican.
+&lt;/p&gt;
+&lt;p&gt;To fix this, add this to your Pelican settings file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MARKDOWN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;extension_configs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s1"&gt;&amp;#39;markdown.extensions.tables&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:{},&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-05-using-tables-in-markdown-in-pelican.html</guid></item></channel></rss>

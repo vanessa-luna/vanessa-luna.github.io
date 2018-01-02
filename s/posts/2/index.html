@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Posts | Inanis Umbra</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/index.min.css?6cf087a5">
+    <script>
+      function prettyDate(time) {
+        var date = new Date((time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")),
+            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400), y = date.getFullYear(), m = date.getMonth()+1, d = date.getDate();
+        if (isNaN(dd) || dd < 0 || dd >= 31)
+            return (y.toString()+'-'+((m<10) ? '0'+m.toString() : m.toString())+'-'+((d<10) ? '0'+d.toString() : d.toString()));
+        var r = ((dd == 0 && "Today") || (dd == 1 && "Yesterday") || (dd < 7 && dd + " days") || (dd < 31 && ( (dd < 14 && "1 week") || (dd < 21 && "2 weeks") || (dd < 28 && "3 weeks") || (dd < 25 && "4 weeks") ) ) );
+        if (dd > 7 && dd % 7) r += " & " + dd % 7 + " days"
+        return r;
+      }
+      document.addEventListener("DOMContentLoaded", function () { updateTimes(); setInterval(updateTimes, 60000);})
+      function updateTimes() {
+        var times = document.querySelectorAll("time");
+        for (var i = 0; i < times.length; i++) {
+          var s = prettyDate(times[i].getAttribute("datetime"));
+          if (s) times[i].innerHTML = s
+        }
+      }
+    </script>    <link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/shadows.min.css?524cb569">
+
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script></head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/25cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 25 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
+				<h1> Inanis &#xe80a; Umbra</h1>
+			</a>
+			<p class="subtitle">Within the shadows lies the honesty we seek yet fear the most. Oversharing &#xe813;</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/s/posts">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Shadows").className = "fa fa-" +  chooseIcon(["cloud-moon-inv","moon"]); });
+							</script>
+							<i id="icon-Shadows" class="fa fa-cloud-moon-inv"></i>
+						</div>
+						<span class='name'>Shadows</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/s/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-o","hourglass"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-o"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/s/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","cloud-sun-inv"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>	<div class="content">
+ 	<div class="index pad-content">
+		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/s/posts/2017-08-26-cousin-health.html">
+					<div class='post-meta'><div class="inner-meta box">
+						shadows<br>
+						<time class="post-date" datetime=2017-08-26 00:00:00-04:00 title="2017-08-26">2017-08-26</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/s/posts/2017-08-26-cousin-health.html">Choosing some level of responsibility for my cousin</a>
+				</h1>
+				<p>
+					<p>I have a cousin who is struggling with behavioral/mental health issues. We had been off and on close over the years. Seemingly, I am the only person in this family who cares enough to make an effort. Not that it's surprising.</p>
+<p>Given our limited interactions I can't say for …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/s/posts/2017-08-26-cousin-health.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/s/posts/2017-08-24-letting-go-of-people.html">
+					<div class='post-meta'><div class="inner-meta box">
+						shadows<br>
+						<time class="post-date" datetime=2017-08-24 00:00:00-04:00 title="2017-08-24">2017-08-24</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/s/posts/2017-08-24-letting-go-of-people.html">How much do you have to let go?</a>
+				</h1>
+				<p>
+					<p>I had an intense experience with an amazing girl last year. We had a lot of common ground but we were distant and built something over the phone. I know it was risky, but I couldn't help myself.</p>
+<p>When we finally got face to face we both shriveled in fear …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/s/posts/2017-08-24-letting-go-of-people.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/s/posts/2017-08-21-can-i-die-please.html">
+					<div class='post-meta'><div class="inner-meta box">
+						shadows<br>
+						<time class="post-date" datetime=2017-08-21 00:00:00-04:00 title="2017-08-21">2017-08-21</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/s/posts/2017-08-21-can-i-die-please.html">Yup, I'm thinking about death.</a>
+				</h1>
+				<p>
+					<p>The day of the eclipse. Only hours away. I figured I need to let out the part of me I've been hiding.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/s/posts/2017-08-21-can-i-die-please.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/s/posts/2017-08-04-slipping.html">
+					<div class='post-meta'><div class="inner-meta box">
+						shadows<br>
+						<time class="post-date" datetime=2017-08-04 00:00:00-04:00 title="2017-08-04">2017-08-04</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/s/posts/2017-08-04-slipping.html">Am I slipping?</a>
+				</h1>
+				<p>
+					<p>I have been in more pain, hiding more, feeling worse, for days.  I lie in bed hours at a time drooling over the dream of being healthy again.</p>
+<p>I wish I could lift and move the bench seats on my own in the basement to take photos of them so …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/s/posts/2017-08-04-slipping.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/s/posts/2017-07-19-dreaming-in-3rd-person.html">
+					<div class='post-meta'><div class="inner-meta box">
+						shadows<br>
+						<time class="post-date" datetime=2017-07-19 00:00:00-04:00 title="2017-07-19">2017-07-19</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/s/posts/2017-07-19-dreaming-in-3rd-person.html">Dreaming in 3rd person in pain</a>
+				</h1>
+				<p>
+					<p>Alike my depersonalization, many of my dreams are the same as awake. I rarely am the dream or dreamer, but watching the dream.</p>
+<p>And last night, I dreamt of how incapable I am of being me when social interactions are not temporal. If there is a chance they may not …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/s/posts/2017-07-19-dreaming-in-3rd-person.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/s/posts/2017-07-16-a-date-and-new-worlds.html">
+					<div class='post-meta'><div class="inner-meta box">
+						shadows<br>
+						<time class="post-date" datetime=2017-07-16 00:00:00-04:00 title="2017-07-16">2017-07-16</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/s/posts/2017-07-16-a-date-and-new-worlds.html">New Worlds found through a date.</a>
+				</h1>
+				<p>
+					<p>Full disclosure here. I have been on very few dates in my life. Today, meeting with a total stranger for a walk in the woods I found myself in places I've never been before.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/s/posts/2017-07-16-a-date-and-new-worlds.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/s/posts/2017-06-09-alcohol.html">
+					<div class='post-meta'><div class="inner-meta box">
+						shadows<br>
+						<time class="post-date" datetime=2017-06-09 00:00:00-04:00 title="2017-06-09">2017-06-09</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/s/posts/2017-06-09-alcohol.html">I still don't understand parties with alcohol</a>
+				</h1>
+				<p>
+					<p>This evening I went to a house with my friends where drinking was involved. This was the first time in years that I had been in a setting where heavy drinking was involved. It was weird.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/s/posts/2017-06-09-alcohol.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/s/posts/2017-06-06-a-different-perspective.html">
+					<div class='post-meta'><div class="inner-meta box">
+						shadows<br>
+						<time class="post-date" datetime=2017-06-06 00:00:00-04:00 title="2017-06-06">2017-06-06</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/s/posts/2017-06-06-a-different-perspective.html">4am musing over relationships</a>
+				</h1>
+				<p>
+					<p>I know I am not sharing interesting words other than my inner thoughts. Which suddenly struck me as being way over the top. But it seems I have acquired the habit so I keep doing it. So I shall label this a writing instead. Whatever. It has more depth than the contents of my day.</p>
+<p>I sit here, actually into tomorrow around 4am. Mulling over the people I've met these last three months. How quickly I have changed with each passing day. I can see my instability diminishing, and my uncertainty rising.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/s/posts/2017-06-06-a-different-perspective.html">continue »</a>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+        <div class="pagination-item">
+    <a class="box" href="/s/posts/">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <div class="pagination-list">
+          <a class='box ' href="/s/posts/">1</a>
+          <a class='box current-page' href="/s/posts/2/">2</a>
+        </div>
+
+        <div class="pagination-item">
+    <span class="empty-box older"></span>
+</div>
+
+
+
+      </div>	</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna <i class="fa fa-star"></i> <a href="https://vanessa-luna.github.io/feed/rss.xml"><i class='fa fa-rss'></i> RSS</a>
+
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>	</div>
+</body>
+</html>

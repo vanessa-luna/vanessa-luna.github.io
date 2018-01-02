@@ -1,0 +1,5 @@
+theme/.webassets-cache
+theme/webassets-external/*.css
+drafts/
+images/
+thumb/
