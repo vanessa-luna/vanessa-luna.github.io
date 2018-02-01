@@ -157,9 +157,16 @@
 			<h3 id="and-off-to-a-new-life">and off to a new life.</h3>
 <p>I said to myself as I left my life to travel the USA in my half converted van named Vanessa. A few years ago, I was near panic knowing that I had to leave everything I knew so I could find myself. After meeting the right people, and finding enough strength, I did just that.</p>
 <p>Living in my van has cured me of my depersonalization disorder. I used to not feel like a real person my whole life. I had breaks from it sure, but by and large, I felt like I was always watching someone else's life.</p>
-<h3 id="i-am-150-days-real-now">I am 150 days real now</h3>
+<h3 id="num-days-real">num-days-real</h3>
 <p>I go by Luna Inanis Umbra. I am an empathic transsexual wrapped in chronic pain who is desperately hoping she can find a way to live this life.</p>
 <p>Unfortunately, all those years in pain and depersonalization stripped me of identity and future. Who I should have been is now totally incompatible with who I can be given my limitations. Chronic pain is a horrible experience.</p>
+<script>
+   var day_real = new Date("2017/05/25");
+   var now = new Date()
+   var num_days = Math.round((now-day_real)/(1000*60*60*24))
+   var el = document.getElementById("num-days-real")
+   el.innerHTML = "I am " + num_days + " days real now"
+</script>
 			
 		</div>
 </div>        <div class="footer">
