@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Dreaming in pain | Inanis Umbra</title>
+	<title>Posts | Inanis Umbra</title>
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -18,8 +18,26 @@
 		ga('create', 'UA-100867520-1', 'auto');
 		ga('send', 'pageview');
 </script>
-	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
-    <link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/shadows.min.css?524cb569">
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/index.min.css?03e70731">
+    <script>
+      function prettyDate(time) {
+        var date = new Date((time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")),
+            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400), y = date.getFullYear(), m = date.getMonth()+1, d = date.getDate();
+        if (isNaN(dd) || dd < 0 || dd >= 31)
+            return (y.toString()+'-'+((m<10) ? '0'+m.toString() : m.toString())+'-'+((d<10) ? '0'+d.toString() : d.toString()));
+        var r = ((dd == 0 && "Today") || (dd == 1 && "Yesterday") || (dd < 7 && dd + " days") || (dd < 31 && ( (dd < 14 && "1 week") || (dd < 21 && "2 weeks") || (dd < 28 && "3 weeks") || (dd < 25 && "4 weeks") ) ) );
+        if (dd > 7 && dd % 7) r += " & " + dd % 7 + " days"
+        return r;
+      }
+      document.addEventListener("DOMContentLoaded", function () { updateTimes(); setInterval(updateTimes, 60000);})
+      function updateTimes() {
+        var times = document.querySelectorAll("time");
+        for (var i = 0; i < times.length; i++) {
+          var s = prettyDate(times[i].getAttribute("datetime"));
+          if (s) times[i].innerHTML = s
+        }
+      }
+    </script>    <link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/shadows.min.css?524cb569">
 
     <script type="text/javascript">
       function gh(s) { return parseInt(s.replace(/.+x/, '')) }
@@ -102,19 +120,26 @@
 			</div>
 		</nav>
 	</div>	<div class="content">
- <div class="min-height-full pad-content">
-	<div class="post">
-		<h1 class="post-title">Dreaming in pain</h1>
-		<span class="post-date">shadows ~ 2018-01-02</span>
-		<br><br>
-
-		<p>What a remarkable thing. Dreaming in pain. This never used to be the case.</p>
-<p>Waking in a warm bed, my lower half aching, my shoulders crinkling, my heart at the  bottom of a pit from my dream.</p>
-<p>I sit again wondering when I will get this life over with. When I will finish my bucket list so I can end this. And why I seem to think I will still want to follow through with ending my life after I live through it all.</p>
-<p>In a few short chilly days I will be driving north into the hell of winter. For at least two weeks I will be trapped, trying my hardest to not get sucked into the dark depression of frigid tense hell. And I'll need to borrow more money in order to get back south after.</p>
-<p>I want this hell over with.</p>
-
-	</div>
+ 	<div class="index pad-content">
+		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/s/posts/2017-06-06-a-different-perspective.html">
+					<div class='post-meta'><div class="inner-meta box">
+						shadows<br>
+						<time class="post-date" datetime=2017-06-06 00:00:00-04:00 title="2017-06-06">2017-06-06</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/s/posts/2017-06-06-a-different-perspective.html">4am musing over relationships</a>
+				</h1>
+				<p>
+					<p>I know I am not sharing interesting words other than my inner thoughts. Which suddenly struck me as being way over the top. But it seems I have acquired the habit so I keep doing it. So I shall label this a writing instead. Whatever. It has more depth than the contents of my day.</p>
+<p>I sit here, actually into tomorrow around 4am. Mulling over the people I've met these last three months. How quickly I have changed with each passing day. I can see my instability diminishing, and my uncertainty rising.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/s/posts/2017-06-06-a-different-perspective.html">continue »</a>
+				</div>
+			</div>
+		</div>
 
 
 
@@ -124,119 +149,30 @@
 
 
       <div class="pagination">
-
-
-
-
-
-
-
         <div class="pagination-item">
-    <a class="box" href="/s/posts/2018-01-18-dysphoria.html">
+    <a class="box" href="/s/posts/2/">
         <span class="newer">Newer</span>
     </a>
 </div>
 
 
-        <span class="pagination-spacer"></span>
+        <div class="pagination-list">
+          <a class='box ' href="/s/posts/">1</a>
+          <a class='box ' href="/s/posts/2/">2</a>
+          <a class='box current-page' href="/s/posts/3/">3</a>
+        </div>
 
         <div class="pagination-item">
-    <a class="box" href="/s/posts/2017-12-11-attraction.html">
-        <span class="older">Older</span>
-    </a>
+    <span class="empty-box older"></span>
 </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
-<script>
-hcb_user = {
-    no_comments_msg: 'Be the first to leave a comment',
-    // submit form
-    comments_header : 'Comments',
-    name_label : 'Name (optional)',
-    email_label:'Email (optional)',
-    website_label:'Website (optional)',
-    content_label: 'Message',
-    submit : 'Submit',
-    add:'Leave a comment',
-    again: 'Post another comment',
-    subscribe:'subscribe (email updates)',
-    // user actions
-    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
-    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
-    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
-    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
-    // comment body
-    said:'',
-    anonymous:'anon',
-    mod_label:'(owner)',
-    // dates
-    days_ago:'days',
-    hours_ago:'hours',
-    minutes_ago:'mins',
-    within_the_last_minute:'<1 min',
-    // comment actions
-    reply:"<i class='fa fa-reply'></i> reply",
-    flag:"<i class='fa fa-flag-filled'></i> flag",
-    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
-    are_you_sure:'Really flag this comment as inappropriate?',
-    // pagination
-    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
-    showing:'comments',
-    to:'-',
-    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
-
-    msg_thankyou:'<span class="success-span">You left a comment!</span>',
-    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
-    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
-
-    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
-    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
-    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
-    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
-    err_denied:'<span class="success">Your comment was not accepted.</span>',
-
-    //SETTINGS
-    MAX_CHARS: 8192,
-    PAGE:"s/posts/2018-01-02-dreaming-in-pain.html",
-    RELATIVE_DATES:true
-};
-</script>
-<script type="text/javascript" id="hcb"> /*<!--*/
-    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-<noscript>
-    <style>#HCB_comment_box { display:none;}</style>
-    <div>
-        <h3>Comments</h3>
-        <p class="warning-block">Enable Javascript to view or write comments</p>
-    </div>
-</noscript>
-</div>
+      </div>	</div>
         <div class="footer">
             <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
-            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna <i class="fa fa-star"></i> <a href="https://vanessa-luna.github.io/feed/rss.xml"><i class='fa fa-rss'></i> RSS</a>
+
             <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
         </div>	</div>
 </body>
