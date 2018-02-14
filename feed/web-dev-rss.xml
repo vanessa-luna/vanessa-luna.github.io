@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>https://vanessa-luna.github.io/</link><description></description><lastBuildDate>Mon, 01 Jan 2018 00:00:00 -0500</lastBuildDate><item><title>Integrating a CDN for image hosting part 1</title><link>https://vanessa-luna.github.io/posts/2018-01-01-cdn.html</link><description>&lt;p&gt;Super excited. I recently created an account at Cloudinary.com for their free account.&lt;/p&gt;
+<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>https://vanessa-luna.github.io/</link><description></description><lastBuildDate>Wed, 14 Feb 2018 00:00:00 -0500</lastBuildDate><item><title>Becoming code again?</title><link>https://vanessa-luna.github.io/posts/2018-02-14-becoming-code.html</link><description>&lt;p&gt;Alright, so in getting sucked into my old support group again, I have added responsibilities to my plate instead of removing them. Ugh. What am I doing?!?&lt;/p&gt;
+&lt;p&gt;Well it's not so bad. I guess it makes sense I would return despite my distance because I am alive. So how does this relate to coding?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I spent about three days hack and slashing some html/css/js to revitalize the website for the support group&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Yuck.  Yup. I am doing website work for the group again. Hopefully this time I won't be doing the bulk of the work. I'll simply be managing and inspiring. Eventually, I'll only be inspiring. LOL. Wouldn't that be nice?&lt;/p&gt;
+&lt;p&gt;In my efforts to engage in this again, I've had conversations about code, project management, and explored new tools to help me along the way. And guess what? I'm starting to enjoy it again? Dammit. &lt;/p&gt;
+&lt;p&gt;We shall see where this leads eh?&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 14 Feb 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2018-02-14:/posts/2018-02-14-becoming-code.html</guid></item><item><title>Integrating a CDN for image hosting part 1</title><link>https://vanessa-luna.github.io/posts/2018-01-01-cdn.html</link><description>&lt;p&gt;Super excited. I recently created an account at Cloudinary.com for their free account.&lt;/p&gt;
 &lt;p&gt;I really want to switch over to a CDN for image hosting because my git project should not host all those images.&lt;/p&gt;
 &lt;p&gt;Here's what I accomplished:&lt;/p&gt;
 &lt;ul&gt;
@@ -429,67 +436,4 @@
 
 &lt;p&gt;Thus allowing me to reference the proper WebAssets bundle within the relevant file.&lt;/p&gt;
 &lt;h4 id="finally"&gt;Finally&lt;/h4&gt;
-&lt;p&gt;I'm pretty happy with this one. With a simple abstraction of content, and a relatively low overhead addition of process, I was able to knock off about 20k+ in bloat by only serving the css that's required.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html</guid></item><item><title>Adding SoundCloud embed widget to Pelican using Jinja and Javascript</title><link>https://vanessa-luna.github.io/posts/2017-05-12-04-adding-soundloud-widget-to-pelican-using-jinja.html</link><description>&lt;p&gt;Another little project that took me a while to figure out was getting a SoundCloud widget on the page without loading right away. This is tricker than I hoped and I wish there was a way I could do this without Javascript. I am sure there is a way, but I have not found it yet. The secret may lie it &lt;code&gt;a:target&lt;/code&gt; selector, but we'll see.
-&lt;/p&gt;
-&lt;h2 id="soundcloud-widget"&gt;SoundCloud widget&lt;/h2&gt;
-&lt;p&gt;There are three options to choose for the SoundCloud widget depending on your account type. I prefered the Smaller HTML5 one, compared to the one that loaded if I used the plugin &lt;code&gt;liquid_tags&lt;/code&gt; for soundcloud. So I set off to make my own. I'm not ready to write a full fledged plugin yet so I opted for
-Jinja&lt;/p&gt;
-&lt;h2 id="how-it-works"&gt;How it works&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;custom metadata field for content &lt;code&gt;soundcloud&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Jinja template which embeds the proper html&lt;/li&gt;
-&lt;li&gt;CSS to render things pretty&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id="mypostmd"&gt;mypost.md&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Title: My post
-soundcloud: 0123456
-
-listen to this cool song!
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;The soundcloud metadata variable should be simply the id of the song you want the widget to load.&lt;/p&gt;
-&lt;h5 id="fragmentssoundcloudhtml-jinja-template"&gt;fragments/soundcloud.html - Jinja template&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;article.soundcloud&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="nf"&gt;defined&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;article.soundcloud&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nf"&gt;length&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;span class="x"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-&lt;span class="x"&gt;  function loadSoundCloud() {&lt;/span&gt;
-&lt;span class="x"&gt;    document.getElementById(&amp;#39;soundcloud&amp;#39;).innerHTML = &amp;quot;&amp;lt;iframe name=&amp;#39;soundcloud2&amp;#39; width=&amp;#39;100%&amp;#39; height=&amp;#39;122px&amp;#39; scrolling=&amp;#39;no&amp;#39; frameborder=&amp;#39;no&amp;#39; src=&amp;#39;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/&lt;/span&gt;
-&lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;article.soundcloud&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt; &amp;amp;amp;color=ff5500&amp;amp;amp;auto_play=false&amp;amp;amp;hide_related=true&amp;amp;amp;show_comments=false&amp;amp;amp;show_user=false&amp;amp;amp;show_reposts=false&amp;#39;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;quot;&lt;/span&gt;
-&lt;span class="x"&gt;  }&lt;/span&gt;
-&lt;span class="x"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span class="x"&gt;&amp;lt;div markdown id=&amp;quot;soundcloud&amp;quot; onclick=&amp;quot;loadSoundCloud()&amp;quot;&amp;gt;&lt;/span&gt;
-&lt;span class="x"&gt;  &amp;lt;div class=&amp;quot;soundcloud-loader&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class="x"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endif&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Above you can see the first line ensures that there is at least some soundcloud variable in the metadata.&lt;/p&gt;
-&lt;p&gt;Next, I add some javascript that adds a function to create an iframe with the proper url&lt;/p&gt;
-&lt;p&gt;The function replaces the innerHTML of the outer &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; that holds the placeholder image.&lt;/p&gt;
-&lt;p&gt;The added div, when clicked on runs the javascript function.&lt;/p&gt;
-&lt;h5 id="soundcloud-css"&gt;soundcloud css&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;soundcloud-loader&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kc"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;box-sizing&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;border-box&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;122&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;max-height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;122&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="kc"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;background-image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/images/soundcloud-loader.jpg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-  &lt;span class="k"&gt;background-position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;background-repeat&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;no-repeat&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;background-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;contain&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;cursor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;pointer&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;soundcloud-loader&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;hover&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt; &lt;span class="kc"&gt;solid&lt;/span&gt; &lt;span class="mh"&gt;#ff7256&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;You can see that I'm simply adding a background, a border, and making it a certain size. On hover, it highlights the border. In hindsight, I coudl have done this very differently, however I tried to start with a css only method, but upon failure, I opted for the easiest next solution. &lt;/p&gt;
-&lt;h2 id="future-updates"&gt;Future updates&lt;/h2&gt;
-&lt;p&gt;I plan to write a plugin that allows me to place custom tag inside my content to put the soundcloud widget where I please in the document. At the moment, it always appears in the same place: the end of the content.&lt;/p&gt;
-&lt;p&gt;I also hope to find a way to do with without js since, if it can be done, it should, to benefit users who have js turned off. However I don't know what would happen if you load the widget without js. So I'm merely speculating about its worth.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-04-adding-soundloud-widget-to-pelican-using-jinja.html</guid></item></channel></rss>
+&lt;p&gt;I'm pretty happy with this one. With a simple abstraction of content, and a relatively low overhead addition of process, I was able to knock off about 20k+ in bloat by only serving the css that's required.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html</guid></item></channel></rss>
