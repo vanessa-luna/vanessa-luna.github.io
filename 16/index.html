@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Daily | Vanessa & Luna</title>
+	<title>Posts | Vanessa & Luna</title>
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -18,8 +18,26 @@
 		ga('create', 'UA-100867520-1', 'auto');
 		ga('send', 'pageview');
 </script>
-	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/article.min.css?790838c1">
-	
+	<link rel="stylesheet" href="https://vanessa-luna.github.io/theme/css/index.min.css?03e70731">
+    <script>
+      function prettyDate(time) {
+        var date = new Date((time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")),
+            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400), y = date.getFullYear(), m = date.getMonth()+1, d = date.getDate();
+        if (isNaN(dd) || dd < 0 || dd >= 31)
+            return (y.toString()+'-'+((m<10) ? '0'+m.toString() : m.toString())+'-'+((d<10) ? '0'+d.toString() : d.toString()));
+        var r = ((dd == 0 && "Today") || (dd == 1 && "Yesterday") || (dd < 7 && dd + " days") || (dd < 31 && ( (dd < 14 && "1 week") || (dd < 21 && "2 weeks") || (dd < 28 && "3 weeks") || (dd < 25 && "4 weeks") ) ) );
+        if (dd > 7 && dd % 7) r += " & " + dd % 7 + " days"
+        return r;
+      }
+      document.addEventListener("DOMContentLoaded", function () { updateTimes(); setInterval(updateTimes, 60000);})
+      function updateTimes() {
+        var times = document.querySelectorAll("time");
+        for (var i = 0; i < times.length; i++) {
+          var s = prettyDate(times[i].getAttribute("datetime"));
+          if (s) times[i].innerHTML = s
+        }
+      }
+    </script>	
     <script type="text/javascript">
       function gh(s) { return parseInt(s.replace(/.+x/, '')) }
       var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
@@ -144,16 +162,41 @@
 		</nav>
 	</div>
 	<div class="content">
- <div class="min-height-full pad-content">
-	<div class="post">
-		<h1 class="post-title">Daily</h1>
-		<span class="post-date">drawings ~ 2017-04-18</span>
-		<br><br>
-
-		<p><img src="https://res.cloudinary.com/vanessa-luna/image/upload/images/media/stay-go.jpg" class="postimg"></p>
-<p>I drew this a long time ago. No date. It is still apropriate to me today.</p>
-
-	</div>
+ 	<div class="index pad-content">
+		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2015-10-25-luna-umbra.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2015-10-25 00:00:00-04:00 title="2015-10-25">2015-10-25</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2015-10-25-luna-umbra.html">Luna Inanis Umbra</a>
+				</h1>
+				<p>
+					<p>I suppose my new identifier found me. It's not letting go. Apparently I shall now be known as <code>Luna Inanis Umbra</code>. While purging some of my old things I came across a notebook in which I wrote:</p>
+<blockquote>
+<p>I am not swayed by the 'sun'. Everyone is too afraid to stop …</p></blockquote>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2015-10-25-luna-umbra.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2015-10-07-finding-the-girl-in-the-reflection.html">
+					<div class='post-meta'><div class="inner-meta box">
+						writing<br>
+						<time class="post-date" datetime=2015-10-07 00:00:00-04:00 title="2015-10-07">2015-10-07</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2015-10-07-finding-the-girl-in-the-reflection.html">Finding the girl in the reflection</a>
+				</h1>
+				<p>
+					<p>A moment glimpsed in the slider door to the balcony of my sixth floor apartment. A girl blocked my view. She was on the phone with a friend who had just moved 600 miles away. It was one o'clock in the morning. She was pacing, brought out of bed by …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2015-10-07-finding-the-girl-in-the-reflection.html">continue »</a>
+				</div>
+			</div>
+		</div>
 
 
 
@@ -163,289 +206,43 @@
 
 
       <div class="pagination">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="pagination-item">
-    <a class="box" href="/posts/2017-04-25-cockpit-light-update.html">
+    <a class="box" href="/15/">
         <span class="newer">Newer</span>
     </a>
 </div>
 
 
-        <span class="pagination-spacer"></span>
+        <div class="pagination-list">
+          <a class='box ' href="/">1</a>
+          <a class='box ' href="/2/">2</a>
+          <a class='box ' href="/3/">3</a>
+          <a class='box ' href="/4/">4</a>
+          <a class='box ' href="/5/">5</a>
+          <a class='box ' href="/6/">6</a>
+          <a class='box ' href="/7/">7</a>
+          <a class='box ' href="/8/">8</a>
+          <a class='box ' href="/9/">9</a>
+          <a class='box ' href="/10/">10</a>
+          <a class='box ' href="/11/">11</a>
+          <a class='box ' href="/12/">12</a>
+          <a class='box ' href="/13/">13</a>
+          <a class='box ' href="/14/">14</a>
+          <a class='box ' href="/15/">15</a>
+          <a class='box current-page' href="/16/">16</a>
+        </div>
 
         <div class="pagination-item">
-    <a class="box" href="/posts/2017-04-06-new-cockpit-light.html">
-        <span class="older">Older</span>
-    </a>
+    <span class="empty-box older"></span>
 </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
-<script>
-hcb_user = {
-    no_comments_msg: 'Be the first to leave a comment',
-    // submit form
-    comments_header : 'Comments',
-    name_label : 'Name (optional)',
-    email_label:'Email (optional)',
-    website_label:'Website (optional)',
-    content_label: 'Message',
-    submit : 'Submit',
-    add:'Leave a comment',
-    again: 'Post another comment',
-    subscribe:'subscribe (email updates)',
-    // user actions
-    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
-    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
-    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
-    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
-    // comment body
-    said:'',
-    anonymous:'anon',
-    mod_label:'(owner)',
-    // dates
-    days_ago:'days',
-    hours_ago:'hours',
-    minutes_ago:'mins',
-    within_the_last_minute:'<1 min',
-    // comment actions
-    reply:"<i class='fa fa-reply'></i> reply",
-    flag:"<i class='fa fa-flag-filled'></i> flag",
-    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
-    are_you_sure:'Really flag this comment as inappropriate?',
-    // pagination
-    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
-    showing:'comments',
-    to:'-',
-    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
-
-    msg_thankyou:'<span class="success-span">You left a comment!</span>',
-    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
-    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
-
-    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
-    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
-    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
-    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
-    err_denied:'<span class="success">Your comment was not accepted.</span>',
-
-    //SETTINGS
-    MAX_CHARS: 8192,
-    PAGE:"posts/2017-04-18-daily-struggle.html",
-    RELATIVE_DATES:true
-};
-</script>
-<script type="text/javascript" id="hcb"> /*<!--*/
-    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-<noscript>
-    <style>#HCB_comment_box { display:none;}</style>
-    <div>
-        <h3>Comments</h3>
-        <p class="warning-block">Enable Javascript to view or write comments</p>
-    </div>
-</noscript>
-</div>
+      </div>	</div>
         <div class="footer">
             <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
-            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna <i class="fa fa-star"></i> <a href="https://vanessa-luna.github.io/feed/rss.xml"><i class='fa fa-rss'></i> RSS</a>
+
             <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
         </div>
 	</div>
