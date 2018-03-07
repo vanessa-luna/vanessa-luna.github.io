@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>https://vanessa-luna.github.io/</link><description></description><lastBuildDate>Wed, 14 Feb 2018 00:00:00 -0500</lastBuildDate><item><title>Becoming code again?</title><link>https://vanessa-luna.github.io/posts/2018-02-14-becoming-code.html</link><description>&lt;p&gt;Alright, so in getting sucked into my old support group again, I have added responsibilities to my plate instead of removing them. Ugh. What am I doing?!?&lt;/p&gt;
+<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>https://vanessa-luna.github.io/</link><description></description><lastBuildDate>Mon, 26 Feb 2018 00:00:00 -0500</lastBuildDate><item><title>Banner Comments +</title><link>https://vanessa-luna.github.io/posts/2018-02-26-bcp.html</link><description>&lt;p&gt;So, in style of getting back into code, I made an extension for Visual Studio Code. Well I rewrote it.&lt;/p&gt;
+&lt;p&gt;It is an exentions which allows you to convert text into ASCII fonts! &lt;/p&gt;
+&lt;p&gt;I use these kinds of fonts in large comments to help segment my code for easy parsing. I spent a couple days tweaking and trying to get into better commit and versioning habits. Documenting was fun too. &lt;/p&gt;
+&lt;p&gt;Check it out here: https://marketplace.visualstudio.com/items?itemName=lunarlimbo.banner-comments-plus&lt;/p&gt;
+&lt;h3 id="examples"&gt;Examples:&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/vanessa-luna/banner-comments-plus/raw/master/images/apply.gif"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/vanessa-luna/banner-comments-plus/raw/master/images/applyFromConfig.gif"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Mon, 26 Feb 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2018-02-26:/posts/2018-02-26-bcp.html</guid></item><item><title>Becoming code again?</title><link>https://vanessa-luna.github.io/posts/2018-02-14-becoming-code.html</link><description>&lt;p&gt;Alright, so in getting sucked into my old support group again, I have added responsibilities to my plate instead of removing them. Ugh. What am I doing?!?&lt;/p&gt;
 &lt;p&gt;Well it's not so bad. I guess it makes sense I would return despite my distance because I am alive. So how does this relate to coding?&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I spent about three days hack and slashing some html/css/js to revitalize the website for the support group&lt;/p&gt;
@@ -343,97 +349,4 @@
 &lt;p&gt;I parse out the value of the key using js function replace since I cannot do this kind of string manipulation in Jinja.&lt;/p&gt;
 &lt;p&gt;At the bottom I build the URL using the appropriate settings from the Pelican settings file, and thumbnailer options.&lt;/p&gt;
 &lt;h4 id="finally"&gt;Finally&lt;/h4&gt;
-&lt;p&gt;I could use this function anywhere, but it's currently only being used by the background code. I will eventually place it elsewhere but I need to stop focusing on this and move on. I have to go north!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-02-dynamic-image-sizes.html</guid></item><item><title>Using WebAssets in Pelican to serve small css files</title><link>https://vanessa-luna.github.io/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html</link><description>&lt;p&gt;I cared a lot about mobile bandwidth usage. One of the things I focused on was condensing my css as much as possible.
-&lt;/p&gt;
-&lt;h2 id="webassets"&gt;WebAssets&lt;/h2&gt;
-&lt;p&gt;This is a cool Python tool to help manage assets in your web projects. Lol. Some made a simple &lt;a class="internal" href="(https://github.com/getpelican/pelican-plugins/tree/master/assets)"&gt;plugin for Pelican&lt;/a&gt; to integrate it into the system&lt;/p&gt;
-&lt;p&gt;Using modular css files and webassets, I can serve only the css styles that are required per page, without dumping all css selectors on every page.&lt;/p&gt;
-&lt;p&gt;Bear with me on this one.&lt;/p&gt;
-&lt;h5 id="pelican-settings-file"&gt;Pelican settings file&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;plugins&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-
-&lt;span class="n"&gt;ASSET_SOURCE_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;src&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;helpers&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;I tell the plugin which paths to look into for files I will be using later.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/base.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/fragments/sidebar.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;ASSET_CSS_CONTENT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/fragments/content.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/fragments/syntax.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;ASSET_CSS_PAGINATED&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/fragments/pagination.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;ASSET_CSS_COMMENTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/fragments/comments.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;ASSET_CSS_GALLERY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;fotorama/fotorama.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/fragments/gallery.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Here I am creating some reusable, easily referenced lists containing paths to the files I will bundle together&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ASSET_BUNDLES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-base&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/base.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;})&lt;/span&gt;
-
-    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-archives&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/archives.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/archives.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-
-    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-article&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;ASSET_CSS_CONTENT&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_PAGINATED&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_COMMENTS&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/article.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/article.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-
-        &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-fragment-gallery&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-            &lt;span class="n"&gt;ASSET_CSS_GALLERY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-            &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/fragments/gallery-fragment.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-
-    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-categories&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/categories.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/categories.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-
-    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-category&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;ASSET_CSS_CONTENT&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_PAGINATED&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/index.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/category.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-
-    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-index&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;ASSET_CSS_CONTENT&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_PAGINATED&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/index.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/index.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-
-    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-page&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/page.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/page.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-
-        &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css-gallery&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-            &lt;span class="n"&gt;ASSET_CSS_BASE&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ASSET_CSS_GALLERY&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css/pages/gallery.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-            &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;css/pages/gallery.min.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;filters&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yui_css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-
-    &lt;span class="p"&gt;,(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;js-gallery&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;jquery/jquery.min.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;fotorama/fotorama.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;js/gallery.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;The &lt;code&gt;ASSETS&lt;/code&gt; is the fun part. It accepts a Tuple of three values &lt;code&gt;(name, files, options)&lt;/code&gt; I won't go into all the details of using the plugin, but you should be able to discern how I split up my css code and only included what was necessary.&lt;/p&gt;
-&lt;p&gt;I am using font awesome for some of my icons. I may convert them to images at some point, but I did only include the css class that I needed instead of the entire library.&lt;/p&gt;
-&lt;p&gt;The biggest culprits here for filesize are of course: jquery and fotorama. I want to change lightbox/gallery library but it's turning out to be a much harder problem than I hoped for.&lt;/p&gt;
-&lt;h5 id="basehtml-jinja-template-file"&gt;base.html - Jinja template file&lt;/h5&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;...&lt;/span&gt;
-&lt;span class="x"&gt;    &amp;lt;head&amp;gt;&lt;/span&gt;
-&lt;span class="x"&gt;      &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt; &lt;span class="nv"&gt;assets&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;span class="x"&gt;      &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endblock&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;span class="x"&gt;    &amp;lt;/head&amp;gt;&lt;/span&gt;
-&lt;span class="x"&gt;...&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Above, not all is included, but what is important is defining a block I can use to put the assets inside the head.&lt;/p&gt;
-&lt;p&gt;Inside of any page that extends base.html I can put this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt; &lt;span class="nv"&gt;assets&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;assets&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;css-index&amp;quot;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;span class="x"&gt;    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;ASSET_URL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&amp;gt;&lt;/span&gt;
-&lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endassets&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endblock&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Thus allowing me to reference the proper WebAssets bundle within the relevant file.&lt;/p&gt;
-&lt;h4 id="finally"&gt;Finally&lt;/h4&gt;
-&lt;p&gt;I'm pretty happy with this one. With a simple abstraction of content, and a relatively low overhead addition of process, I was able to knock off about 20k+ in bloat by only serving the css that's required.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html</guid></item></channel></rss>
+&lt;p&gt;I could use this function anywhere, but it's currently only being used by the background code. I will eventually place it elsewhere but I need to stop focusing on this and move on. I have to go north!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.github.io,2017-05-12:/posts/2017-05-12-02-dynamic-image-sizes.html</guid></item></channel></rss>
