@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
+    <link rel=icon href=/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
 
@@ -22,8 +22,11 @@
     <script>
       function prettyDate(time) {
         var date = new Date((time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")),
-            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400), y = date.getFullYear(), m = date.getMonth()+1, d = date.getDate();
-        if (isNaN(dd) || dd < 0 || dd >= 31)
+            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400),
+            y = date.getFullYear(), 
+            m = date.getMonth()+1, 
+            d = date.getDate();
+        if (isNaN(dd) || dd < 0 || dd >= 28)
             return (y.toString()+'-'+((m<10) ? '0'+m.toString() : m.toString())+'-'+((d<10) ? '0'+d.toString() : d.toString()));
         var r = ((dd == 0 && "Today") || (dd == 1 && "Yesterday") || (dd < 7 && dd + " days") || (dd < 31 && ( (dd < 14 && "1 week") || (dd < 21 && "2 weeks") || (dd < 28 && "3 weeks") || (dd < 25 && "4 weeks") ) ) );
         if (dd > 7 && dd % 7) r += " & " + dd % 7 + " days"
@@ -51,12 +54,12 @@
           curSize.abs = Math.abs(h - curSize.h);
           if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
         }
-        return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
       }
     </script></head>
 <body>
 	<div class="sidebar">
-		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
 			<script type="text/javascript">
 			    document.addEventListener("DOMContentLoaded", function (e) {
@@ -71,7 +74,7 @@
 		<div class="headline">
 			<a id="secret" href='/s' tabindex="-1"></a>
 			<a id="home" href="/">
-				<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
 				<h1> Inanis &#xe80a; Umbra</h1>
 			</a>
 			<p class="subtitle">Within the shadows lies the honesty we seek yet fear the most. Oversharing &#xe813;</p>

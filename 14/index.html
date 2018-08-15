@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
+    <link rel=icon href=/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
 
@@ -22,8 +22,11 @@
     <script>
       function prettyDate(time) {
         var date = new Date((time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")),
-            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400), y = date.getFullYear(), m = date.getMonth()+1, d = date.getDate();
-        if (isNaN(dd) || dd < 0 || dd >= 31)
+            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400),
+            y = date.getFullYear(), 
+            m = date.getMonth()+1, 
+            d = date.getDate();
+        if (isNaN(dd) || dd < 0 || dd >= 28)
             return (y.toString()+'-'+((m<10) ? '0'+m.toString() : m.toString())+'-'+((d<10) ? '0'+d.toString() : d.toString()));
         var r = ((dd == 0 && "Today") || (dd == 1 && "Yesterday") || (dd < 7 && dd + " days") || (dd < 31 && ( (dd < 14 && "1 week") || (dd < 21 && "2 weeks") || (dd < 28 && "3 weeks") || (dd < 25 && "4 weeks") ) ) );
         if (dd > 7 && dd % 7) r += " & " + dd % 7 + " days"
@@ -50,13 +53,13 @@
           curSize.abs = Math.abs(h - curSize.h);
           if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
         }
-        return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
       }
     </script>
 </head>
 <body>
 	<div class="sidebar">
-		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
 			<script type="text/javascript">
 			    document.addEventListener("DOMContentLoaded", function (e) {
@@ -71,7 +74,7 @@
 		<div class="headline">
 			<a id="secret" href='/s' tabindex="-1"></a>
 			<a id="home" href="/">
-				<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
 				<h1>Vanessa &#xe80a; Luna</h1>
 			</a>
 			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
@@ -164,6 +167,92 @@
 	<div class="content">
  	<div class="index pad-content">
 		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-06-14-leaving-maryland.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-06-14 00:00:00-04:00 title="2017-06-14">2017-06-14</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-06-14-leaving-maryland.html">My time in Elkton MD</a>
+				</h1>
+				<p>
+					<p>So I guess I'm beginning to share where I am now. Getting tiresome to try to hide it. And you may also notice that I backdate posts to the day things happen, rather than the day I write. Regardless.</p>
+<p>Holy heck was my time in Maryland awesome, affecting, powerful.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-06-14-leaving-maryland.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-06-10-90-days.html">
+					<div class='post-meta'><div class="inner-meta box">
+						vandwelling<br>
+						<time class="post-date" datetime=2017-06-10 00:00:00-04:00 title="2017-06-10">2017-06-10</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-06-10-90-days.html">90 days in Vanessa.</a>
+				</h1>
+				<p>
+					<p>I have been on the road for 90 days in Vanessa! I wanted to try to write some words about the experience from this context.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-06-10-90-days.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-06-10-surprise-visit.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-06-10 00:00:00-04:00 title="2017-06-10">2017-06-10</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-06-10-surprise-visit.html">Surprise visit from a new friend</a>
+				</h1>
+				<p>
+					<p>I have been staying with a friend of mine in MD, whom I met at a courthouse in MA, who lived in NH, from two years ago. This afternoon I got a text from a new friend I met earlier this week saying she was in town.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-06-10-surprise-visit.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-06-05-baltimore-md.html">
+					<div class='post-meta'><div class="inner-meta box">
+						<i class="fa fa-picture"></i>
+						chronograph<br>
+						<time class="post-date" datetime=2017-06-05 00:00:00-04:00 title="2017-06-05">2017-06-05</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-06-05-baltimore-md.html">Baltimore MD with a new friend</a>
+				</h1>
+				<p>
+					<p>Every day is a thing now huh. Every day is, exciting. Every day I feel better and better. I spent two days in Baltimore MD with a new friend. Someone I met on a social media site purely for the sake of hanging out with another trans person. I am so happy this worked out.</p>
+<p>Yesterday, we got sushi, and I made a gaff for them. Tonight we went for a boat ride in the bay, walked up a hill as the sun's light faded, then walked all the way back to their place, stopping for a beer.
+
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-06-05-baltimore-md.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-06-02-park-playing-introductions.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-06-02 00:00:00-04:00 title="2017-06-02">2017-06-02</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-06-02-park-playing-introductions.html">Another violin-in-park conversation</a>
+				</h1>
+				<p>
+					<p>After finally getting my ass back on the road. I decided to stop in a nearby city back to Richmond for a rest and violin time in a park.</p>
+<p>After a nap, I walked out to the paved path at the edge of the small river and found a bench.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-06-02-park-playing-introductions.html">continue »</a>
+				</div>
+			</div>
 			<div class="post">
 				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-06-01-virginia-mountains.html">
 					<div class='post-meta'><div class="inner-meta box">
@@ -300,87 +389,6 @@
 				</p>
 				<div style="text-align:right;">
 					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-23-learning-lessons.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-21-alcohol-stove-purchase.html">
-					<div class='post-meta'><div class="inner-meta box">
-						chronograph<br>
-						<time class="post-date" datetime=2017-05-21 00:00:00-04:00 title="2017-05-21">2017-05-21</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-21-alcohol-stove-purchase.html">Buying an alcohol stove for my friend through craigslist</a>
-				</h1>
-				<p>
-					<p>I have a friend who also lives in a van. She asked if I could buy an alcohol stove for her she found on craigslist that was on the way for me. I obliged since it was only 2 hours out the way of a total 8 hour trip.
-
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-21-alcohol-stove-purchase.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-19-playing-on-the-pier.html">
-					<div class='post-meta'><div class="inner-meta box">
-						<i class="fa fa-picture"></i>
-						chronograph<br>
-						<time class="post-date" datetime=2017-05-19 00:00:00-04:00 title="2017-05-19">2017-05-19</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-19-playing-on-the-pier.html">Playing my violin on the pier</a>
-				</h1>
-				<p>
-					<p>Today, I left my comfort zone to head north. I have a craiglist sale on Sunday I need to get to. As I drove mindlessly, I was struck by the idea to DO something, instead of simply travel. My exhaustion can be beat with interesting stuff right?</p>
-<p>So I opted …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-19-playing-on-the-pier.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-17-minimizing-font-size.html">
-					<div class='post-meta'><div class="inner-meta box">
-						web-dev<br>
-						<time class="post-date" datetime=2017-05-17 00:00:00-04:00 title="2017-05-17">2017-05-17</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-17-minimizing-font-size.html">Minimizing icon font size in Pelican</a>
-				</h1>
-				<p>
-					<p>Looking at my assets required for this site, I knew FontAwesome was taking up bloat. I was including the whole font! But I'm using a small portion. It consumed 76kb! So I searched for how to make it smaller.</p>
-<p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-17-minimizing-font-size.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-17-people-watching.html">
-					<div class='post-meta'><div class="inner-meta box">
-						chronograph<br>
-						<time class="post-date" datetime=2017-05-17 00:00:00-04:00 title="2017-05-17">2017-05-17</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-17-people-watching.html">People watching in a coffee shop</a>
-				</h1>
-				<p>
-					<p>After a late night shower, I passed out naked in the bed. I was exhausted. I awoke before 4am. Gah, but why! I couldn't get back to sleep. So I packed up and headed to a coffee shop, only after helping two guys jump-start their car xD</p>
-<p>It's only 7 …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-17-people-watching.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-05-16-finally-clean.html">
-					<div class='post-meta'><div class="inner-meta box">
-						chronograph<br>
-						<time class="post-date" datetime=2017-05-16 00:00:00-04:00 title="2017-05-16">2017-05-16</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-05-16-finally-clean.html">Today was a clean day. Plus a small performance.</a>
-				</h1>
-				<p>
-					<p>Oh yes, laundry, shower, clean dishes. Prepping myself to get on the road for a couple days.</p>
-<p>I chose the best spot in a parking lot, with the best shade, protecting from the sun. This morning may have been the first time I woke up and forgot where I am …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-05-16-finally-clean.html">continue »</a>
 				</div>
 			</div>
 		</div>

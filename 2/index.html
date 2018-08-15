@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
+    <link rel=icon href=/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
 
@@ -22,8 +22,11 @@
     <script>
       function prettyDate(time) {
         var date = new Date((time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")),
-            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400), y = date.getFullYear(), m = date.getMonth()+1, d = date.getDate();
-        if (isNaN(dd) || dd < 0 || dd >= 31)
+            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400),
+            y = date.getFullYear(), 
+            m = date.getMonth()+1, 
+            d = date.getDate();
+        if (isNaN(dd) || dd < 0 || dd >= 28)
             return (y.toString()+'-'+((m<10) ? '0'+m.toString() : m.toString())+'-'+((d<10) ? '0'+d.toString() : d.toString()));
         var r = ((dd == 0 && "Today") || (dd == 1 && "Yesterday") || (dd < 7 && dd + " days") || (dd < 31 && ( (dd < 14 && "1 week") || (dd < 21 && "2 weeks") || (dd < 28 && "3 weeks") || (dd < 25 && "4 weeks") ) ) );
         if (dd > 7 && dd % 7) r += " & " + dd % 7 + " days"
@@ -50,13 +53,13 @@
           curSize.abs = Math.abs(h - curSize.h);
           if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
         }
-        return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
       }
     </script>
 </head>
 <body>
 	<div class="sidebar">
-		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
 			<script type="text/javascript">
 			    document.addEventListener("DOMContentLoaded", function (e) {
@@ -71,7 +74,7 @@
 		<div class="headline">
 			<a id="secret" href='/s' tabindex="-1"></a>
 			<a id="home" href="/">
-				<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
 				<h1>Vanessa &#xe80a; Luna</h1>
 			</a>
 			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
@@ -164,6 +167,86 @@
 	<div class="content">
  	<div class="index pad-content">
 		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-05-12-finasteride.html">
+					<div class='post-meta'><div class="inner-meta box">
+						transition<br>
+						<time class="post-date" datetime=2018-05-12 00:00:00-04:00 title="2018-05-12">2018-05-12</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-05-12-finasteride.html">Starting Finasteride</a>
+				</h1>
+				<p>
+					<p>Last night I begun taking Finasteride as my testosterone suppressant. The spironolactone had fucked with me enough that I put my foot down to try something else. While, this chemical is not very effective, it is a stepping stone to trying Lupron. So I will try to track my progress …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-05-12-finasteride.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-05-11-accident.html">
+					<div class='post-meta'><div class="inner-meta box">
+						vandwelling<br>
+						<time class="post-date" datetime=2018-05-11 00:00:00-04:00 title="2018-05-11">2018-05-11</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-05-11-accident.html">Vanessa got in a minor accident</a>
+				</h1>
+				<p>
+					<p>My mother was driving, we were shortly off the highway and a merging truck did not yield to us. My mother had no option to change lanes and the clipped my slider door and scraped toward the back. Very minor, but damn am I pissed.</p>
+<p>I have not been in …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-05-11-accident.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-05-11-this-will-destroy-you.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2018-05-11 00:00:00-04:00 title="2018-05-11">2018-05-11</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-05-11-this-will-destroy-you.html">I went to my first concert in a long time to see "This Will Destroy You"</a>
+				</h1>
+				<p>
+					<p>I was super jazzed. They were doing a tenth anniversary tour of their self title album. My favorite album of theirs alongside their first, Young Mountain. If they were playing their new stuff I would not have gone.</p>
+<p>But I went because this album has played an important roll in …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-05-11-this-will-destroy-you.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-05-08-gallery-update.html">
+					<div class='post-meta'><div class="inner-meta box">
+						web-dev<br>
+						<time class="post-date" datetime=2018-05-08 00:00:00-04:00 title="2018-05-08">2018-05-08</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-05-08-gallery-update.html">Gallery Page updated</a>
+				</h1>
+				<p>
+					<p>I finally updated the gallery page to be more friendly-ish...</p>
+<ul>
+<li>implemented lazyloading of images</li>
+<li>no-js collapse of albums</li>
+<li>handles no-js okay</li>
+</ul>
+<p>Now, it only loads 800kb to start, instead of 20mb+ yay</p>
+				</p>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-04-25-different-pains.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2018-04-25 00:00:00-04:00 title="2018-04-25">2018-04-25</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-04-25-different-pains.html">Sometimes I think my chronic pain is a lie, today I felt better about it</a>
+				</h1>
+				<p>
+					<p>A couple days ago I spent a couple hours picking up trash at my favorite outlook. I tried my very best to bend properly, go slow, and take care of my body. It was exhausting and I needed a nap after. Turns out, I also worked out a lot of …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-04-25-different-pains.html">continue »</a>
+				</div>
+			</div>
 			<div class="post">
 				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-04-23-empty.html">
 					<div class='post-meta'><div class="inner-meta box">
@@ -292,88 +375,6 @@
 				</p>
 				<div style="text-align:right;">
 					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-03-15-my-body-my-pain.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-03-12-my-transition.html">
-					<div class='post-meta'><div class="inner-meta box">
-						transition<br>
-						<time class="post-date" datetime=2018-03-12 00:00:00-04:00 title="2018-03-12">2018-03-12</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-03-12-my-transition.html">My Transition... so far</a>
-				</h1>
-				<p>
-					<p>I haven't been writing about transition specific things, and I figured I should. So here is an introduction to my transition...</p>
-<p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-03-12-my-transition.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-03-11-glimpes-of-fat.html">
-					<div class='post-meta'><div class="inner-meta box">
-						chronograph<br>
-						<time class="post-date" datetime=2018-03-11 00:00:00-05:00 title="2018-03-11">2018-03-11</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-03-11-glimpes-of-fat.html">I just had a glimpse of how I might gain weight</a>
-				</h1>
-				<p>
-					<p>I adore empathy. In turn this really means I love imagination. It is through using my imagination and wholly attempting to live it, I am able to create such empathy.</p>
-<p>Tonight, after gourging on food, I went out for another snack. As I was eating I realized my stomach was …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-03-11-glimpes-of-fat.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-03-09-mew-doodle.html">
-					<div class='post-meta'><div class="inner-meta box">
-						writing<br>
-						<time class="post-date" datetime=2018-03-09 00:00:00-05:00 title="2018-03-09">2018-03-09</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-03-09-mew-doodle.html">Mew, give it time.</a>
-				</h1>
-				<p>
-					<div class="highlight"><pre><span></span>Mew doodle do, I&#39;m thinking of you.
-I hope that today you&#39;re feeling less blue.
-Cause in a couple days everything will be alright!
-The clouds will clear and you will jeer, 
-FUCK THAT&#39;S SO BRIGHT!
-</pre></div>
-				</p>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-03-05-stuck.html">
-					<div class='post-meta'><div class="inner-meta box">
-						vandwelling<br>
-						<time class="post-date" datetime=2018-03-05 00:00:00-05:00 title="2018-03-05">2018-03-05</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-03-05-stuck.html">Stuck in MA</a>
-				</h1>
-				<p>
-					<p>So, due to many reasons, I have decided to stay in MA until the summer hits. I know. SADFACE. </p>
-<p>Now the plan is to focus on selling stuff, getting my kitchen built in Vanessa, and continuing my other plans as much as I can while still in MA. </p>
-<p>I do …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-03-05-stuck.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-03-01-drive-shaft-bearing.html">
-					<div class='post-meta'><div class="inner-meta box">
-						vandwelling<br>
-						<time class="post-date" datetime=2018-03-01 00:00:00-05:00 title="2018-03-01">2018-03-01</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-03-01-drive-shaft-bearing.html">Drive Shaft Bearing</a>
-				</h1>
-				<p>
-					<p>Sigh. so the Wheel bearings didn't fix the issue I was feeling. Turns out it was the center drive shaft bearing. </p>
-<p>I had made assumptions it would be the bearings, instead of investigating deeply. And while I needed to do that bearing anyway, I felt disappointed. Anyway, Vanessa is all …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-03-01-drive-shaft-bearing.html">continue »</a>
 				</div>
 			</div>
 		</div>

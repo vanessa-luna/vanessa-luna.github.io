@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
+    <link rel=icon href=/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
 
@@ -22,8 +22,11 @@
     <script>
       function prettyDate(time) {
         var date = new Date((time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")),
-            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400), y = date.getFullYear(), m = date.getMonth()+1, d = date.getDate();
-        if (isNaN(dd) || dd < 0 || dd >= 31)
+            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400),
+            y = date.getFullYear(), 
+            m = date.getMonth()+1, 
+            d = date.getDate();
+        if (isNaN(dd) || dd < 0 || dd >= 28)
             return (y.toString()+'-'+((m<10) ? '0'+m.toString() : m.toString())+'-'+((d<10) ? '0'+d.toString() : d.toString()));
         var r = ((dd == 0 && "Today") || (dd == 1 && "Yesterday") || (dd < 7 && dd + " days") || (dd < 31 && ( (dd < 14 && "1 week") || (dd < 21 && "2 weeks") || (dd < 28 && "3 weeks") || (dd < 25 && "4 weeks") ) ) );
         if (dd > 7 && dd % 7) r += " & " + dd % 7 + " days"
@@ -50,13 +53,13 @@
           curSize.abs = Math.abs(h - curSize.h);
           if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
         }
-        return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
       }
     </script>
 </head>
 <body>
 	<div class="sidebar">
-		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
 			<script type="text/javascript">
 			    document.addEventListener("DOMContentLoaded", function (e) {
@@ -71,7 +74,7 @@
 		<div class="headline">
 			<a id="secret" href='/s' tabindex="-1"></a>
 			<a id="home" href="/">
-				<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
 				<h1>Vanessa &#xe80a; Luna</h1>
 			</a>
 			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
@@ -165,6 +168,93 @@
  	<div class="index pad-content">
 		<div class="posts">
 			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-08-02-i-am-fine.html">
+					<div class='post-meta'><div class="inner-meta box">
+						recovery<br>
+						<time class="post-date" datetime=2017-08-02 00:00:00-04:00 title="2017-08-02">2017-08-02</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-08-02-i-am-fine.html">I am fine. When I am not fine I'm learning something</a>
+				</h1>
+				<p>
+					<p>This mantra is a choice. A reminder to never let the bad become who I am.</p>
+<p>I am fragile minded still. I can admit that. Something that stills tries to make me feel inadequate, unlovable. I have so many habits built on my past life weighing me down. Every time …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-08-02-i-am-fine.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-07-30-paying-attention-to-hormones.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-07-30 00:00:00-04:00 title="2017-07-30">2017-07-30</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-07-30-paying-attention-to-hormones.html">3y & 4m into Hormone Replacement Therapy</a>
+				</h1>
+				<p>
+					<p>My time with HRT has been volatile and blissful. A major shift seems to have occurred recently in changing to injections. Hopefully recalling my story will help me better understand my own history.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-07-30-paying-attention-to-hormones.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-07-24-injections-2.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-07-24 00:00:00-04:00 title="2017-07-24">2017-07-24</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-07-24-injections-2.html">I injected myself today!</a>
+				</h1>
+				<p>
+					<p>Yesterday I got my second shot of estrogen. I stuck myself with the needle!</p>
+<p>Only one more visit with the doctor before they will let me do this on my own. I cannot wait. I am so much happier dealing with my pain when I am not taking the pill three or more times a day that makes me hurt more.</p>
+<h1 id="_1">♡〜٩(☉ꇴ☉)۶〜♡</h1>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-07-24-injections-2.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-07-22-i-am-not-my-body.html">
+					<div class='post-meta'><div class="inner-meta box">
+						recovery<br>
+						<time class="post-date" datetime=2017-07-22 00:00:00-04:00 title="2017-07-22">2017-07-22</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-07-22-i-am-not-my-body.html">I am not my body. I am not my thoughts. I am something more than this.</a>
+				</h1>
+				<p>
+					<p>This may not seem intuitive. But I'd like to unpack this and describe how this has been valuable for me over the last few years.</p>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-07-22-i-am-not-my-body.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-07-18-poem-worthy.html">
+					<div class='post-meta'><div class="inner-meta box">
+						writing<br>
+						<time class="post-date" datetime=2017-07-18 00:00:00-04:00 title="2017-07-18">2017-07-18</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-07-18-poem-worthy.html">[poem] You are worthy.</a>
+				</h1>
+				<p>
+					<div class="highlight"><pre><span></span>You are worthy. You are strong. You can do it. All night long!
+
+In the shadows, through the night. The sun won&#39;t rest, always rising to fight.
+
+In harmony, it&#39;s tough to be, when you believe, you&#39;re unworthy.
+
+but I see you different. I see you whole …</pre></div>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-07-18-poem-worthy.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
 				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-07-18-questions-of-a-year.html">
 					<div class='post-meta'><div class="inner-meta box">
 						recovery<br>
@@ -208,7 +298,7 @@
 				</h1>
 				<p>
 					<p>A phrase I used at the beginning to help push myself to keep moving.</p>
-<p><img src="https://res.cloudinary.com/vanessa-luna/image/upload/images/media/get_on_with_it.jpg" class="postimg"></p>
+<p><img src="/images/media/get_on_with_it.jpg" class="postimg"></p>
 				</p>
 			</div>
 			<div class="post">
@@ -292,86 +382,6 @@
 					<p>Burlington is a familiar place for me. I went to see a friend before she left for California. And I got to see some of my favorite spots. I even went swimming! and got a sunburn :|</p>
 <p>Look inside for pics :)</p>
 				</p>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-07-04-firefly-accident.html">
-					<div class='post-meta'><div class="inner-meta box">
-						chronograph<br>
-						<time class="post-date" datetime=2017-07-04 00:00:00-04:00 title="2017-07-04">2017-07-04</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-07-04-firefly-accident.html">As in The Alchemist: Omens</a>
-				</h1>
-				<p>
-					<p>The universe does strange things. And I decided to act on the messages being shown to me. I ran into someone I hadn't seen for two years. And I may yet alter my plans for this trip.</p>
-<p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-07-04-firefly-accident.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-07-03-swimming.html">
-					<div class='post-meta'><div class="inner-meta box">
-						<i class="fa fa-picture"></i>
-						chronograph<br>
-						<time class="post-date" datetime=2017-07-03 00:00:00-04:00 title="2017-07-03">2017-07-03</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-07-03-swimming.html">I went swimming!</a>
-				</h1>
-				<p>
-					<p>In a new bathing suit. Something I picked and fits, mostly. This was a big deal for me. Around people I knew.</p>
-<p>I only got ten minutes in, and then needed to nap for a couple hours XD but I did it! Barrier broken :)</p>
-				</p>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-07-03-you-got-out.html">
-					<div class='post-meta'><div class="inner-meta box">
-						drawings<br>
-						<time class="post-date" datetime=2017-07-03 00:00:00-04:00 title="2017-07-03">2017-07-03</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-07-03-you-got-out.html">You Got Out.</a>
-				</h1>
-				<p>
-					<p>A new friend from the internet sent me the most lovely message which I had to condense into a new poster for myself. Thank you &lt;3</p>
-<p><img src="https://res.cloudinary.com/vanessa-luna/image/upload/images/media/you-got-out.jpg" class="postimg"></p>
-				</p>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-07-02-lake-rise.html">
-					<div class='post-meta'><div class="inner-meta box">
-						<i class="fa fa-picture"></i>
-						chronograph<br>
-						<time class="post-date" datetime=2017-07-02 00:00:00-04:00 title="2017-07-02">2017-07-02</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-07-02-lake-rise.html">Sunrise at a Lake in NH</a>
-				</h1>
-				<p>
-					<blockquote>
-<p>I slept very little, waking at 3am. After a walk I sit here watching the sun rise by the lake. So this post is about yesterday but marked for today. Shock!</p>
-</blockquote>
-<p>So I'm spending the weekend at a lake house which belongs to my high school ex's family. For the …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-07-02-lake-rise.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-07-01-this-nh-cop-was-nice.html">
-					<div class='post-meta'><div class="inner-meta box">
-						chronograph<br>
-						<time class="post-date" datetime=2017-07-01 00:00:00-04:00 title="2017-07-01">2017-07-01</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-07-01-this-nh-cop-was-nice.html">This NH cop was nice.</a>
-				</h1>
-				<p>
-					<p>I am on the phone with my friend, topless, not wearing a seatbelt.</p>
-<p>I take the exit off the highway to the small town area where I will be staying. A police cruiser sits off the side of the road, plainly visible. Feeling brash, I make no effort to hide the fact that I'm on the phone.</p>
-<p>Yes, he follows me and pulls me over xD</p>
-<p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-07-01-this-nh-cop-was-nice.html">continue »</a>
-				</div>
 			</div>
 		</div>
 

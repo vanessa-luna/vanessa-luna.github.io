@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
+    <link rel=icon href=/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
 
@@ -22,8 +22,11 @@
     <script>
       function prettyDate(time) {
         var date = new Date((time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")),
-            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400), y = date.getFullYear(), m = date.getMonth()+1, d = date.getDate();
-        if (isNaN(dd) || dd < 0 || dd >= 31)
+            dd = Math.floor((((new Date()).getTime() - date.getTime()) / 1000) / 86400),
+            y = date.getFullYear(), 
+            m = date.getMonth()+1, 
+            d = date.getDate();
+        if (isNaN(dd) || dd < 0 || dd >= 28)
             return (y.toString()+'-'+((m<10) ? '0'+m.toString() : m.toString())+'-'+((d<10) ? '0'+d.toString() : d.toString()));
         var r = ((dd == 0 && "Today") || (dd == 1 && "Yesterday") || (dd < 7 && dd + " days") || (dd < 31 && ( (dd < 14 && "1 week") || (dd < 21 && "2 weeks") || (dd < 28 && "3 weeks") || (dd < 25 && "4 weeks") ) ) );
         if (dd > 7 && dd % 7) r += " & " + dd % 7 + " days"
@@ -50,13 +53,13 @@
           curSize.abs = Math.abs(h - curSize.h);
           if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
         }
-        return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
+        return "url(https://vanessa-luna.github.io/thumb/" + chosenSize.name + "/" + filename;
       }
     </script>
 </head>
 <body>
 	<div class="sidebar">
-		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://vanessa-luna.github.io/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
 			<script type="text/javascript">
 			    document.addEventListener("DOMContentLoaded", function (e) {
@@ -71,7 +74,7 @@
 		<div class="headline">
 			<a id="secret" href='/s' tabindex="-1"></a>
 			<a id="home" href="/">
-				<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
+				<img class="profile-picture" src="https://vanessa-luna.github.io/images/favicon.png"></img>
 				<h1>Vanessa &#xe80a; Luna</h1>
 			</a>
 			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
@@ -164,6 +167,93 @@
 	<div class="content">
  	<div class="index pad-content">
 		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-02-14-endemic.html">
+					<div class='post-meta'><div class="inner-meta box">
+						writing<br>
+						<time class="post-date" datetime=2018-02-14 00:00:00-05:00 title="2018-02-14">2018-02-14</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-02-14-endemic.html">Endemic</a>
+				</h1>
+				<p>
+					<div class="highlight"><pre><span></span>I didn&#39;t have to shut my eyes 
+I didn&#39;t need to tell those lies
+I should have been more honest
+with myself
+
+Caught staring beneath that light
+Wishful thinking, I&#39;ll be alright
+I should have been more honest
+with myself
+
+My world may have gone a tumbling …</pre></div>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-02-14-endemic.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-02-14-v-day-drawings.html">
+					<div class='post-meta'><div class="inner-meta box">
+						drawings<br>
+						<time class="post-date" datetime=2018-02-14 00:00:00-05:00 title="2018-02-14">2018-02-14</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-02-14-v-day-drawings.html">I drew some pictures for two people today</a>
+				</h1>
+				<p>
+					<p><img src="/images/media/for_him.jpg" class="postimg"></p>
+<p><img src="/images/media/for_her.jpg" class="postimg"></p>
+				</p>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-02-02-what-to-do.html">
+					<div class='post-meta'><div class="inner-meta box">
+						recovery<br>
+						<time class="post-date" datetime=2018-02-02 00:00:00-05:00 title="2018-02-02">2018-02-02</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-02-02-what-to-do.html">I need to get away from the internet, what can I do?</a>
+				</h1>
+				<p>
+					<p>Hate how you spend all your time in front of computer screens or on the internet wasting time? Here is a list of ideas you can peruse for inspiration. Some of these are quite unconventional. Read carefully.</p>
+<ul>
+<li>pluck all your body hair with tweezers</li>
+<li>practice moving one eye but not …</li></ul>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-02-02-what-to-do.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-02-01-stand-up.html">
+					<div class='post-meta'><div class="inner-meta box">
+						recovery<br>
+						<time class="post-date" datetime=2018-02-01 00:00:00-05:00 title="2018-02-01">2018-02-01</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-02-01-stand-up.html">Are you a failure?</a>
+				</h1>
+				<p>
+					<p>Or do you simply believe the thought that you are a failure? If you HAVE failed in the past, can you not find ways to get better so you don't fail the same way again in the future? Failure is common but failure only comes knowing you didn't try your …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-02-01-stand-up.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-01-31-vanessa-back.html">
+					<div class='post-meta'><div class="inner-meta box">
+						vandwelling<br>
+						<time class="post-date" datetime=2018-01-31 00:00:00-05:00 title="2018-01-31">2018-01-31</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-01-31-vanessa-back.html">Vanessa is back <i class="fa fa-heart"></i></a>
+				</h1>
+				<p>
+					<p>Finally, I have Vanessa back. Things were fine. It was the belt tensioner. I should have seen this coming. I heard light squeaking in the belt the last month or two.</p>
+<p>Anyway. I got in and drove off. I parked, opened the door. But Vanessa kept beeping at me like …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-01-31-vanessa-back.html">continue »</a>
+				</div>
+			</div>
 			<div class="post">
 				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-01-26-thrown-belt.html">
 					<div class='post-meta'><div class="inner-meta box">
@@ -290,89 +380,6 @@
 				</p>
 				<div style="text-align:right;">
 					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-01-11-sick.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-01-05-a-social-month.html">
-					<div class='post-meta'><div class="inner-meta box">
-						vandwelling<br>
-						<time class="post-date" datetime=2018-01-05 00:00:00-05:00 title="2018-01-05">2018-01-05</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-01-05-a-social-month.html">A very social month. Today I part north.</a>
-				</h1>
-				<p>
-					<p>In the last 38 days, I was social 29 of them. This is a lot for me. I have never spent so much time and energy meeting new people in my life. Van life gave me this month. Van life gave me all the growth I experienced the month of …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-01-05-a-social-month.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-01-01-cdn.html">
-					<div class='post-meta'><div class="inner-meta box">
-						web-dev<br>
-						<time class="post-date" datetime=2018-01-01 00:00:00-05:00 title="2018-01-01">2018-01-01</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-01-01-cdn.html">Integrating a CDN for image hosting part 1</a>
-				</h1>
-				<p>
-					<p>Super excited. I recently created an account at Cloudinary.com for their free account.</p>
-<p>I really want to switch over to a CDN for image hosting because my git project should not host all those images.</p>
-<p>Here's what I accomplished:</p>
-<ul>
-<li>I created an account which gives me enough free space …</li></ul>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-01-01-cdn.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2018-01-01-new-year.html">
-					<div class='post-meta'><div class="inner-meta box">
-						chronograph<br>
-						<time class="post-date" datetime=2018-01-01 00:00:00-05:00 title="2018-01-01">2018-01-01</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2018-01-01-new-year.html">New Years 2018</a>
-				</h1>
-				<p>
-					<p>This new years eve was better than any other year of my life! What I love the most is how today is today, and while I am recalling yesterday for the sake of history, I am here today and that's it.</p>
-<p>Yesterday I played my violin and made $50. The …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2018-01-01-new-year.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-12-26-long-overdue.html">
-					<div class='post-meta'><div class="inner-meta box">
-						chronograph<br>
-						<time class="post-date" datetime=2017-12-26 00:00:00-05:00 title="2017-12-26">2017-12-26</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-12-26-long-overdue.html">A long overdue update. The world is a weird place</a>
-				</h1>
-				<p>
-					<p>I have been up to so much in the last two weeks. I have hardly had time to write about it all. I will recap in this post, but I am thankful I still managed to write more than what you'll see here in a different place.</p>
-<p>One of the …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-12-26-long-overdue.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.github.io/posts/2017-12-25.html">
-					<div class='post-meta'><div class="inner-meta box">
-						sun<br>
-						<time class="post-date" datetime=2017-12-25 00:00:00-05:00 title="2017-12-25">2017-12-25</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.github.io/posts/2017-12-25.html">St. Augustine Beach Pier [rise]</a>
-				</h1>
-				<p>
-					<p><img alt="" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/sun/IMG_20171225_063544609.jpg"></p>
-<h3 id="3-more">... +3 more</h3>
-<p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.github.io/posts/2017-12-25.html">continue »</a>
 				</div>
 			</div>
 		</div>
