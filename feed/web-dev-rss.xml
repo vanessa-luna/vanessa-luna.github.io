@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>http://vanessa-luna.life/</link><description></description><lastBuildDate>Tue, 08 May 2018 00:00:00 -0400</lastBuildDate><item><title>Gallery Page updated</title><link>http://vanessa-luna.life/posts/2018-05-08-gallery-update.html</link><description>&lt;p&gt;I finally updated the gallery page to be more friendly-ish...&lt;/p&gt;
+<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>http://vanessa-luna.life/</link><description></description><lastBuildDate>Mon, 17 Sep 2018 00:00:00 -0400</lastBuildDate><item><title>CSS Workaround to rename the "ungrouped" title in TreeTabs browser extension</title><link>http://vanessa-luna.life/posts/2018-09-17-treetabs-emoji-ungrouped.html</link><description>&lt;p&gt;I love TreeTabs. I've been using verticle nesting tabs for years. Because of Firefox's change to WebExtension crap I have had to switch to TreeTabs. It's pretty great, but I have some gripes and this post is how to fix one of the worst: How to rename the "ungrouped" group to something else.
+
+Yes, the groups toolbar default group cannot be deleted or renamed. Let's fix that.&lt;/p&gt;
+&lt;h2 id="how-to-change-it-in-firefox"&gt;How to change it in Firefox.&lt;/h2&gt;
+&lt;p&gt;Since I am giving you the code this should be easy. &lt;/p&gt;
+&lt;h3 id="1-find-and-open-your-usercontentcss-for-your-profile"&gt;1. Find and open your "UserContent.css" for your profile.&lt;/h3&gt;
+&lt;p&gt;a. Open &lt;code&gt;about:support&lt;/code&gt; in a new tab&lt;/p&gt;
+&lt;p&gt;b. Scroll to &lt;code&gt;Profile Folder&lt;/code&gt; (near the top)&lt;/p&gt;
+&lt;p&gt;c. Naviagate to that folder &lt;code&gt;+ chrome/userContent.css&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;On linux the full path looked like this for me: &lt;code&gt;~/.mozilla/firefox/unique.default/chrome/UserContent.css&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="2-find-the-unique-id-for-the-tree-tabs-plugin"&gt;2. Find the unique ID for the tree tabs plugin&lt;/h3&gt;
+&lt;p&gt;a. Open &lt;code&gt;about:debugging&lt;/code&gt; in a new tab&lt;/p&gt;
+&lt;p&gt;b. Scroll down to &lt;code&gt;TreeTabs&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;c. Copy the &lt;code&gt;Internal UUID&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="3-paste-this-into-your-usercontentcss-and-customize"&gt;3. Paste this into your UserContent.css and customize&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;/* TREE STYLES TABS EXTENSION */&lt;/span&gt;
+&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;-moz-document&lt;/span&gt; &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;moz-extension://&amp;lt;&amp;lt;UUID&amp;gt;&amp;gt;/sidebar.html&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c"&gt;/* CHANGE Ungrouped Tab Label */&lt;/span&gt;
+    &lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="nn"&gt;_gtetab_list&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="cp"&gt;!important&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="nn"&gt;_gtetab_list&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="nd"&gt;before&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;content&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\01F47B&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;REMEMBER!&lt;/p&gt;
+&lt;p&gt;Update the UUID with yours in the selector. And change the &lt;code&gt;::before&lt;/code&gt; content to whatever you wish. I chose a ghost emoji. &lt;/p&gt;
+&lt;h3 id="4-save-and-restart-firefox"&gt;4. Save and restart Firefox&lt;/h3&gt;
+&lt;p&gt;That is all you need to do to change the title of the Ungrouped group. Everything will look and work fine. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You'll also not I changed a couple other things, like the roration and font size. Another Post for that...&lt;/p&gt;
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Mon, 17 Sep 2018 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-09-17:/posts/2018-09-17-treetabs-emoji-ungrouped.html</guid></item><item><title>Gallery Page updated</title><link>http://vanessa-luna.life/posts/2018-05-08-gallery-update.html</link><description>&lt;p&gt;I finally updated the gallery page to be more friendly-ish...&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;implemented lazyloading of images&lt;/li&gt;
 &lt;li&gt;no-js collapse of albums&lt;/li&gt;
@@ -258,33 +292,4 @@
 &lt;li&gt;It's python! so allow yourself to create holder variables and run logic to make things easier if you have to.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Below is a Gist of it.&lt;/p&gt;
-&lt;script src="https://gist.github.com/vanessa-luna/7abfd80a6774b99ddbe71101e4b9cc92.js"&gt;&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Tue, 16 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2017-05-16:/posts/2017-05-16-pelicanconf.html</guid></item><item><title>Version 1 of this website</title><link>http://vanessa-luna.life/posts/2017-05-12-01-finishing-this-website.html</link><description>&lt;p&gt;I have put a lot of effort into making this website over the last two weeks. I spent most of my time working on it because I'm a little depressed and trying to avoid the real problem.&lt;/p&gt;
-&lt;p&gt;Here's some interesting tidbits about it.
-&lt;/p&gt;
-&lt;h2 id="pelican-static-site-generator"&gt;Pelican - Static Site generator&lt;/h2&gt;
-&lt;p&gt;I am using &lt;a class="external" href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; to generate this website. It allows me to write my posts using Markdown and apply a theme to it.&lt;/p&gt;
-&lt;p&gt;It's written in Python and the way it's setup is quite flexible. Allowing me to sorta chunk things around as I please. Thanks Python!&lt;/p&gt;
-&lt;p&gt;Main features:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Pretty good &lt;a class="external" href="https://docs.getpelican.com/"&gt;documentation&lt;/a&gt;. Some minor things missing but found through google.&lt;/li&gt;
-&lt;li&gt;&lt;a class="external" href="https://jinja.pocoo.org/"&gt;Jinja Templates&lt;/a&gt; are used for writing .html templates&lt;/li&gt;
-&lt;li&gt;Plenty of &lt;a class="external" href="https://www.pelicanthemes.com/"&gt;themes&lt;/a&gt; to get you started&lt;/li&gt;
-&lt;li&gt;A bunch of really helpful &lt;a class="external" href="https://github.com/getpelican/pelican-plugins"&gt;plugins&lt;/a&gt;. I am using 11 of them! some I modified myself.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="credits"&gt;credits&lt;/h3&gt;
-&lt;p&gt;I need to point out that the theme &lt;a class="external" href="http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/"&gt;tranquilpeak&lt;/a&gt; inspired much of this website... I mean, I kinda ripped it off. I mean, creative freedom! &lt;/p&gt;
-&lt;h2 id="fun-things-i-did"&gt;Fun things I did&lt;/h2&gt;
-&lt;p&gt;Being an ex-software-programmer, I have some old habits, and that learned behavior of refactor refactor refactor. Normally as a learning experience. Definitely in this case a learning experience. So here are some extra things I did that I didn't have to.&lt;/p&gt;
-&lt;p&gt;In the following posts I write about how I:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class="internal" href="http://vanessa-luna.life/posts/2017-05-12-02-dynamic-image-sizes.html"&gt;Served image sizes based on viewport height&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="internal" href="http://vanessa-luna.life/posts/2017-05-12-03-using-webassets-in-pelican-to-serve-the-smallest-css-files.html"&gt;Served the smallest css files I could muster&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="internal" href="http://vanessa-luna.life/posts/2017-05-12-04-adding-soundloud-widget-to-pelican-using-jinja.html"&gt;Adding SoundCloud widget using Jinja and Javascript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="internal" href="http://vanessa-luna.life/posts/2017-05-12-05-using-tables-in-markdown-in-pelican.html"&gt;Using Tables in Markdown with Pelican&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="background-images"&gt;Background images&lt;/h3&gt;
-&lt;p&gt;I just wanted to comment on how fun the background images are to me. Randomly chosen at runtime, the background-position is also chosen randomly. I felt like the ever changing background was a fun representation of how I shift all the time too.&lt;/p&gt;
-&lt;p&gt;If you want to see all of them, head on over to the gallery page and look for the background album :)&lt;/p&gt;
-&lt;p&gt;I should really do some updates to make sure the site doesn't look total shit if Javascript is turned off xD&lt;/p&gt;
-&lt;h2 id="shit-what-do-i-do-now"&gt;Shit what do I do now?&lt;/h2&gt;
-&lt;p&gt;Now that I have done enough to feel like it's presentable, I am supposed to slow down on development and amp up the content right? Sigh. Hard to let go of the incessant need to keep making it better and better. Sorry the image viewing isn't amazing yet.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 12 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2017-05-12:/posts/2017-05-12-01-finishing-this-website.html</guid></item></channel></rss>
+&lt;script src="https://gist.github.com/vanessa-luna/7abfd80a6774b99ddbe71101e4b9cc92.js"&gt;&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Tue, 16 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2017-05-16:/posts/2017-05-16-pelicanconf.html</guid></item></channel></rss>
