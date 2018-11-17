@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Priorities :: Avoidance | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/article.min.css?54f23859">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 26 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">Priorities :: Avoidance</h1>
+		<span class="post-date">recovery ~ 2018-11-16</span>
+		<br><br>
+
+		</p>
+<p>Priorities. This morning I am surrounded. Their chattering cackle drowning me in cacophony. The din begging me to answer the question: <em>Who are you?</em></p>
+<blockquote class="info-span" style="background-color:#fff; font-size:.8rem"> This post is specficially for me, without much concern for the position of others. This somehow feels different to me as I write this than other recovery posts. I hope there is still value for my readers through extrapolation</blockquote>
+
+<h5 id="dammit-why-does-it-always-boil-down-to-that-question_1"><em>Dammit, why does it always boil down to that question?</em></h5>
+<p>Who am I? Fuck. No one likes answering that question. Well some of us. And fine, I like the <em>idea</em> of answering it. Making the choice to be someone is a little too daunting.</p>
+<p>Priorities are a good way of determining who someone is. What do they care about? Why do they care about? What do they spend their time thinking about? What do they do with their time? All of those questions could be answered through the lense of priorities.</p>
+<p>Can we avoid answering this existential question and still determine our priorities? How would we do that? What other frames or lenses, or, as I like to say, windows can we add to this perspective to help us decide our priorities without exhausting ourselves into existential hell? Hopefully, I work it out by the end of this.</p>
+<h2 id="what-is-important-to-you">What is important to you?</h2>
+<p>I already know what is important to me, I choose not to fight for it.</p>
+<p>How do I know what is important to me? Feeling. Intuition. Dreams. Why do I know I am avoiding them? Because I sit on my phone allowing the habit loops of click after click create a barrier around me to protect me. A haze of moment to moment positivity which requires no effort. </p>
+<p>I have a dream of doing something meaninful for the transgender community. I want to give something powerful, big, and impact many lives. Ever since I knew I had to transition I felt a fire raging for me to ensure no one else experiences what I did. This is important to me. It is a priority. I can't simply do it though. This kind of dream takes building, steps. Unfortunately for me, the biggest challenge I have in getting there is conquering my body. I must find a way to live inside a human body, eat drink sleep and compensate for its failings. I suck at this right now. And so one priortiy exposes another. </p>
+<p>In following this path towards a huge goal like this, other ideas and smaller priorities pop up along the way. Because of this larger goal I can plug them in to ensure my smaller priorities also in some way bring me closer to the bigger goal. </p>
+<p>If I am to give back meaninfuly, I need to conquer my social anxiety. How will I do this? One way is for me to busk with my violin. Standing on the street playing music for strangers requires me to remain in my world thinking only of me while in the presence of others. If I am to give back I must be able to speak up for what I need given my limitations. One way to get better at that is to go on dates and spend time with new people always pushing my limits. I choose to draw out these other priorities to help me along the other. All points converging at some point in the future.</p>
+<h2 id="why-am-i-still-avoiding-my-priorities">Why am I still avoiding my priorities?</h2>
+<p>Lately I have been watching youtube and using reddit to an obscene amount, well, for my standards. Because I know I have all these things I want to do I feelt guilty and lightly ashamed when I use these services. </p>
+<p>I am writing this article because I desparately want to find my way back into inspiration and commitment. I hope by writing this down I find the outreached arm of my dreams and grab hold again. </p>
+<p>A quote I found suggested this idea:</p>
+<blockquote>
+<p>Don't say <code>I don't have time</code> say <code>It is not a priority</code></p>
+</blockquote>
+<p>Cool. Okay, so "I don't have time to do this thing" really means "I am not prioritizing this thing". I don't have time to make my bed really means making my bed is not a priority. If it was a priority you would find a way. But I can also look at this another way.</p>
+<p>I don't have time. Period. Life is short. Weeks fly by. Months are gone and next year is already here. I get to Jacksonville and feel releived to know I plan to spend 6 weeks here only to realize I have so much planned I cannot afford to rest. What the heck!? </p>
+<p>It is not a priority. I need to tell myself this, not in hoping to determine my priorities, but to remind myself of what NOT to do, because I already know them. I already know what my priorities are and I am getting bogged down by all the junk that means nothing to me. The habits that drain me of my life, that rob me of my goals. </p>
+<p>It feels to me, by framing these two phrases this way I am putting myself in the window of someone who <code>does</code> know know their priorities rather than always triyng to determine if they are. </p>
+<blockquote>
+<p>The price of anything is the amount of life you exchange for it</p>
+</blockquote>
+<h2 id="i-know-my-priorities">I know my priorities</h2>
+<ul>
+<li>Eat better and drink more</li>
+<li>Exercise and conquer my body's pain</li>
+<li>Get better at the violin</li>
+<li>Take care of and improve Vanessa</li>
+<li>Read books and craft things</li>
+<li>Conquer identity issues and anxieties</li>
+<li>Find the way I will give back to the trans community</li>
+</ul>
+<p>Everything I do must help me towards one of these goals. Otherwise what am I doing? There is no mystery for me. There is no hemming or hawing over what I want. I know. And I am going to do it. </p>
+<blockquote>
+<p>No such thing as spare time, <br>
+no such thing as free time,<br>
+no such thing as down time,<br>
+there is only life time.<br>
+Go.</p>
+</blockquote>
+
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2018-11-16-catching-up.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2018-11-11-finding-anger.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2018-11-16-priorities-part1.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>
