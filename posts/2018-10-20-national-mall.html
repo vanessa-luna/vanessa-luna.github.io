@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Walking the National Mall | Vanessa & Luna</title>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-100867520-1', 'auto');
+		ga('send', 'pageview');
+</script>
+	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/article.min.css?8fed74b7">
+	
+    <script type="text/javascript">
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{name:"huge", h:gh("?x1080")}, {name:"medium", h:gh("?x480")}, {name:"tiny", h:gh("?x144")}, {name:"large", h:gh("?x720")}, {name:"smaller", h:gh("?x240")}, {name:"small", h:gh("?x360")}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
+
+      function imgUrlByHeight(filename, h) {
+        var chosenSize = imageSizes[0]; //start at smallest size
+        for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
+          var curSize = imageSizes[i];
+          curSize.abs = Math.abs(h - curSize.h);
+          if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
+        }
+        return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
+      }
+    </script>
+</head>
+<body>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "backgrounds/" + (parseInt((Math.random() * 26 ))) + "cover.jpg)"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
+			</script>
+		</div>
+		<div class="headline">
+			<a id="secret" href='/s' tabindex="-1"></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
+				<h1>Vanessa &#xe80a; Luna</h1>
+			</a>
+			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
+		</div>
+		<nav class="menu">
+			<div class="menu-item ">
+				<a href="/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+							</script>
+							<i id="icon-Home" class="fa fa-flight"></i>
+						</div>
+						<span class='name'>Home</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/categories">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+							</script>
+							<i id="icon-Categories" class="fa fa-leaf"></i>
+						</div>
+						<span class='name'>Categories</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/archives/">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+							</script>
+							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+						</div>
+						<span class='name'>Archive</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/images">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+							</script>
+							<i id="icon-Gallery" class="fa fa-picture"></i>
+						</div>
+						<span class='name'>Gallery</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item spacer">
+			</div>
+			<div class="menu-item ">
+				<a href="/about">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+							</script>
+							<i id="icon-About" class="fa fa-dot-circled"></i>
+						</div>
+						<span class='name'>About</span>
+					</div>
+				</a>
+			</div>
+			<div class="menu-item ">
+				<a href="/contact">
+					<div class="menu-item-content">
+						<div class='icon'>
+							<script type="text/javascript">
+								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+							</script>
+							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+						</div>
+						<span class='name'>Contact</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<div class="content">
+ <div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">Walking the National Mall</h1>
+		<span class="post-date">chronograph ~ 2018-10-20</span>
+		<br><br>
+
+		<p>Today I walked all around the national mall. It was hard. It is big. And I was tired. </p>
+<p>I am backdating this quite far with regrets. But I do remember some things about it worth sharing.</p>
+<p></p>
+<h3 id="authoratative-power">authoratative power</h3>
+<p>Inside the Lincoln Memorial, a young child was beginning to make noise. Now this place was packed. At least a hundred people inside and on the steps the whole time. The sun was getting down and people were filed in trying to read and take their pictures. I glanced over to the child and saw a park ranger person lean over make a gesture and the child shut up immediately. I was impressed! </p>
+<p>So when I saw the man flaoting looking free I asked what he said to the child. The park ranger said nothing. He only put his finger to his lips and made eye contact. I was bewildered with delight. How adorable. </p>
+<p>The ranger claims sometimes all you need is someone other than the parent who likes like authoratitive to get a child to behave. The uniform, his stern look.</p>
+<h3 id="historical-context">historical context</h3>
+<p>I also remember thinking a lot about what good this all was. I really apprecitated learning the history. Context is queen right? And how little I know of the greater human context of this society and species. History used to have this vaneer on it. A false sense of distance. When truly, all the art I see is no different than the art I make only other than the time. Normal people being who they are compelled by their creativity made things which somehow survived sometimes for thousands of years. </p>
+<h3 id="dwarfed">dwarfed</h3>
+<p>Another thing I felt strongly was being dwarfed by the buildings. How large they are! I truly did not anticipate how small I would feel walking around it all. So many of the buildings are these huge stone monuments.</p>
+<p>Something about why they are built that way. What they represent. Why they should be built that way. </p>
+<p>I lightly pity those who get used to it. I am sure I would eventually if I lived there. </p>
+<h3 id="conclusion">conclusion</h3>
+<p>I hope I have more time in DC in the future to truly explore all the free stuff this place has to offer. I want to spend a week or more soaking it all in. With a purpose in mind. And to glean something valuable. I will be back. </p>
+<p>DC is also less militaristic than I thought it would be so I felt safer being there than expected.</p>
+
+
+<noscript>
+    <div class="warning-block">
+        Enable javascript to use the fancy gallery viewer.<br>
+        Instead, clicking an image will load the image in a new page.
+    </div>
+</noscript>
+<div class='album' id="national-mall">
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0449.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 0)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0449.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0450.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 1)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0450.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0451.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 2)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0451.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0452.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 3)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0452.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0453.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 4)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0453.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0454.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 5)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0454.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0455.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 6)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0455.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0456.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 7)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0456.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0458.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 8)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0458.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0460.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 9)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0460.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0462.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 10)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0462.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0465.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 11)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0465.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0466.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 12)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0466.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0467.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 13)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0467.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0468.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 14)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0468.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0469.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 15)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0469.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0471.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 16)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0471.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0472.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 17)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0472.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0473.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 18)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0473.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0476.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 19)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0476.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0477.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 20)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0477.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0478.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 21)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0478.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0479.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 22)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0479.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0480.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 23)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0480.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0481.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 24)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0481.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0483.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 25)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0483.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0484.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 26)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0484.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0485.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 27)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0485.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0487.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 28)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0487.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0488.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 29)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0488.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0489.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 30)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0489.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0490.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 31)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0490.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0491.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 32)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0491.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0492.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 33)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0492.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0493.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 34)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0493.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0495.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 35)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0495.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0496.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 36)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0496.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0497.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 37)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0497.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0500.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 38)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0500.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0501.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 39)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0501.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0504.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 40)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0504.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0505.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 41)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0505.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0506.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 42)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0506.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0509.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 43)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0509.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0510.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 44)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0510.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0512.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 45)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0512.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0513.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 46)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0513.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0514.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 47)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0514.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0515.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 48)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0515.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0516.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 49)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0516.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0517.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 50)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0517.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0518.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 51)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0518.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0519.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 52)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0519.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0523.JPG"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 53)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0523.JPG">
+        <noscript></a></noscript>
+    </div>
+    <div class='album-image'>
+        <noscript> <a href="https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/MOV_0482.mp4"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, 54)"
+          src="https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/MOV_0482.mp4">
+        <noscript></a></noscript>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/gallery-article.min.css?2a282a51">
+
+<script>
+    var items = []
+      items [0] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0449.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0449.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [1] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0450.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0450.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [2] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0451.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0451.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [3] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0452.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0452.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [4] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0453.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0453.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [5] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0454.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0454.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [6] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0455.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0455.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [7] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0456.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0456.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [8] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0458.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0458.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [9] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0460.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0460.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [10] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0462.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0462.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [11] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0465.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0465.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [12] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0466.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0466.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [13] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0467.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0467.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [14] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0468.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0468.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [15] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0469.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0469.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [16] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0471.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0471.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [17] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0472.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0472.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [18] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0473.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0473.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [19] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0476.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0476.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [20] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0477.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0477.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [21] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0478.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0478.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [22] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0479.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0479.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [23] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0480.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0480.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [24] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0481.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0481.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [25] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0483.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0483.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [26] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0484.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0484.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [27] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0485.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0485.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [28] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0487.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0487.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [29] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0488.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0488.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [30] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0489.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0489.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [31] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0490.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0490.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [32] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0491.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0491.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [33] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0492.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0492.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [34] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0493.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0493.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [35] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0495.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0495.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [36] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0496.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0496.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [37] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0497.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0497.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [38] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0500.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0500.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [39] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0501.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0501.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [40] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0504.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0504.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [41] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0505.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0505.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [42] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0506.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0506.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [43] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0509.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0509.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [44] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0510.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0510.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [45] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0512.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0512.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [46] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0513.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0513.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [47] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0514.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0514.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [48] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0515.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0515.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [49] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0516.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0516.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [50] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0517.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0517.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [51] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0518.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0518.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [52] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0519.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0519.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [53] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/DSC_0523.JPG', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/DSC_0523.JPG', doGetSlideDimensions: true, w: 300, h:200 }
+      items [54] = {
+        src: 'https://res.cloudinary.com/vanessa-luna/image/upload/images/national-mall/MOV_0482.mp4', msrc: 'https://res.cloudinary.com/vanessa-luna/image/upload/thumb/small/national-mall/MOV_0482.mp4', doGetSlideDimensions: true, w: 300, h:200 }
+</script>
+
+    <script type="text/javascript" src="https://vanessa-luna.life/theme/js/photoswipe.js?90d5a5ff"></script>
+    <script type="text/javascript" src="https://vanessa-luna.life/theme/js/photoswipe_ui.js?1a0dc471"></script>
+    <link rel="stylesheet" href="https://vanessa-luna.life/theme/css/fragments/photoswipe.min.css?a7796261">
+
+<style>
+    .pswp__top-bar {
+        width:inherit;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .pswp__counter { position: static; }
+    .pswp img { max-height: none; }
+</style>
+<script>
+    // call when you want to open the gallery
+    var photoswipe;
+    function initGallery(items, index) {
+        var options = {index: index, barsSize: {top:0, bottom:'auto'}, closeEl:false, captionEl: false, fullscreenEl: false, zoomEl: false, shareEl: false, counterEl: true, arrowEl: true, preloaderEl: true, tapToClose: true, tapToToggleControls: true, clickToCloseNonZoomable: false }
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        photoswipe = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        photoswipe.listen("gettingData", function(index, slide){
+            if (slide.doGetSlideDimensions) { setTimeout(function(){ getSlideDimensions(slide); } ,100); }
+        });
+        photoswipe.listen("imageLoadComplete", function(index, slide){ if (slide.doGetSlideDimensions) getSlideDimensions(slide); });
+        photoswipe.init();
+    }
+    // when image loads, tell photoswipe how big it is
+    function getSlideDimensions(slide) {
+        if (!slide.doGetSlideDimensions) return;
+        var img = new Image();
+        img.addEventListener('error', function(evt){ slide.doGetSlideDimensions = false; });
+        img.addEventListener('load', function(evt){
+            slide.doGetSlideDimensions = false;
+            slide.w = img.naturalWidth;
+            slide.h = img.naturalHeight;
+            photoswipe.updateSize(true);
+            photoswipe.invalidateCurrItems();
+        });
+        img.src = slide.src;
+    }
+</script>
+<div class=pswp aria-hidden=true role=dialog tabindex=-1><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close"title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"title=Share></button> <button class="pswp__button pswp__button--fs"title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left"title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right"title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div>
+	</div>
+
+
+
+
+
+
+
+
+      <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2018-10-27-volunteering.html">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+
+
+        <span class="pagination-spacer"></span>
+
+        <div class="pagination-item">
+    <a class="box" href="/posts/2018-10-19-set.html">
+        <span class="older">Older</span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
+
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"posts/2018-10-20-national-mall.html",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<noscript>
+    <style>#HCB_comment_box { display:none;}</style>
+    <div>
+        <h3>Comments</h3>
+        <p class="warning-block">Enable Javascript to view or write comments</p>
+    </div>
+</noscript>
+</div>
+        <div class="footer">
+            <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
+            <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
+            <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
+        </div>
+	</div>
+</body>
+</html>
