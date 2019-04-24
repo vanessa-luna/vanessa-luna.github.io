@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <noscript><style>.nojs { display:none; } </style></noscript>
 
 
 <script type="text/javascript">
@@ -18,9 +19,10 @@
 		ga('create', 'UA-100867520-1', 'auto');
 		ga('send', 'pageview');
 </script>
-	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/liner-gaff-page.min.css?8847006d">
+	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/liner-gaff-page.min.css?e9875bdc">
 </head>
 <body>
+	<input type="checkbox" id="theme">
 	<div class="content">
         <div class="liner-gaff-menu">
             <div class=""><a href="/linergaff"><div>LINER GAFF</div></a></div>
@@ -73,9 +75,9 @@
     <li>What is an inguinal tuck?
         <ul><li>An inguinal tuck is when you push your testicles back up into the inguinal canals and pull the rest of your genitalia back underneath your body. <a class="external" href="https://www.youtube.com/watch?v=dKMO-ZA7tTE" target="\_blank">This video</a> does a great job of explaining how to do an inguinal tuck.</li></ul></li>
     <li>Is tucking safe?
-        <ul><li>As I understand it, not much is known about the consequences of regular tucking. However, you are putting pressures on your genitals that are not meant to be. Tuck at your own risk! It potentially can cause serious issues.</li></ul></li>
+        <ul><li>There is at least anedotal evidence suggesting inguinal tucking can cause an inguinal hernia. This can be very painful. One doctor on Reddit suggested as many as 20/1000 patients have it. The risk of this decreases the smaller your testicles are, which shrink the longer you are Estrogen dominant. Tuck at your own risk! It potentially can cause serious issues.</li></ul></li>
     <li>Does tucking hurt?
-        <ul><li>If you are new to tucking, you will likely experience some discomfort from placing your testicles in the inguinal canals and because you are putting pressure on your genitals. Most people get accustomed to this after a short period of time.</li></ul></li>
+        <ul><li>If you are new to tucking, you will likely experience some discomfort from placing your testicles in the inguinal canals and because you are putting pressure on your genitals. Most people get accustomed to this after a short period of time. The smaller your testicles, the less like you will experience pain.</li></ul></li>
     <li>Is the Liner Gaff really pain free?
         <ul><li>Yes, however there are occasions where you might get pinching in the back like in the DIY method. This is something I am working on resolving.</li></ul></li>
     <li>How does the comfort band work?
@@ -157,15 +159,14 @@
 <div class="measurement-guide-text" id="text-instructions">
 <!-- <div class="flex"> -->
     <h4>Text Instructions: <span class="warning-span">GRAPHIC</span></h4>
-
-    <input id="img-checkbox" type="checkbox"/>
-    <span class="img-toggle">
-        drawings
-        <label class="switch" for="img-checkbox">
-          <span class="slider round" id="slider"></span>
-        </label>
+    <input id="css-checkbox" type="checkbox"/>
+    <label class="css-toggle" for="css-checkbox">
+        <span>drawings</span>
+        <span class="slider">
+            <span class="inner round"></span>
+        </span>
         <span class="warning-span">photos (nsfw)</span>
-    </span>
+    </label>
 <!-- </div> -->
     <table class="measurement-guide-table"><tbody>
     <tr>
@@ -367,6 +368,27 @@
 			</div>
 
         <div class="footer">
+            <script type="text/javascript">
+                function onLoadShowCookieNotification() {
+                    cookie_notify = document.getElementById("cookie-notify")
+                    if(getCookie("cookiesack") != "1") {
+                        cookie_notify.style.display = "block"
+                    }
+                }
+                function acknowledgeCookies() {
+                    setCookie("cookiesack", "1", 365);
+                    cookie_notify.style.display = "none";
+                }
+                var cookie_notify;
+                document.addEventListener("DOMContentLoaded", onLoadShowCookieNotification);
+            </script>
+            <span class="cookie-notification nojs" id="cookie-notify">
+                <strong>Cookies Notice:</strong> <span>I store theme choice, cookie acknowledgment and google analytics.</span>
+                <a class="btn" onclick="acknowledgeCookies();">Acknowledge</a>
+            </span>
+            <span class="nojs">
+                <a href="#" onclick="cookie_notify.style.display = 'block';">cookies</a>  <i class="fa fa-star"></i>
+            </span>
             <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
             <i class="fa fa-copyright"></i> 2017 Liner Gaff
             <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>

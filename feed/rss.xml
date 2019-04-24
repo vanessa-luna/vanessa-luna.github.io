@@ -1,5 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Vanessa  Luna</title><link>https://vanessa-luna.life/</link><description></description><lastBuildDate>Mon, 01 Apr 2019 00:00:00 -0400</lastBuildDate><item><title>Taking a break from searching.</title><link>https://vanessa-luna.life/posts/2019-04-01-searching.html</link><description>&lt;p&gt;For months now my primary goal has been to try and find a new van to live in. I have seen many and missed out on a few. Now I must take a break.&lt;/p&gt;
+<rss version="2.0"><channel><title>Vanessa  Luna</title><link>https://vanessa-luna.life/</link><description></description><lastBuildDate>Wed, 24 Apr 2019 00:00:00 -0400</lastBuildDate><item><title>Creating a css theme toggle</title><link>https://vanessa-luna.life/posts/2019-04-24-theme-toggle.html</link><description>&lt;p&gt;I finally did it! As you should see in the sidebar/header there is now a toggle which allows you to display a dark theme. If you have javascript enabled the site will remember your choice using a cookie. If you do not have javascript enabled the site will warn you that the choice cannot be saved. &lt;/p&gt;
+&lt;p&gt;Let me show you how I did it. 
+&lt;/p&gt;
+&lt;h2 id="a-brief-overview-of-the-concepts"&gt;A brief overview of the concepts&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Utilize the no-js checkbox trick for changing css&lt;/li&gt;
+&lt;li&gt;Convert nearly all color values into css variables&lt;/li&gt;
+&lt;li&gt;set css variables using the state of the checkbox&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are two major concerns with ensuring the variables stick. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ideally, define your variables only in the theme toggle&lt;/li&gt;
+&lt;li&gt;Otherwise you must use more specific selectors to override variables for specific components&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I have an example of both in my css which I will explain. &lt;/p&gt;
+&lt;h2 id="no-js-toggle"&gt;No-JS Toggle&lt;/h2&gt;
+&lt;p&gt;My toggle is directly based off this &lt;a class="external" href="https://www.w3schools.com/howto/howto_css_switch.asp"&gt;how to at W3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Essentially, you place a &lt;code&gt;&amp;lt;input type="checkbox" id="chk"&amp;gt;&lt;/code&gt; in your code. You create a &lt;code&gt;&amp;lt;label for="chk"&amp;gt;&lt;/code&gt; which acts as your button. Then using some fancy css selector trickery, you can change values based of the &lt;code&gt;:checked&lt;/code&gt; status of the checkbox. &lt;/p&gt;
+&lt;p&gt;The difference between the W3 exmaple and mine will be clear. In their example they places the checkbox &lt;em&gt;inside&lt;/em&gt; the label. I place mine in the root and the label lives wherever I want. &lt;/p&gt;
+&lt;h2 id="code"&gt;Code&lt;/h2&gt;
+&lt;p&gt;View on &lt;a class="external" href="https://codepen.io/sqmortplantic/pen/MRzjGL?editors=1100"&gt;Codepen.io&lt;/a&gt; (it has some extras to make it actually look good)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;theme&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sidebar&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nn"&gt;#theme&lt;/span&gt;         &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;white&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nn"&gt;#theme&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;black&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nc"&gt;.content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;  &lt;span class="nt"&gt;background-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;var&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;  &lt;span class="p"&gt;}&lt;/span&gt;
+
+
+&lt;span class="nn"&gt;#theme&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nc"&gt;.sidebar&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nt"&gt;--bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;var&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nc"&gt;.sidebar&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;--bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="nt"&gt;background-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;var&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;--bg-color&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="explanation"&gt;Explanation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;When the checkbox is selected, the selectors change the values of the variables&lt;/li&gt;
+&lt;li&gt;The selectors for the theme are applied to all the siblings of the checkbox&lt;/li&gt;
+&lt;li&gt;Every element beside the checkbox has access to the variables&lt;/li&gt;
+&lt;li&gt;Use a more specific selector to change the value of a variable already defined&lt;/li&gt;
+&lt;li&gt;This allows for the difference of theme-defined variables and default variables for a given component&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 24 Apr 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-04-24:/posts/2019-04-24-theme-toggle.html</guid></item><item><title>I know you can find your way back in</title><link>https://vanessa-luna.life/posts/2019-04-10-you-can-do-it.html</link><description>&lt;p&gt;Look. I know this experience is fucking horrifying. I lived it most of my life. And for at least half of it I just wished I was dead, tried a couple times, and the only real progress I ever made in my life was when I thought "If I'm just gonna kill myself why NOT do the thing?" So I would try the thing, life would get a little better and I would stagnate again. Until eventually I found a few things that truly helped. But more on that later.&lt;/p&gt;
+&lt;h2 id="life-is-not-hard-dealing-with-your-self-is"&gt;Life is not hard. Dealing with your self is.&lt;/h2&gt;
+&lt;p&gt;This was equally one of the most horrifying and relieving things I learned in my teens.&lt;/p&gt;
+&lt;p&gt;Life is not hard. Your body is gonna stay alive and you don't have a damn choice about it. Living is the easy part. The hard part is dealing with you, your inner you, your mind, your perspective.&lt;/p&gt;
+&lt;p&gt;Take 100 people and put them all through the same experience and you get 100 different outcomes. Some might crumble, others might soar. Some might slip into depression, others might take a few days off and get back on it. It is you, your unique set of experiences, physiology, traumas, circumstance which help determine your response.&lt;/p&gt;
+&lt;h2 id="the-universe-is-free-to-experience-any-kind-of-all-kinds-that-it-can"&gt;The universe is free to experience any kind of all kinds that it can&lt;/h2&gt;
+&lt;p&gt;Be it some anxiety plus a bad trip, or chronic dysphoria, physical injury, other other cause of this, we are the group of humans who get to experience DPDR, and thus get to overcome it.&lt;/p&gt;
+&lt;p&gt;Some people will experience murder in their life, or major battery, or life changing car accident, a stalker requiring moving out of state, or any number of bizarre, sad, challenging, painful experiences in life.&lt;/p&gt;
+&lt;p&gt;We don't get to choose some parts of our life. But we do get some choice in how we respond.&lt;/p&gt;
+&lt;h2 id="we-get-dpdr"&gt;We get DPDR.&lt;/h2&gt;
+&lt;p&gt;And I got to say, after all these years, at age 29, overcoming DPDR, I get these moments of feeling like a god. I came back from THAT. And amidst all the hard days, slips, stumbles, punches I have more resolve and fortitude than I've ever had.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;But I will carry on,&lt;br&gt;
+Drifting around in the dawn always&lt;br&gt;
+I will carry on&lt;br&gt;
+Shadow, you can follow me  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I will always have to struggle with the 20+ years of my life where I drifted amongst the waves, tumbling around believing I didn't deserve anything better. Just as someone who overcame their own trauma will always have to fight that part of their life.&lt;/p&gt;
+&lt;h2 id="fueling-the-fire"&gt;Fueling the fire&lt;/h2&gt;
+&lt;p&gt;The most important, if the only, thing you really need to find is the fire to fight this.&lt;/p&gt;
+&lt;p&gt;We all need different fuel for it, but I Think a lot of us find it in anger. Be angry about living this way. And use that as fuel to stoke the fire of commitment to find a way back in to your life.&lt;/p&gt;
+&lt;p&gt;Once that fire gets a solid amount of fuel to burn bright and long enough to give you a taste of what could come if you take the long path it will never fully fade again.&lt;/p&gt;
+&lt;h2 id="my-fire"&gt;My Fire&lt;/h2&gt;
+&lt;p&gt;In the beginning I mentioned what I found. I've written about this before here and on my website.&lt;/p&gt;
+&lt;p&gt;But in brief it all began with a few thoughts&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I know I need to change, so why not learn how change works?&lt;/li&gt;
+&lt;li&gt;I have a habit of thinking this way, so how do I change habits?&lt;/li&gt;
+&lt;li&gt;I am ashamed of who I am so how do I overcome shame?&lt;/li&gt;
+&lt;li&gt;I will use my media consumption as a tool for exploring my own empowerment&lt;/li&gt;
+&lt;li&gt;What do other people have that I don't? How can I get what they have?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="i-know-you-can-do-this"&gt;I know you can do this&lt;/h2&gt;
+&lt;p&gt;I know you can find your fuel. I know your fire can turn back on. Plz never stop seeking a way back in to your life.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 10 Apr 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-04-10:/posts/2019-04-10-you-can-do-it.html</guid></item><item><title>Walking your own path</title><link>https://vanessa-luna.life/posts/2019-04-03-reflection.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;"If you can see your path laid out in front of you step by step, you know it is not your path. Your own path you make, with every step you take. That is why it is your path." - Joseph Campbell&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Not to be confused with the path you envision for your self by your self. I have been reading Braving The Wilderness by Brene Brown. Predominantly it is about understanding the idea of "true belonging". In brief, it seems she concludes, as May Angelou did, that belonging is something that comes from within. Do you feel as if you belong to your self?&lt;/p&gt;
+&lt;p&gt;Most of the time I do not feel I belong to myself. When I began searching for my true self I was confronted also with repressed physical chronic pain. First beginning in my early teens, switfly became locked away as I began to be seen as a "complainer" and no one found a cause. Every year on HRT my chornic pain seems to worsen, and after years of up and down on hormones I concluded I could not live without it, but thus I must endure the pain. It is hard for me to belong to my body because of this pain which is the first obstacle I face before I can even reach dysphoria. Because of this I feel trapped. I cannot make progress on transition because of it. I would claim I am not full time even after five years of hormones.&lt;/p&gt;
+&lt;p&gt;But I also know I am not living some other path that someone else may have laid before me. Despite my crawl I am taking my path step by step. And while I have dreams of being farther along, it is clear I have made great progress already. Hopefully coming out of this depressive chapter I will allow myself to sit in this achievement more often than I have so far this year. I accept this is my life. I accept I will not be the vision of "normalcy" I weakly clung to growing up. And I feel I have healthy expectations of what's possible for me and my life in the future.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Brothertiger - Bottom of It
+
+...
+I&amp;#39;m trying to live in the moment 
+Capture it on my mind 
+But I&amp;#39;m always waiting for somethin&amp;#39; 
+That&amp;#39;ll bring me a stable life
+
+I stubbornly go through the motions 
+I&amp;#39;m hanging on to life 
+Gonna get down to the bottom of it 
+In time
+
+But I will carry on 
+Drifting around in the dawn always 
+I will carry on 
+Shadow, you can follow me
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="bandcamp-player"&gt;
+    &lt;iframe style="border: 0; width: 300px; height: 420px; margin: 0 calc(50% - 150px);" src="https://bandcamp.com/EmbeddedPlayer/album=2918845448/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/track=290970613/transparent=true/" seamless&gt;&lt;a href="http://brothertiger.bandcamp.com/album/a-chain-of-islands-ep"&gt;A Chain of Islands EP by Brothertiger&lt;/a&gt;&lt;/iframe&gt;
+    &lt;input id="css-checkbox" type="checkbox"&gt;
+    &lt;label class="css-toggle" for="css-checkbox"&gt;
+        &lt;span class="left"&gt;Show full lyrics&lt;/span&gt;
+        &lt;span class="slider"&gt;&lt;span class="inner round"&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;div class="show-on-toggle"&gt;
+        &lt;div class="highlight"&gt;
+            &lt;pre&gt;
+Shadow on the floor and  
+I open up my eyes  
+To the sun streaks in the morning  
+I don't wanna rise
+
+Following through the door and 
+I don't wanna get behind 
+Can I get back to you tomorrow? 
+When I feel alright 
+
+Everything that was broken 
+It all comes back in time 
+Didn't always know what I wanted 
+And I still can't make up my mind 
+
+My eyes they are wide open 
+I swallow all my pride 
+Gonna get down to the bottom of it 
+In time 
+
+But I will carry on 
+Drifting around in the dawn always 
+I will carry on 
+Shadow, you can follow me 
+
+I'm trying to live in the moment 
+Capture it on my mind 
+But I'm always waiting for somethin' 
+That'll bring me a stable life 
+
+I stubbornly go through the motions 
+I'm hanging on to life 
+Gonna get down to the bottom of it 
+In time 
+
+I always say to you, 
+"I'll get away from this." 
+Can I get away from this? 
+Before I sleep? 
+
+I always say to you, 
+"I can handle this." 
+Can I handle this 
+impossible dream?
+            &lt;/pre&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;      
+&lt;/div&gt;
+
+&lt;style&gt;
+    label.css-toggle .left { font-weight: bold; }
+    input[type=checkbox]:checked + .css-toggle + .show-on-toggle { display: block; }
+    .show-on-toggle { display:none; }
+&lt;/style&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-04-03:/posts/2019-04-03-reflection.html</guid></item><item><title>Taking a break from searching.</title><link>https://vanessa-luna.life/posts/2019-04-01-searching.html</link><description>&lt;p&gt;For months now my primary goal has been to try and find a new van to live in. I have seen many and missed out on a few. Now I must take a break.&lt;/p&gt;
 &lt;p&gt;This search has exhausted me. Given the time I have other things to take care of. Then I will ascend as the weather warms and continue my search. &lt;/p&gt;
 &lt;p&gt;Hopefully this means I will start writing more. I have been depressed lately. And in excess pain. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Mon, 01 Apr 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-04-01:/posts/2019-04-01-searching.html</guid></item><item><title>My theme song</title><link>https://vanessa-luna.life/posts/2019-03-17-theme-song-recording.html</link><description>&lt;/p&gt;
 &lt;h3 id="history"&gt;History&lt;/h3&gt;
@@ -10,7 +182,34 @@
                     frameborder='0' webkitAllowFullScreen mozallowfullscreen
                     allowFullScreen&gt;
                 &lt;/iframe&gt;
-            &lt;/span&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sun, 17 Mar 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-03-17:/posts/2019-03-17-theme-song-recording.html</guid></item><item><title>I am getting better at not over-explaining myself.</title><link>https://vanessa-luna.life/posts/2019-03-07-explaining-yourself.html</link><description>&lt;p&gt;Okay, I think I am learning the lesson more and more: You do not have to explain yourself to everyone. You don't need to justify your needs, your questions, your desires to every person. When I felt undeserving of everything I always felt I had to explain myself in order to appease others, to create a reason for me to be valid. But as I have been reaching out to a lot of strangers lately I have been finding myself writing out those sentences explaining myself, and then realizing they are not necessary and deleting them. It feels good. It feels good to know I care about myself more than I used to. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 07 Mar 2019 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-03-07:/posts/2019-03-07-explaining-yourself.html</guid></item><item><title>I am without steam</title><link>https://vanessa-luna.life/posts/2019-01-09-without-steam.html</link><description>&lt;p&gt;I am ever drifting through the days. I am tired of where I am. I am tired. I have so many things to do and I think I am nearing the end of life with Vanessa. Although every time I feel this I go on another couple months.&lt;/p&gt;
+            &lt;/span&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Vanessa &amp;amp; Luna - Keeping it real together.
+Vanessa &amp;amp; Luna - No one will get in our way!
+
+Cause we are alone now and totally free,
+to be whatever we want to be,
+and we know that we will survive,
+cause we&amp;#39;ve got nothing to lose.
+
+The world is a weird place.
+Life is a heart beat.
+People are different,
+yet always the same.
+
+Vanessa &amp;amp; Luna... We&amp;#39;re coming your way.
+Vanessa &amp;amp; Luna... But don&amp;#39;t think we&amp;#39;ll stay.
+
+Cause we&amp;#39;re on a road trip,
+to figure me out.
+To open my doors,
+and cast away doubt.
+And if we don&amp;#39;t make it,
+&amp;#39;ll be alright.
+Cause we chose to live life,
+and put up a fight!
+
+Vanessa &amp;amp; Luna
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sun, 17 Mar 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-03-17:/posts/2019-03-17-theme-song-recording.html</guid></item><item><title>I am getting better at not over-explaining myself.</title><link>https://vanessa-luna.life/posts/2019-03-07-explaining-yourself.html</link><description>&lt;p&gt;Okay, I think I am learning the lesson more and more: You do not have to explain yourself to everyone. You don't need to justify your needs, your questions, your desires to every person. When I felt undeserving of everything I always felt I had to explain myself in order to appease others, to create a reason for me to be valid. But as I have been reaching out to a lot of strangers lately I have been finding myself writing out those sentences explaining myself, and then realizing they are not necessary and deleting them. It feels good. It feels good to know I care about myself more than I used to. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 07 Mar 2019 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-03-07:/posts/2019-03-07-explaining-yourself.html</guid></item><item><title>I am without steam</title><link>https://vanessa-luna.life/posts/2019-01-09-without-steam.html</link><description>&lt;p&gt;I am ever drifting through the days. I am tired of where I am. I am tired. I have so many things to do and I think I am nearing the end of life with Vanessa. Although every time I feel this I go on another couple months.&lt;/p&gt;
 &lt;p&gt;I have not been writing much which upsets me. I have no routine other than sleeping a lot and lying down. IS this the increase in my hormones? Is it depression? Hopefully moving on to another city will help determine. &lt;/p&gt;
 &lt;p&gt;OH, also I have not been to a PT in a few weeks, first time in months. Maybe this is the issue...&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 09 Jan 2019 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-01-09:/posts/2019-01-09-without-steam.html</guid></item><item><title>A jam packed day with a little turbulence</title><link>https://vanessa-luna.life/posts/2018-12-30-excitement.html</link><description>&lt;p&gt;Today was a wild experience. A number of things happened which trickle into tomorrow, so some of this will be about new years eve day.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -74,37 +273,4 @@ Swayed not by the crash nor pulled by the tow.
 For a moment lament the strength you now hold.
 Not too long ago you&amp;#39;d have been swept away
 as you play amongst the waves.
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 20 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-20:/posts/2018-12-20-waves.html</guid></item><item><title>Crescent Shore Park [set]</title><link>https://vanessa-luna.life/posts/2018-12-19-rise.html</link><description>&lt;p&gt;&lt;img alt="" src="/images/sun/2018-12-19-rise-crescent-beach-shore-1.jpg"&gt;&lt;/p&gt;
-&lt;h3 id="9-more"&gt;... +9 more&lt;/h3&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="/images/sun/2018-12-19-rise-crescent-beach-shore-2.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-19-rise-crescent-beach-shore-3.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-19-rise-crescent-beach-shore-4.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-19-rise-crescent-beach-shore-5.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-19-rise-crescent-beach-shore-6.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-19-rise-crescent-beach-shore-7.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-19-rise-crescent-beach-shore-8.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-19-rise-crescent-beach-shore-9.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-19-rise-crescent-beach-shore-10.jpg"&gt;&lt;/p&gt;
-&lt;h2 id="youtube-videos"&gt;youtube videos&lt;/h2&gt;
-&lt;p&gt;&lt;span class="videobox"&gt;
-                &lt;iframe width="100%" height="100%"
-                    src='https://www.youtube.com/embed/1Clgv4era3A'
-                    frameborder='0' webkitAllowFullScreen mozallowfullscreen
-                    allowFullScreen&gt;
-                &lt;/iframe&gt;
-            &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="videobox"&gt;
-                &lt;iframe width="100%" height="100%"
-                    src='https://www.youtube.com/embed/PztK-mt_h6s'
-                    frameborder='0' webkitAllowFullScreen mozallowfullscreen
-                    allowFullScreen&gt;
-                &lt;/iframe&gt;
-            &lt;/span&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 19 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-19:/posts/2018-12-19-rise.html</guid></item><item><title>Fort Matanzas National Park</title><link>https://vanessa-luna.life/posts/2018-12-12-fort-matanzas.html</link><description>&lt;p&gt;Wow this was cool. Not only is this a strange place, they have a free boat ride over the river and a tour guide to tell you some cool stuff about it. &lt;/p&gt;
-&lt;p&gt;Matanzas is apparantly a word for slaughters. So there is a whole region here in Florida named after slaughters. And it doesn't freak anyone out. I can't think of any English named places like "The masacre" "The Killings" "The deaths" "The Slaughters"... apparently there are some thigns like that in other countries. But how strange it is. &lt;/p&gt;
-&lt;p&gt;Apparently this little fort never had to kill anyone and succesfully shooed away all ptoential invaders. Build to protect the southern side of St Augustine from attack. &lt;/p&gt;
-&lt;p&gt;It was a nice and relaxing experience. There was also a small path to walk which is where the tree picture comes from. Gosh the nature around here is so different. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 12 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-12:/posts/2018-12-12-fort-matanzas.html</guid></item><item><title>Matanzas Inlet, ~ St Augustine [set]</title><link>https://vanessa-luna.life/posts/2018-12-12-set.html</link><description>&lt;p&gt;&lt;img alt="" src="/images/sun/2018-12-12-set-matanzas-inlet-1.jpg"&gt;&lt;/p&gt;
-&lt;h3 id="2-more"&gt;... +2 more&lt;/h3&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="/images/sun/2018-12-12-set-matanzas-inlet-2.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-12-set-matanzas-inlet-3.jpg"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 12 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-12:/posts/2018-12-12-set.html</guid></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 20 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-20:/posts/2018-12-20-waves.html</guid></item></channel></rss>

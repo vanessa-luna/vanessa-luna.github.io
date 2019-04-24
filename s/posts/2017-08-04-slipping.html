@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <noscript><style>.nojs { display:none; } </style></noscript>
 
 
 <script type="text/javascript">
@@ -18,8 +19,8 @@
 		ga('create', 'UA-100867520-1', 'auto');
 		ga('send', 'pageview');
 </script>
-	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/article.min.css?8fed74b7">
-    <link rel="stylesheet" href="https://vanessa-luna.life/theme/css/shadows.min.css?524cb569">
+	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/article.min.css?364f6584">
+    <link rel="stylesheet" href="https://vanessa-luna.life/theme/css/shadows.min.css?9937618b">
 
     <script type="text/javascript">
       function gh(s) { return parseInt(s.replace(/.+x/, '')) }
@@ -35,10 +36,39 @@
         }
         return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
       }
+    </script>    <script type="text/javascript">
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = decodeURIComponent(document.cookie).split(';');
+            for(var i = 0; i <ca.length; i++) { // loop through each value
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1); // remove extra spaces
+                if (c.indexOf(name) == 0) { // if the name is found
+                    return c.substring(name.length, c.length); // send back value
+                }
+            }
+            return ""; //no match found
+        }
+        var themechk;
+        function applyTheme() {
+            themechk = document.getElementById("theme");
+            themechk.addEventListener("change", function (e){ setCookie("dark", themechk.checked, 365); } );
+            if (getCookie("dark") == "true") themechk.checked = true;
+        }
+        document.addEventListener("DOMContentLoaded", applyTheme);
     </script></head>
 <body>
+	<input type="checkbox" id="theme">
+	<div class="theme-wrapper">
 	<div class="sidebar">
-		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
+		<div id='sidebar-bg' class="sidebar" style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
 			<script type="text/javascript">
 			    document.addEventListener("DOMContentLoaded", function (e) {
@@ -50,71 +80,81 @@
 				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
 			</script>
 		</div>
-		<div class="headline">
-			<a id="secret" href='/s' tabindex="-1"></a>
-			<a id="home" href="/">
-				<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
-				<h1> Inanis &#xe80a; Umbra</h1>
-			</a>
-			<p class="subtitle">Within the shadows lies the honesty we seek yet fear the most. Oversharing &#xe813;</p>
-		</div>
-		<nav class="menu">
-			<div class="menu-item ">
-				<a href="/s/posts">
-					<div class="menu-item-content">
-						<div class='icon'>
-							<script type="text/javascript">
-								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Shadows").className = "fa fa-" +  chooseIcon(["cloud-moon-inv","moon"]); });
-							</script>
-							<i id="icon-Shadows" class="fa fa-cloud-moon-inv"></i>
-						</div>
-						<span class='name'>Shadows</span>
-					</div>
+		<div class="sidebar-content">
+			<div class="headline">
+				<a id="secret" href='/s' tabindex="-1"></a>
+				<a id="home" href="/">
+					<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
+					<h1> Inanis &#xe80a; Umbra</h1>
 				</a>
+				<p class="subtitle">Within the shadows lies the honesty we seek yet fear the most. Oversharing &#xe813;</p>
 			</div>
-			<div class="menu-item ">
-				<a href="/s/archives/">
-					<div class="menu-item-content">
-						<div class='icon'>
-							<script type="text/javascript">
-								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-o","hourglass"]); });
-							</script>
-							<i id="icon-Archive" class="fa fa-hourglass-o"></i>
+			<nav class="menu">
+				<div class="menu-item ">
+					<a href="/s/posts">
+						<div class="menu-item-content">
+							<div class='icon'>
+								<script type="text/javascript">
+									document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Shadows").className = "fa fa-" +  chooseIcon(["cloud-moon-inv","moon"]); });
+								</script>
+								<i id="icon-Shadows" class="fa fa-cloud-moon-inv"></i>
+							</div>
+							<span class='name'>Shadows</span>
 						</div>
-						<span class='name'>Archive</span>
-					</div>
-				</a>
-			</div>
-			<div class="menu-item spacer">
-			</div>
-			<div class="menu-item ">
-				<a href="/s/about">
-					<div class="menu-item-content">
-						<div class='icon'>
-							<script type="text/javascript">
-								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","cloud-sun-inv"]); });
-							</script>
-							<i id="icon-About" class="fa fa-dot-circled"></i>
+					</a>
+				</div>
+				<div class="menu-item ">
+					<a href="/s/archives/">
+						<div class="menu-item-content">
+							<div class='icon'>
+								<script type="text/javascript">
+									document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-o","hourglass"]); });
+								</script>
+								<i id="icon-Archive" class="fa fa-hourglass-o"></i>
+							</div>
+							<span class='name'>Archive</span>
 						</div>
-						<span class='name'>About</span>
-					</div>
-				</a>
-			</div>
-			<div class="menu-item ">
-				<a href="/s/character">
-					<div class="menu-item-content">
-						<div class='icon'>
-							<script type="text/javascript">
-								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Character").className = "fa fa-" +  chooseIcon(["anchor","umbrella"]); });
-							</script>
-							<i id="icon-Character" class="fa fa-anchor"></i>
+					</a>
+				</div>
+				<div class="menu-item spacer">
+				</div>
+				<div class="menu-item ">
+					<a href="/s/about">
+						<div class="menu-item-content">
+							<div class='icon'>
+								<script type="text/javascript">
+									document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","cloud-sun-inv"]); });
+								</script>
+								<i id="icon-About" class="fa fa-dot-circled"></i>
+							</div>
+							<span class='name'>About</span>
 						</div>
-						<span class='name'>Character</span>
-					</div>
-				</a>
-			</div>
-		</nav>
-	</div>	<div class="content">
+					</a>
+				</div>
+				<div class="menu-item ">
+					<a href="/s/character">
+						<div class="menu-item-content">
+							<div class='icon'>
+								<script type="text/javascript">
+									document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Character").className = "fa fa-" +  chooseIcon(["anchor","umbrella"]); });
+								</script>
+								<i id="icon-Character" class="fa fa-anchor"></i>
+							</div>
+							<span class='name'>Character</span>
+						</div>
+					</a>
+				</div>
+			</nav>
+			<label for="theme" class="css-toggle">
+				<span class="left">dark</span>
+				<span class="slider round animate"></span>
+			</label>
+			<noscript id="nojs-theme">
+				<span>Enable javascript to save your choice</span>
+			</noscript>
+	  </div>
+	</div>
+		<div class="content">
  <div class="min-height-full pad-content">
 	<div class="post">
 		<h1 class="post-title">Am I slipping?</h1>
@@ -256,9 +296,32 @@ hcb_user = {
 </noscript>
 </div>
         <div class="footer">
+            <script type="text/javascript">
+                function onLoadShowCookieNotification() {
+                    cookie_notify = document.getElementById("cookie-notify")
+                    if(getCookie("cookiesack") != "1") {
+                        cookie_notify.style.display = "block"
+                    }
+                }
+                function acknowledgeCookies() {
+                    setCookie("cookiesack", "1", 365);
+                    cookie_notify.style.display = "none";
+                }
+                var cookie_notify;
+                document.addEventListener("DOMContentLoaded", onLoadShowCookieNotification);
+            </script>
+            <span class="cookie-notification nojs" id="cookie-notify">
+                <strong>Cookies Notice:</strong> <span>I store theme choice, cookie acknowledgment and google analytics.</span>
+                <a class="btn" onclick="acknowledgeCookies();">Acknowledge</a>
+            </span>
+            <span class="nojs">
+                <a href="#" onclick="cookie_notify.style.display = 'block';">cookies</a>  <i class="fa fa-star"></i>
+            </span>
             <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
             <i class="fa fa-copyright"></i> 2017 Vanessa & Luna
             <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
-        </div>	</div>
+        </div>		</div>
+		
+	</div>
 </body>
 </html>

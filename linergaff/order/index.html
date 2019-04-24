@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <noscript><style>.nojs { display:none; } </style></noscript>
 
 
 <script type="text/javascript">
@@ -18,9 +19,10 @@
 		ga('create', 'UA-100867520-1', 'auto');
 		ga('send', 'pageview');
 </script>
-	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/liner-gaff-page.min.css?8847006d">
+	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/liner-gaff-page.min.css?e9875bdc">
 </head>
 <body>
+	<input type="checkbox" id="theme">
 	<div class="content">
         <div class="liner-gaff-menu">
             <div class=""><a href="/linergaff"><div>LINER GAFF</div></a></div>
@@ -65,7 +67,6 @@
     </script>
     <iframe id="hidden_iframe" name="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
     <form name="gform" id="gform" class="gform" enctype="text/plain" target="hidden_iframe" onsubmit="submitted=true;" action="https://docs.google.com/forms/d/e/1FAIpQLSc9bHi2VTACxx7D9ifM8l0Fem9eYs7phugh4nw5Vx_I0BwiMQ/formResponse?">
-
       <div class="request-inputs">
         <div>
           <label>Who are you?</label>
@@ -87,7 +88,6 @@
             <label>Msg</label>
           </div>
         </div>
-
         <div>
           <label>Measurements:</label>
           <div class="measure-warning"><a href="/liner-gaff/info/"><i class=" fa fa-question-circle-o"></i> How to measure</a>
@@ -118,12 +118,12 @@
       </div>
       <input id="form-submit" type="submit" value="Submit Request">
     </form>
-
+    <!-- hidden until submit -->
     <div id="thank-you">
         <h3>Thank you for requesting a Liner Gaff!</h3>
         <p>I will respond as soon as I can.</p>
     </div>
-
+    <!-- auto pick submit time -->
     <script type="text/javascript">
         var today = new Date();
         var mm = today.getMonth() + 1;
@@ -157,6 +157,27 @@
 			</div>
 
         <div class="footer">
+            <script type="text/javascript">
+                function onLoadShowCookieNotification() {
+                    cookie_notify = document.getElementById("cookie-notify")
+                    if(getCookie("cookiesack") != "1") {
+                        cookie_notify.style.display = "block"
+                    }
+                }
+                function acknowledgeCookies() {
+                    setCookie("cookiesack", "1", 365);
+                    cookie_notify.style.display = "none";
+                }
+                var cookie_notify;
+                document.addEventListener("DOMContentLoaded", onLoadShowCookieNotification);
+            </script>
+            <span class="cookie-notification nojs" id="cookie-notify">
+                <strong>Cookies Notice:</strong> <span>I store theme choice, cookie acknowledgment and google analytics.</span>
+                <a class="btn" onclick="acknowledgeCookies();">Acknowledge</a>
+            </span>
+            <span class="nojs">
+                <a href="#" onclick="cookie_notify.style.display = 'block';">cookies</a>  <i class="fa fa-star"></i>
+            </span>
             <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
             <i class="fa fa-copyright"></i> 2017 Liner Gaff
             <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>

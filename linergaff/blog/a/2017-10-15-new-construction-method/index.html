@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <noscript><style>.nojs { display:none; } </style></noscript>
 
 
 <script type="text/javascript">
@@ -18,11 +19,12 @@
 		ga('create', 'UA-100867520-1', 'auto');
 		ga('send', 'pageview');
 </script>
-	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/article.min.css?8fed74b7">
+	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/article.min.css?364f6584">
     <link rel="stylesheet" href="https://vanessa-luna.life/theme/css/liner-gaff-base.min.css?d713e1f7">
 
 </head>
 <body>
+	<input type="checkbox" id="theme">
 	<div class="content">
         <div class="liner-gaff-menu">
             <div class=""><a href="/linergaff"><div>LINER GAFF</div></a></div>
@@ -85,7 +87,7 @@
 </div>
 
 
-<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/gallery-article.min.css?2a282a51">
+<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/gallery-article.min.css?dc56739c">
 
 <script>
     var items = []
@@ -148,6 +150,7 @@
 
 
       <div class="pagination">
+
 
 
 
@@ -246,6 +249,27 @@ hcb_user = {
 </div>
 
         <div class="footer">
+            <script type="text/javascript">
+                function onLoadShowCookieNotification() {
+                    cookie_notify = document.getElementById("cookie-notify")
+                    if(getCookie("cookiesack") != "1") {
+                        cookie_notify.style.display = "block"
+                    }
+                }
+                function acknowledgeCookies() {
+                    setCookie("cookiesack", "1", 365);
+                    cookie_notify.style.display = "none";
+                }
+                var cookie_notify;
+                document.addEventListener("DOMContentLoaded", onLoadShowCookieNotification);
+            </script>
+            <span class="cookie-notification nojs" id="cookie-notify">
+                <strong>Cookies Notice:</strong> <span>I store theme choice, cookie acknowledgment and google analytics.</span>
+                <a class="btn" onclick="acknowledgeCookies();">Acknowledge</a>
+            </span>
+            <span class="nojs">
+                <a href="#" onclick="cookie_notify.style.display = 'block';">cookies</a>  <i class="fa fa-star"></i>
+            </span>
             <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
             <i class="fa fa-copyright"></i> 2017 Liner Gaff
             <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>

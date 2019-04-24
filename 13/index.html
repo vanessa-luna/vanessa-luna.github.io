@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <noscript><style>.nojs { display:none; } </style></noscript>
 
 
 <script type="text/javascript">
@@ -18,7 +19,7 @@
 		ga('create', 'UA-100867520-1', 'auto');
 		ga('send', 'pageview');
 </script>
-	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/index.min.css?4f19672f">
+	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/index.min.css?f0d9e155">
     <script>
       function prettyDate(time) {
         var date = new Date((time || "").replace(/-/g, "/").replace(/[TZ]/g, " ")),
@@ -55,11 +56,40 @@
         }
         return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
       }
+    </script>    <script type="text/javascript">
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = decodeURIComponent(document.cookie).split(';');
+            for(var i = 0; i <ca.length; i++) { // loop through each value
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1); // remove extra spaces
+                if (c.indexOf(name) == 0) { // if the name is found
+                    return c.substring(name.length, c.length); // send back value
+                }
+            }
+            return ""; //no match found
+        }
+        var themechk;
+        function applyTheme() {
+            themechk = document.getElementById("theme");
+            themechk.addEventListener("change", function (e){ setCookie("dark", themechk.checked, 365); } );
+            if (getCookie("dark") == "true") themechk.checked = true;
+        }
+        document.addEventListener("DOMContentLoaded", applyTheme);
     </script>
 </head>
 <body>
+	<input type="checkbox" id="theme">
+	<div class="theme-wrapper">
 	<div class="sidebar">
-		<div class="sidebar" id='sidebar-bg' style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
+		<div id='sidebar-bg' class="sidebar" style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
 			<script type="text/javascript">
 			    document.addEventListener("DOMContentLoaded", function (e) {
@@ -71,102 +101,158 @@
 				function chooseIcon(list){ return list[parseInt(Math.random()*list.length)]; }
 			</script>
 		</div>
-		<div class="headline">
-			<a id="secret" href='/s' tabindex="-1"></a>
-			<a id="home" href="/">
-				<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
-				<h1>Vanessa &#xe80a; Luna</h1>
-			</a>
-			<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
-		</div>
-		<nav class="menu">
-			<div class="menu-item ">
-				<a href="/">
-					<div class="menu-item-content">
-						<div class='icon'>
-							<script type="text/javascript">
-								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
-							</script>
-							<i id="icon-Home" class="fa fa-flight"></i>
-						</div>
-						<span class='name'>Home</span>
-					</div>
+		<div class="sidebar-content">
+			<div class="headline">
+				<a id="secret" href='/s' tabindex="-1"></a>
+				<a id="home" href="/">
+					<img class="profile-picture" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png"></img>
+					<h1>Vanessa &#xe80a; Luna</h1>
 				</a>
+				<p class="subtitle">A reflection of your experience: as moonlight is a reflection of sunlight.</p>
 			</div>
-			<div class="menu-item ">
-				<a href="/categories">
-					<div class="menu-item-content">
-						<div class='icon'>
-							<script type="text/javascript">
-								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
-							</script>
-							<i id="icon-Categories" class="fa fa-leaf"></i>
+			<nav class="menu">
+				<div class="menu-item ">
+					<a href="/">
+						<div class="menu-item-content">
+							<div class='icon'>
+								<script type="text/javascript">
+									document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Home").className = "fa fa-" +  chooseIcon(["flight","rocket","fighter-jet","space-shuttle"]); });
+								</script>
+								<i id="icon-Home" class="fa fa-flight"></i>
+							</div>
+							<span class='name'>Home</span>
 						</div>
-						<span class='name'>Categories</span>
-					</div>
-				</a>
-			</div>
-			<div class="menu-item ">
-				<a href="/archives/">
-					<div class="menu-item-content">
-						<div class='icon'>
-							<script type="text/javascript">
-								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
-							</script>
-							<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+					</a>
+				</div>
+				<div class="menu-item ">
+					<a href="/categories">
+						<div class="menu-item-content">
+							<div class='icon'>
+								<script type="text/javascript">
+									document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Categories").className = "fa fa-" +  chooseIcon(["leaf","feather","tree-2"]); });
+								</script>
+								<i id="icon-Categories" class="fa fa-leaf"></i>
+							</div>
+							<span class='name'>Categories</span>
 						</div>
-						<span class='name'>Archive</span>
-					</div>
-				</a>
-			</div>
-			<div class="menu-item spacer">
-			</div>
-			<div class="menu-item ">
-				<a href="/images">
-					<div class="menu-item-content">
-						<div class='icon'>
-							<script type="text/javascript">
-								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
-							</script>
-							<i id="icon-Gallery" class="fa fa-picture"></i>
+					</a>
+				</div>
+				<div class="menu-item ">
+					<a href="/archives/">
+						<div class="menu-item-content">
+							<div class='icon'>
+								<script type="text/javascript">
+									document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Archive").className = "fa fa-" +  chooseIcon(["hourglass-3","hourglass-2","hourglass-1"]); });
+								</script>
+								<i id="icon-Archive" class="fa fa-hourglass-3"></i>
+							</div>
+							<span class='name'>Archive</span>
 						</div>
-						<span class='name'>Gallery</span>
-					</div>
-				</a>
-			</div>
-			<div class="menu-item spacer">
-			</div>
-			<div class="menu-item ">
-				<a href="/about">
-					<div class="menu-item-content">
-						<div class='icon'>
-							<script type="text/javascript">
-								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
-							</script>
-							<i id="icon-About" class="fa fa-dot-circled"></i>
+					</a>
+				</div>
+				<div class="menu-item spacer">
+				</div>
+				<div class="menu-item ">
+					<a href="/gallery">
+						<div class="menu-item-content">
+							<div class='icon'>
+								<script type="text/javascript">
+									document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Gallery").className = "fa fa-" +  chooseIcon(["picture","eye-off","eye"]); });
+								</script>
+								<i id="icon-Gallery" class="fa fa-picture"></i>
+							</div>
+							<span class='name'>Gallery</span>
 						</div>
-						<span class='name'>About</span>
-					</div>
-				</a>
-			</div>
-			<div class="menu-item ">
-				<a href="/contact">
-					<div class="menu-item-content">
-						<div class='icon'>
-							<script type="text/javascript">
-								document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
-							</script>
-							<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+					</a>
+				</div>
+				<div class="menu-item spacer">
+				</div>
+				<div class="menu-item ">
+					<a href="/about">
+						<div class="menu-item-content">
+							<div class='icon'>
+								<script type="text/javascript">
+									document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-About").className = "fa fa-" +  chooseIcon(["dot-circled","sun-1"]); });
+								</script>
+								<i id="icon-About" class="fa fa-dot-circled"></i>
+							</div>
+							<span class='name'>About</span>
 						</div>
-						<span class='name'>Contact</span>
-					</div>
-				</a>
-			</div>
-		</nav>
+					</a>
+				</div>
+				<div class="menu-item ">
+					<a href="/contact">
+						<div class="menu-item-content">
+							<div class='icon'>
+								<script type="text/javascript">
+									document.addEventListener("DOMContentLoaded", function (e) { document.getElementById("icon-Contact").className = "fa fa-" +  chooseIcon(["thumbs-up","hand-paper-o","hand-scissors-o","hand-grab-o"]); });
+								</script>
+								<i id="icon-Contact" class="fa fa-thumbs-up"></i>
+							</div>
+							<span class='name'>Contact</span>
+						</div>
+					</a>
+				</div>
+			</nav>
+			<label for="theme" class="css-toggle">
+				<span class="left">dark</span>
+				<span class="slider round animate"></span>
+			</label>
+			<noscript id="nojs-theme">
+				<span>Enable javascript to save your choice</span>
+			</noscript>
+	  </div>
 	</div>
-	<div class="content">
+		<div class="content">
  	<div class="index pad-content">
 		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.life/posts/2017-11-02-waking-up.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-11-02 00:00:00-04:00 title="2017-11-02">2017-11-02</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.life/posts/2017-11-02-waking-up.html">Filling in the void a little bit more</a>
+				</h1>
+				<p>
+					<p>Last night, my very good friend and I talked about my anger towards my life. How I feel trapped by my pain, and prevented from a real life because I missed out on the first 25 years.</p>
+<p>After going over a lot it dawned on me how much this negative …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.life/posts/2017-11-02-waking-up.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.life/posts/2017-10-31-halloween.html">
+					<div class='post-meta'><div class="inner-meta box">
+						chronograph<br>
+						<time class="post-date" datetime=2017-10-31 00:00:00-04:00 title="2017-10-31">2017-10-31</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.life/posts/2017-10-31-halloween.html">Another hollow Halloween, another sad fucking Halloween.</a>
+				</h1>
+				<p>
+					<p>I remember so many years watching Halloween come and pass. Envy filled my every bone as I detested my fear of expression. I stopped dressing up for Halloween as soon as I could. Likely around puberty or seventh grade. I have not participated now in over fifteen years. And oh …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.life/posts/2017-10-31-halloween.html">continue »</a>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.life/posts/2017-10-30-your-knowledge.html">
+					<div class='post-meta'><div class="inner-meta box">
+						recovery<br>
+						<time class="post-date" datetime=2017-10-30 00:00:00-04:00 title="2017-10-30">2017-10-30</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.life/posts/2017-10-30-your-knowledge.html">You own your knowledge</a>
+				</h1>
+				<p>
+					<p>If you are struggling and feel stuck, google "how to get unstuck". If you feel like you cannot change but wish to, google "how to change". If you need something in your life, simply learning ANYTHING about that subject is going to make a large difference.</p>
+<p>Within our perfectionism and …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.life/posts/2017-10-30-your-knowledge.html">continue »</a>
+				</div>
+			</div>
 			<div class="post">
 				<h1 class="post-title" href="https://vanessa-luna.life/posts/2017-10-28-trying-to-acknoweldge.html">
 					<div class='post-meta'><div class="inner-meta box">
@@ -236,7 +322,7 @@ The world is a weird place …</pre></div>
 					<h3 class="text-center"> The safe road is the road of death.</h3>
 
 <p><span class="block text-center">
-<a href="https://vanessa-luna.life/posts/2017-10-24-self-transformation.html">
+<a href="/posts/2017-10-24-self-transformation.html">
 <img width="360" height="200" class="cover center inline-block" src="https://i.ytimg.com/vi/MQgC2nI6Wu4/hqdefault.jpg?custom=true&w=250">
 </a>
 </span>
@@ -344,60 +430,6 @@ The world is a weird place …</pre></div>
 					<a class="read-more box" href="https://vanessa-luna.life/posts/2017-10-10-line-rider.html">continue »</a>
 				</div>
 			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.life/posts/2017-10-06-jim-carrey-inspiration.html">
-					<div class='post-meta'><div class="inner-meta box">
-						media<br>
-						<time class="post-date" datetime=2017-10-06 00:00:00-04:00 title="2017-10-06">2017-10-06</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.life/posts/2017-10-06-jim-carrey-inspiration.html">Jim Carrey - Let the armor go</a>
-				</h1>
-				<p>
-					<h3 class="text-center"> Risk being seen, in all of your glory.</h3>
-
-<p><span class="block text-center">
-<a href="https://vanessa-luna.life/posts/2017-10-06-jim-carrey-inspiration.html">
-<img width="360" height="200" class="cover center inline-block" src="https://i.ytimg.com/vi/Yt_irA9V5Vg/hqdefault.jpg?custom=true&w=250">
-</a>
-</span>
-
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.life/posts/2017-10-06-jim-carrey-inspiration.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.life/posts/2017-09-28-new-drawers-for-vanessa.html">
-					<div class='post-meta'><div class="inner-meta box">
-						<i class="fa fa-picture"></i>
-						vandwelling<br>
-						<time class="post-date" datetime=2017-09-28 00:00:00-04:00 title="2017-09-28">2017-09-28</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.life/posts/2017-09-28-new-drawers-for-vanessa.html">New drawers for Vanessa!</a>
-				</h1>
-				<p>
-					<p>My wonderful friend helped me install new drawers in Vanessa. Totally maximizing some of the space in the rear beneath my bed. I am super excited about them.</p>
-<p>The left side, which is empty for now, will hold a removable plastic drawer storage solution. This is so I can continue …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.life/posts/2017-09-28-new-drawers-for-vanessa.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.life/posts/2017-09-26-vanessa-brakes-fixed.html">
-					<div class='post-meta'><div class="inner-meta box">
-						vandwelling<br>
-						<time class="post-date" datetime=2017-09-26 00:00:00-04:00 title="2017-09-26">2017-09-26</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.life/posts/2017-09-26-vanessa-brakes-fixed.html">Vanessa's brakes are fixed!</a>
-				</h1>
-				<p>
-					<p>I finally did it. I found the people and got them to fix the brake lines. I am very happy about that. I realize my original estimates of repair costs were extreme. That's partly because the mechanic I found I trust most is at a dealership. Partly because I am …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.life/posts/2017-09-26-vanessa-brakes-fixed.html">continue »</a>
-				</div>
-			</div>
 		</div>
 
 
@@ -451,11 +483,33 @@ The world is a weird place …</pre></div>
 
       </div>	</div>
         <div class="footer">
+            <script type="text/javascript">
+                function onLoadShowCookieNotification() {
+                    cookie_notify = document.getElementById("cookie-notify")
+                    if(getCookie("cookiesack") != "1") {
+                        cookie_notify.style.display = "block"
+                    }
+                }
+                function acknowledgeCookies() {
+                    setCookie("cookiesack", "1", 365);
+                    cookie_notify.style.display = "none";
+                }
+                var cookie_notify;
+                document.addEventListener("DOMContentLoaded", onLoadShowCookieNotification);
+            </script>
+            <span class="cookie-notification nojs" id="cookie-notify">
+                <strong>Cookies Notice:</strong> <span>I store theme choice, cookie acknowledgment and google analytics.</span>
+                <a class="btn" onclick="acknowledgeCookies();">Acknowledge</a>
+            </span>
+            <span class="nojs">
+                <a href="#" onclick="cookie_notify.style.display = 'block';">cookies</a>  <i class="fa fa-star"></i>
+            </span>
             <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
             <i class="fa fa-copyright"></i> 2017 Vanessa & Luna <i class="fa fa-star"></i> <a href="https://vanessa-luna.life/feed/rss.xml"><i class='fa fa-rss'></i> RSS</a>
 
             <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
         </div>
+		</div>
 	</div>
 </body>
 </html>

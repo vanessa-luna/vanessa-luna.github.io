@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>https://vanessa-luna.life/</link><description></description><lastBuildDate>Mon, 17 Sep 2018 00:00:00 -0400</lastBuildDate><item><title>CSS Workaround to rename the "ungrouped" title in TreeTabs browser extension</title><link>https://vanessa-luna.life/posts/2018-09-17-treetabs-emoji-ungrouped.html</link><description>&lt;p&gt;I love TreeTabs. I've been using verticle nesting tabs for years. Because of Firefox's change to WebExtension crap I have had to switch to TreeTabs. It's pretty great, but I have some gripes and this post is how to fix one of the worst: How to rename the "ungrouped" group to something else.
+<rss version="2.0"><channel><title>Vanessa  Luna - web-dev</title><link>https://vanessa-luna.life/</link><description></description><lastBuildDate>Wed, 24 Apr 2019 00:00:00 -0400</lastBuildDate><item><title>Creating a css theme toggle</title><link>https://vanessa-luna.life/posts/2019-04-24-theme-toggle.html</link><description>&lt;p&gt;I finally did it! As you should see in the sidebar/header there is now a toggle which allows you to display a dark theme. If you have javascript enabled the site will remember your choice using a cookie. If you do not have javascript enabled the site will warn you that the choice cannot be saved. &lt;/p&gt;
+&lt;p&gt;Let me show you how I did it. 
+&lt;/p&gt;
+&lt;h2 id="a-brief-overview-of-the-concepts"&gt;A brief overview of the concepts&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Utilize the no-js checkbox trick for changing css&lt;/li&gt;
+&lt;li&gt;Convert nearly all color values into css variables&lt;/li&gt;
+&lt;li&gt;set css variables using the state of the checkbox&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are two major concerns with ensuring the variables stick. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ideally, define your variables only in the theme toggle&lt;/li&gt;
+&lt;li&gt;Otherwise you must use more specific selectors to override variables for specific components&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I have an example of both in my css which I will explain. &lt;/p&gt;
+&lt;h2 id="no-js-toggle"&gt;No-JS Toggle&lt;/h2&gt;
+&lt;p&gt;My toggle is directly based off this &lt;a class="external" href="https://www.w3schools.com/howto/howto_css_switch.asp"&gt;how to at W3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Essentially, you place a &lt;code&gt;&amp;lt;input type="checkbox" id="chk"&amp;gt;&lt;/code&gt; in your code. You create a &lt;code&gt;&amp;lt;label for="chk"&amp;gt;&lt;/code&gt; which acts as your button. Then using some fancy css selector trickery, you can change values based of the &lt;code&gt;:checked&lt;/code&gt; status of the checkbox. &lt;/p&gt;
+&lt;p&gt;The difference between the W3 exmaple and mine will be clear. In their example they places the checkbox &lt;em&gt;inside&lt;/em&gt; the label. I place mine in the root and the label lives wherever I want. &lt;/p&gt;
+&lt;h2 id="code"&gt;Code&lt;/h2&gt;
+&lt;p&gt;View on &lt;a class="external" href="https://codepen.io/sqmortplantic/pen/MRzjGL?editors=1100"&gt;Codepen.io&lt;/a&gt; (it has some extras to make it actually look good)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;theme&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sidebar&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nn"&gt;#theme&lt;/span&gt;         &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;white&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nn"&gt;#theme&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;black&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nc"&gt;.content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;  &lt;span class="nt"&gt;background-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;var&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;  &lt;span class="p"&gt;}&lt;/span&gt;
+
+
+&lt;span class="nn"&gt;#theme&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nc"&gt;.sidebar&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nt"&gt;--bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;var&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nc"&gt;.sidebar&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;--bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="nt"&gt;background-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;var&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;--bg-color&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="explanation"&gt;Explanation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;When the checkbox is selected, the selectors change the values of the variables&lt;/li&gt;
+&lt;li&gt;The selectors for the theme are applied to all the siblings of the checkbox&lt;/li&gt;
+&lt;li&gt;Every element beside the checkbox has access to the variables&lt;/li&gt;
+&lt;li&gt;Use a more specific selector to change the value of a variable already defined&lt;/li&gt;
+&lt;li&gt;This allows for the difference of theme-defined variables and default variables for a given component&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 24 Apr 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-04-24:/posts/2019-04-24-theme-toggle.html</guid></item><item><title>CSS Workaround to rename the "ungrouped" title in TreeTabs browser extension</title><link>https://vanessa-luna.life/posts/2018-09-17-treetabs-emoji-ungrouped.html</link><description>&lt;p&gt;I love TreeTabs. I've been using verticle nesting tabs for years. Because of Firefox's change to WebExtension crap I have had to switch to TreeTabs. It's pretty great, but I have some gripes and this post is how to fix one of the worst: How to rename the "ungrouped" group to something else.
 
 Yes, the groups toolbar default group cannot be deleted or renamed. Let's fix that.&lt;/p&gt;
 &lt;h2 id="how-to-change-it-in-firefox"&gt;How to change it in Firefox.&lt;/h2&gt;
@@ -283,13 +332,4 @@ Yes, the groups toolbar default group cannot be deleted or renamed. Let's fix th
 &lt;h4 id="fontawesome-woff2-772kb"&gt;FontAwesome .woff2 77.2kb&lt;/h4&gt;
 &lt;h4 id="myiconfont-woff2-104kb"&gt;MyIconFont .woff2 10.4kb&lt;/h4&gt;
 &lt;p&gt;Pages before assets are now roughly 20kb.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;melts&lt;/strong&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 17 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2017-05-17:/posts/2017-05-17-minimizing-font-size.html</guid></item><item><title>A helpful pelican configuration file</title><link>https://vanessa-luna.life/posts/2017-05-16-pelicanconf.html</link><description>&lt;p&gt;When I was beginning to learn Pelican, it benefited me intensely to copy down all the setting options in one file. This way I could see what I could do. Feel free to copy this and use it yourself as you begin to play with Pelican&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;Some things I'll mention:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I put the customization and plugins at the bottom so those two could use any of the previously defined variables in them.&lt;/li&gt;
-&lt;li&gt;You could put your customizations in a separate file and load them in at the end.&lt;/li&gt;
-&lt;li&gt;It's python! so allow yourself to create holder variables and run logic to make things easier if you have to.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Below is a Gist of it.&lt;/p&gt;
-&lt;script src="https://gist.github.com/vanessa-luna/7abfd80a6774b99ddbe71101e4b9cc92.js"&gt;&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Tue, 16 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2017-05-16:/posts/2017-05-16-pelicanconf.html</guid></item></channel></rss>
+&lt;p&gt;&lt;strong&gt;melts&lt;/strong&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 17 May 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2017-05-17:/posts/2017-05-17-minimizing-font-size.html</guid></item></channel></rss>

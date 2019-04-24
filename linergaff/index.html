@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel=icon href=https://res.cloudinary.com/vanessa-luna/image/upload/images/favicon.png>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <noscript><style>.nojs { display:none; } </style></noscript>
 
 
 <script type="text/javascript">
@@ -18,9 +19,10 @@
 		ga('create', 'UA-100867520-1', 'auto');
 		ga('send', 'pageview');
 </script>
-	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/liner-gaff-page.min.css?8847006d">
+	<link rel="stylesheet" href="https://vanessa-luna.life/theme/css/liner-gaff-page.min.css?e9875bdc">
 </head>
 <body>
+	<input type="checkbox" id="theme">
 	<div class="content">
         <div class="liner-gaff-menu">
             <div class="active"><a href="/linergaff"><div>LINER GAFF</div></a></div>
@@ -60,12 +62,12 @@
     </div>
 <!-- ------------------------- SLIDESHOW --------------------------- -->
     <div class="slideshow">
-        <input id="img-checkbox" type="checkbox">
-        <span class="img-toggle">drawings
-            <label class="switch" for="img-checkbox">
-              <span id="slider" class="slider round"></span>
-            </label><span class="warning-span">photos (nsfw)</span>
-        </span>
+        <input id="css-checkbox" type="checkbox">
+        <label class="css-toggle" for="css-checkbox">
+            <span>drawings</span>
+            <span class="slider round animate"></span>
+            <span class="warning-span">photos (nsfw)</span>
+        </label>
         <div class="drawings">
             <img src="assets/slideshow/naked-draw.png" onclick="initGallery(drawings, 0);"/>
             <img src="assets/slideshow/on-draw.png" onclick="initGallery(drawings, 1);"/>
@@ -103,7 +105,7 @@
     <link rel="stylesheet" href="assets/default-skin/default-skin.css">
     <script src="assets/photoswipe.min.js"></script>
     <script src="assets/photoswipe-ui-default.min.js"></script>
-
+    <!-- photoswipe -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="pswp__bg"></div>
         <div class="pswp__scroll-wrap">
@@ -176,6 +178,27 @@
 			</div>
 </div>
         <div class="footer">
+            <script type="text/javascript">
+                function onLoadShowCookieNotification() {
+                    cookie_notify = document.getElementById("cookie-notify")
+                    if(getCookie("cookiesack") != "1") {
+                        cookie_notify.style.display = "block"
+                    }
+                }
+                function acknowledgeCookies() {
+                    setCookie("cookiesack", "1", 365);
+                    cookie_notify.style.display = "none";
+                }
+                var cookie_notify;
+                document.addEventListener("DOMContentLoaded", onLoadShowCookieNotification);
+            </script>
+            <span class="cookie-notification nojs" id="cookie-notify">
+                <strong>Cookies Notice:</strong> <span>I store theme choice, cookie acknowledgment and google analytics.</span>
+                <a class="btn" onclick="acknowledgeCookies();">Acknowledge</a>
+            </span>
+            <span class="nojs">
+                <a href="#" onclick="cookie_notify.style.display = 'block';">cookies</a>  <i class="fa fa-star"></i>
+            </span>
             <a href="/licenses">licenses</a> <i class="fa fa-star"></i>
             <i class="fa fa-copyright"></i> 2017 Liner Gaff
             <i class="fa fa-star"></i> built on <a href="http://getpelican.com" target="_blank">pelican</a>
