@@ -113,7 +113,7 @@ Shadow, you can follow me
     &lt;input id="css-checkbox" type="checkbox"&gt;
     &lt;label class="css-toggle" for="css-checkbox"&gt;
         &lt;span class="left"&gt;Show full lyrics&lt;/span&gt;
-        &lt;span class="slider"&gt;&lt;span class="inner round"&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class="slider round animate"&gt;&lt;/span&gt;
     &lt;/label&gt;
     &lt;div class="show-on-toggle"&gt;
         &lt;div class="highlight"&gt;
