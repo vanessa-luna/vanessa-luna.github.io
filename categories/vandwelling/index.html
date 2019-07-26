@@ -35,7 +35,11 @@
         }
         return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
       }
-    </script>    <script type="text/javascript">
+    </script>	
+</head>
+<body>
+	<input type="checkbox" id="theme">
+    <script type="text/javascript">
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -62,11 +66,8 @@
             if (getCookie("dark") == "true") themechk.checked = true;
         }
         document.addEventListener("DOMContentLoaded", applyTheme);
-    </script>
-</head>
-<body>
-	<input type="checkbox" id="theme">
-	<div class="theme-wrapper">
+        applyTheme();
+    </script>	<div class="theme-wrapper">
 	<div class="sidebar">
 		<div id='sidebar-bg' class="sidebar" style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
@@ -187,6 +188,22 @@
   <span class="category-description"> <p>Vanessa is my love, and she deserves to be written about. As well as other van life specific events and changes.</p> </span></h1>
 	<div class="index pad-content">
 		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.life/posts/2019-06-17-fixing-coolant-leak.html">
+					<div class='post-meta'><div class="inner-meta box">
+						vandwelling<br>
+						<time class="post-date" datetime=2019-06-17 00:00:00-04:00 title="2019-06-17">2019-06-17</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.life/posts/2019-06-17-fixing-coolant-leak.html">Fixing the new van's coolant leak</a>
+				</h1>
+				<p>
+					<p>I totally lucked out. This coolant leak issue really concerned me. Coolant goes everywhere in the van and a leak could be minor or catastrophic. </p>
+<p>So I added water to the system to fill up the resavoir. Then I got the engine hot, stopped an opened the hood to see …</p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.life/posts/2019-06-17-fixing-coolant-leak.html">continue »</a>
+				</div>
+			</div>
 			<div class="post">
 				<h1 class="post-title" href="https://vanessa-luna.life/posts/2018-10-03-finally-fall-left.html">
 					<div class='post-meta'><div class="inner-meta box">
@@ -373,23 +390,6 @@
 				</p>
 				<div style="text-align:right;">
 					<a class="read-more box" href="https://vanessa-luna.life/posts/2017-11-06-the-fall.html">continue »</a>
-				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.life/posts/2017-09-28-new-drawers-for-vanessa.html">
-					<div class='post-meta'><div class="inner-meta box">
-						<i class="fa fa-picture"></i>
-						vandwelling<br>
-						<time class="post-date" datetime=2017-09-28 00:00:00-04:00 title="2017-09-28">2017-09-28</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.life/posts/2017-09-28-new-drawers-for-vanessa.html">New drawers for Vanessa!</a>
-				</h1>
-				<p>
-					<p>My wonderful friend helped me install new drawers in Vanessa. Totally maximizing some of the space in the rear beneath my bed. I am super excited about them.</p>
-<p>The left side, which is empty for now, will hold a removable plastic drawer storage solution. This is so I can continue …</p>
-				</p>
-				<div style="text-align:right;">
-					<a class="read-more box" href="https://vanessa-luna.life/posts/2017-09-28-new-drawers-for-vanessa.html">continue »</a>
 				</div>
 			</div>
 		</div>

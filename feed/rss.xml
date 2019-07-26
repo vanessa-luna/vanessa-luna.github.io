@@ -1,276 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Vanessa  Luna</title><link>https://vanessa-luna.life/</link><description></description><lastBuildDate>Wed, 24 Apr 2019 00:00:00 -0400</lastBuildDate><item><title>Creating a css theme toggle</title><link>https://vanessa-luna.life/posts/2019-04-24-theme-toggle.html</link><description>&lt;p&gt;I finally did it! As you should see in the sidebar/header there is now a toggle which allows you to display a dark theme. If you have javascript enabled the site will remember your choice using a cookie. If you do not have javascript enabled the site will warn you that the choice cannot be saved. &lt;/p&gt;
-&lt;p&gt;Let me show you how I did it. 
-&lt;/p&gt;
-&lt;h2 id="a-brief-overview-of-the-concepts"&gt;A brief overview of the concepts&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Utilize the no-js checkbox trick for changing css&lt;/li&gt;
-&lt;li&gt;Convert nearly all color values into css variables&lt;/li&gt;
-&lt;li&gt;set css variables using the state of the checkbox&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;There are two major concerns with ensuring the variables stick. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Ideally, define your variables only in the theme toggle&lt;/li&gt;
-&lt;li&gt;Otherwise you must use more specific selectors to override variables for specific components&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I have an example of both in my css which I will explain. &lt;/p&gt;
-&lt;h2 id="no-js-toggle"&gt;No-JS Toggle&lt;/h2&gt;
-&lt;p&gt;My toggle is directly based off this &lt;a class="external" href="https://www.w3schools.com/howto/howto_css_switch.asp"&gt;how to at W3&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Essentially, you place a &lt;code&gt;&amp;lt;input type="checkbox" id="chk"&amp;gt;&lt;/code&gt; in your code. You create a &lt;code&gt;&amp;lt;label for="chk"&amp;gt;&lt;/code&gt; which acts as your button. Then using some fancy css selector trickery, you can change values based of the &lt;code&gt;:checked&lt;/code&gt; status of the checkbox. &lt;/p&gt;
-&lt;p&gt;The difference between the W3 exmaple and mine will be clear. In their example they places the checkbox &lt;em&gt;inside&lt;/em&gt; the label. I place mine in the root and the label lives wherever I want. &lt;/p&gt;
-&lt;h2 id="code"&gt;Code&lt;/h2&gt;
-&lt;p&gt;View on &lt;a class="external" href="https://codepen.io/sqmortplantic/pen/MRzjGL?editors=1100"&gt;Codepen.io&lt;/a&gt; (it has some extras to make it actually look good)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;theme&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sidebar&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+<rss version="2.0"><channel><title>Vanessa  Luna</title><link>https://vanessa-luna.life/</link><description></description><lastBuildDate>Tue, 23 Jul 2019 00:00:00 -0400</lastBuildDate><item><title>Recapping my time in Boston</title><link>https://vanessa-luna.life/posts/2019-07-23-recapping.html</link><description>&lt;p&gt;I have not been writing as much. I have seen this as a good thing lately. First time in almost ten years where writing has not been a consistent thing FOR A GOOD REASON. Other times I have faultered on writing was due to extreme depression. This time around it is because I am active, focused, and committed to the life I am living. It is a wild feeling to be this way. I am so exhausted on most days writing isn't even something I can do. Today I am writing because the weather is finally cool enough to afford me enough comfort.&lt;/p&gt;
+&lt;p&gt;Since I have returned to Boston, I have reconnected with my local support group, began working on repairing and prepping my new van to live in, spent time building connections with new people, worked on new projects, spent more time than I expected on my sewing project, and struggled to sleep because of the heat. &lt;/p&gt;
+&lt;p&gt;I have found myself feeling more confident than ever. I no longer carry anxiety or shame. I experience all the other healthy things like nervouseness and guilt, but not in unhealthy ways or in extremes. This confidence has given me a lot to work with, and given me a lot of new experiences. I will admit my greatest place of nerves does come from being around cis people and people I am attracted to. I can still feel the ache of transhpobia around cis people. They are still, a form of "better" than I am. &lt;/p&gt;
+&lt;p&gt;I have also been more driven to push through my pain. Thankfully I have painkillers now to help me do things I really want to do or must do. Because of this I have felt more empowered to push into my pain threshold and do grander things. I will take the painkillers and I will wallow in my pain afterwards. I hope I am building a resillience and forittude against this and will lead to less pain in the future. I have felt more intense pain lately, and felt discouraged lately. At htis point it is hard to tell if it is the heat not letting me recover, or the extra pushing really isn't doing me any good. Time will tell. &lt;/p&gt;
+&lt;p&gt;I still have another 10 weeks left. Or maybe I only have 10 weeks left. Not a lot. With a lot to do. Trying to prioritize. Pick my values and focus properly. But eager to do so many things I am remiss to leave things out. What am I willing to let suffer?&lt;/p&gt;
+&lt;p&gt;I hope to have more writings of the fact on the day and sharing things I think and learn. But I have dubbed this chapter "Overload in MA", so I won't expect much writing from me. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Tue, 23 Jul 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-07-23:/posts/2019-07-23-recapping.html</guid></item><item><title>Outlive your Haters</title><link>https://vanessa-luna.life/posts/2019-07-23-self-care.html</link><description>&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;On a short hike, a friend struggling to make it back
+refused to take a break.
+Self care is not a reward.
+Push your limits,
+And learn the difference between the two.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nn"&gt;#theme&lt;/span&gt;         &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;white&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nn"&gt;#theme&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;black&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nc"&gt;.content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;  &lt;span class="nt"&gt;background-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;var&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;  &lt;span class="p"&gt;}&lt;/span&gt;
-
-
-&lt;span class="nn"&gt;#theme&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nc"&gt;.sidebar&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nt"&gt;--bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;var&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;--theme-bg-color&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nc"&gt;.sidebar&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nt"&gt;--bg-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-    &lt;span class="nt"&gt;background-color&lt;/span&gt;&lt;span class="nd"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;var&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;--bg-color&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="explanation"&gt;Explanation&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;When the checkbox is selected, the selectors change the values of the variables&lt;/li&gt;
-&lt;li&gt;The selectors for the theme are applied to all the siblings of the checkbox&lt;/li&gt;
-&lt;li&gt;Every element beside the checkbox has access to the variables&lt;/li&gt;
-&lt;li&gt;Use a more specific selector to change the value of a variable already defined&lt;/li&gt;
-&lt;li&gt;This allows for the difference of theme-defined variables and default variables for a given component&lt;/li&gt;
-&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 24 Apr 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-04-24:/posts/2019-04-24-theme-toggle.html</guid></item><item><title>I know you can find your way back in</title><link>https://vanessa-luna.life/posts/2019-04-10-you-can-do-it.html</link><description>&lt;p&gt;Look. I know this experience is fucking horrifying. I lived it most of my life. And for at least half of it I just wished I was dead, tried a couple times, and the only real progress I ever made in my life was when I thought "If I'm just gonna kill myself why NOT do the thing?" So I would try the thing, life would get a little better and I would stagnate again. Until eventually I found a few things that truly helped. But more on that later.&lt;/p&gt;
-&lt;h2 id="life-is-not-hard-dealing-with-your-self-is"&gt;Life is not hard. Dealing with your self is.&lt;/h2&gt;
-&lt;p&gt;This was equally one of the most horrifying and relieving things I learned in my teens.&lt;/p&gt;
-&lt;p&gt;Life is not hard. Your body is gonna stay alive and you don't have a damn choice about it. Living is the easy part. The hard part is dealing with you, your inner you, your mind, your perspective.&lt;/p&gt;
-&lt;p&gt;Take 100 people and put them all through the same experience and you get 100 different outcomes. Some might crumble, others might soar. Some might slip into depression, others might take a few days off and get back on it. It is you, your unique set of experiences, physiology, traumas, circumstance which help determine your response.&lt;/p&gt;
-&lt;h2 id="the-universe-is-free-to-experience-any-kind-of-all-kinds-that-it-can"&gt;The universe is free to experience any kind of all kinds that it can&lt;/h2&gt;
-&lt;p&gt;Be it some anxiety plus a bad trip, or chronic dysphoria, physical injury, other other cause of this, we are the group of humans who get to experience DPDR, and thus get to overcome it.&lt;/p&gt;
-&lt;p&gt;Some people will experience murder in their life, or major battery, or life changing car accident, a stalker requiring moving out of state, or any number of bizarre, sad, challenging, painful experiences in life.&lt;/p&gt;
-&lt;p&gt;We don't get to choose some parts of our life. But we do get some choice in how we respond.&lt;/p&gt;
-&lt;h2 id="we-get-dpdr"&gt;We get DPDR.&lt;/h2&gt;
-&lt;p&gt;And I got to say, after all these years, at age 29, overcoming DPDR, I get these moments of feeling like a god. I came back from THAT. And amidst all the hard days, slips, stumbles, punches I have more resolve and fortitude than I've ever had.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;But I will carry on,&lt;br&gt;
-Drifting around in the dawn always&lt;br&gt;
-I will carry on&lt;br&gt;
-Shadow, you can follow me  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I will always have to struggle with the 20+ years of my life where I drifted amongst the waves, tumbling around believing I didn't deserve anything better. Just as someone who overcame their own trauma will always have to fight that part of their life.&lt;/p&gt;
-&lt;h2 id="fueling-the-fire"&gt;Fueling the fire&lt;/h2&gt;
-&lt;p&gt;The most important, if the only, thing you really need to find is the fire to fight this.&lt;/p&gt;
-&lt;p&gt;We all need different fuel for it, but I Think a lot of us find it in anger. Be angry about living this way. And use that as fuel to stoke the fire of commitment to find a way back in to your life.&lt;/p&gt;
-&lt;p&gt;Once that fire gets a solid amount of fuel to burn bright and long enough to give you a taste of what could come if you take the long path it will never fully fade again.&lt;/p&gt;
-&lt;h2 id="my-fire"&gt;My Fire&lt;/h2&gt;
-&lt;p&gt;In the beginning I mentioned what I found. I've written about this before here and on my website.&lt;/p&gt;
-&lt;p&gt;But in brief it all began with a few thoughts&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;I know I need to change, so why not learn how change works?&lt;/li&gt;
-&lt;li&gt;I have a habit of thinking this way, so how do I change habits?&lt;/li&gt;
-&lt;li&gt;I am ashamed of who I am so how do I overcome shame?&lt;/li&gt;
-&lt;li&gt;I will use my media consumption as a tool for exploring my own empowerment&lt;/li&gt;
-&lt;li&gt;What do other people have that I don't? How can I get what they have?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="i-know-you-can-do-this"&gt;I know you can do this&lt;/h2&gt;
-&lt;p&gt;I know you can find your fuel. I know your fire can turn back on. Plz never stop seeking a way back in to your life.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 10 Apr 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-04-10:/posts/2019-04-10-you-can-do-it.html</guid></item><item><title>Walking your own path</title><link>https://vanessa-luna.life/posts/2019-04-03-reflection.html</link><description>&lt;blockquote&gt;
-&lt;p&gt;"If you can see your path laid out in front of you step by step, you know it is not your path. Your own path you make, with every step you take. That is why it is your path." - Joseph Campbell&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Not to be confused with the path you envision for your self by your self. I have been reading Braving The Wilderness by Brene Brown. Predominantly it is about understanding the idea of "true belonging". In brief, it seems she concludes, as May Angelou did, that belonging is something that comes from within. Do you feel as if you belong to your self?&lt;/p&gt;
-&lt;p&gt;Most of the time I do not feel I belong to myself. When I began searching for my true self I was confronted also with repressed physical chronic pain. First beginning in my early teens, switfly became locked away as I began to be seen as a "complainer" and no one found a cause. Every year on HRT my chornic pain seems to worsen, and after years of up and down on hormones I concluded I could not live without it, but thus I must endure the pain. It is hard for me to belong to my body because of this pain which is the first obstacle I face before I can even reach dysphoria. Because of this I feel trapped. I cannot make progress on transition because of it. I would claim I am not full time even after five years of hormones.&lt;/p&gt;
-&lt;p&gt;But I also know I am not living some other path that someone else may have laid before me. Despite my crawl I am taking my path step by step. And while I have dreams of being farther along, it is clear I have made great progress already. Hopefully coming out of this depressive chapter I will allow myself to sit in this achievement more often than I have so far this year. I accept this is my life. I accept I will not be the vision of "normalcy" I weakly clung to growing up. And I feel I have healthy expectations of what's possible for me and my life in the future.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Brothertiger - Bottom of It
-
-...
-I&amp;#39;m trying to live in the moment 
-Capture it on my mind 
-But I&amp;#39;m always waiting for somethin&amp;#39; 
-That&amp;#39;ll bring me a stable life
-
-I stubbornly go through the motions 
-I&amp;#39;m hanging on to life 
-Gonna get down to the bottom of it 
-In time
-
-But I will carry on 
-Drifting around in the dawn always 
-I will carry on 
-Shadow, you can follow me
-...
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="bandcamp-player"&gt;
-    &lt;iframe style="border: 0; width: 300px; height: 420px; margin: 0 calc(50% - 150px);" src="https://bandcamp.com/EmbeddedPlayer/album=2918845448/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/track=290970613/transparent=true/" seamless&gt;&lt;a href="http://brothertiger.bandcamp.com/album/a-chain-of-islands-ep"&gt;A Chain of Islands EP by Brothertiger&lt;/a&gt;&lt;/iframe&gt;
-    &lt;input id="css-checkbox" type="checkbox"&gt;
-    &lt;label class="css-toggle" for="css-checkbox"&gt;
-        &lt;span class="left"&gt;Show full lyrics&lt;/span&gt;
-        &lt;span class="slider round animate"&gt;&lt;/span&gt;
-    &lt;/label&gt;
-    &lt;div class="show-on-toggle"&gt;
-        &lt;div class="highlight"&gt;
-            &lt;pre&gt;
-Shadow on the floor and  
-I open up my eyes  
-To the sun streaks in the morning  
-I don't wanna rise
-
-Following through the door and 
-I don't wanna get behind 
-Can I get back to you tomorrow? 
-When I feel alright 
-
-Everything that was broken 
-It all comes back in time 
-Didn't always know what I wanted 
-And I still can't make up my mind 
-
-My eyes they are wide open 
-I swallow all my pride 
-Gonna get down to the bottom of it 
-In time 
-
-But I will carry on 
-Drifting around in the dawn always 
-I will carry on 
-Shadow, you can follow me 
-
-I'm trying to live in the moment 
-Capture it on my mind 
-But I'm always waiting for somethin' 
-That'll bring me a stable life 
-
-I stubbornly go through the motions 
-I'm hanging on to life 
-Gonna get down to the bottom of it 
-In time 
-
-I always say to you, 
-"I'll get away from this." 
-Can I get away from this? 
-Before I sleep? 
-
-I always say to you, 
-"I can handle this." 
-Can I handle this 
-impossible dream?
-            &lt;/pre&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;      
-&lt;/div&gt;
-
-&lt;style&gt;
-    label.css-toggle .left { font-weight: bold; }
-    input[type=checkbox]:checked + .css-toggle + .show-on-toggle { display: block; }
-    .show-on-toggle { display:none; }
-&lt;/style&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-04-03:/posts/2019-04-03-reflection.html</guid></item><item><title>Taking a break from searching.</title><link>https://vanessa-luna.life/posts/2019-04-01-searching.html</link><description>&lt;p&gt;For months now my primary goal has been to try and find a new van to live in. I have seen many and missed out on a few. Now I must take a break.&lt;/p&gt;
-&lt;p&gt;This search has exhausted me. Given the time I have other things to take care of. Then I will ascend as the weather warms and continue my search. &lt;/p&gt;
-&lt;p&gt;Hopefully this means I will start writing more. I have been depressed lately. And in excess pain. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Mon, 01 Apr 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-04-01:/posts/2019-04-01-searching.html</guid></item><item><title>My theme song</title><link>https://vanessa-luna.life/posts/2019-03-17-theme-song-recording.html</link><description>&lt;/p&gt;
-&lt;h3 id="history"&gt;History&lt;/h3&gt;
-&lt;p&gt;I begun writing the song shortly after I got Vanessa. It took about 9-12 months to finish it. I know I finished it before I became real. And sharing it with people definitely helped me become real. I am confident the latter half of the song came after my third trip in Vanessa where I was in Florida for a while. &lt;/p&gt;
 &lt;p&gt;&lt;span class="videobox"&gt;
                 &lt;iframe width="100%" height="100%"
-                    src='https://www.youtube.com/embed/Ye590cFD6jc'
+                    src='https://www.youtube.com/embed/6wlFFuL8wrs'
                     frameborder='0' webkitAllowFullScreen mozallowfullscreen
                     allowFullScreen&gt;
                 &lt;/iframe&gt;
-            &lt;/span&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Vanessa &amp;amp; Luna - Keeping it real together.
-Vanessa &amp;amp; Luna - No one will get in our way!
-
-Cause we are alone now and totally free,
-to be whatever we want to be,
-and we know that we will survive,
-cause we&amp;#39;ve got nothing to lose.
-
-The world is a weird place.
-Life is a heart beat.
-People are different,
-yet always the same.
-
-Vanessa &amp;amp; Luna... We&amp;#39;re coming your way.
-Vanessa &amp;amp; Luna... But don&amp;#39;t think we&amp;#39;ll stay.
-
-Cause we&amp;#39;re on a road trip,
-to figure me out.
-To open my doors,
-and cast away doubt.
-And if we don&amp;#39;t make it,
-&amp;#39;ll be alright.
-Cause we chose to live life,
-and put up a fight!
-
-Vanessa &amp;amp; Luna
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sun, 17 Mar 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-03-17:/posts/2019-03-17-theme-song-recording.html</guid></item><item><title>I am getting better at not over-explaining myself.</title><link>https://vanessa-luna.life/posts/2019-03-07-explaining-yourself.html</link><description>&lt;p&gt;Okay, I think I am learning the lesson more and more: You do not have to explain yourself to everyone. You don't need to justify your needs, your questions, your desires to every person. When I felt undeserving of everything I always felt I had to explain myself in order to appease others, to create a reason for me to be valid. But as I have been reaching out to a lot of strangers lately I have been finding myself writing out those sentences explaining myself, and then realizing they are not necessary and deleting them. It feels good. It feels good to know I care about myself more than I used to. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 07 Mar 2019 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-03-07:/posts/2019-03-07-explaining-yourself.html</guid></item><item><title>I am without steam</title><link>https://vanessa-luna.life/posts/2019-01-09-without-steam.html</link><description>&lt;p&gt;I am ever drifting through the days. I am tired of where I am. I am tired. I have so many things to do and I think I am nearing the end of life with Vanessa. Although every time I feel this I go on another couple months.&lt;/p&gt;
-&lt;p&gt;I have not been writing much which upsets me. I have no routine other than sleeping a lot and lying down. IS this the increase in my hormones? Is it depression? Hopefully moving on to another city will help determine. &lt;/p&gt;
-&lt;p&gt;OH, also I have not been to a PT in a few weeks, first time in months. Maybe this is the issue...&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 09 Jan 2019 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-01-09:/posts/2019-01-09-without-steam.html</guid></item><item><title>A jam packed day with a little turbulence</title><link>https://vanessa-luna.life/posts/2018-12-30-excitement.html</link><description>&lt;p&gt;Today was a wild experience. A number of things happened which trickle into tomorrow, so some of this will be about new years eve day.&lt;/p&gt;
+            &lt;/span&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Tue, 23 Jul 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-07-23:/posts/2019-07-23-self-care.html</guid></item><item><title>The Fells Bear Tower [rise]</title><link>https://vanessa-luna.life/posts/2019-07-15-rise.html</link><description>&lt;p&gt;&lt;img alt="" src="/images/sun/2019-07-15-rise-the-fells-bear-tower-1.jpg"&gt;&lt;/p&gt;
+&lt;h3 id="3-more"&gt;... +3 more&lt;/h3&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h3 id="ancient-city-poets"&gt;Ancient City Poets&lt;/h3&gt;
-&lt;p&gt;This was the third time I've performed here. The last time was almost a year and a half ago when I became real. This time I planned. I was going to say something vulnerable and I wrote a poem specifically because I was going to perform. &lt;/p&gt;
-&lt;p&gt;I read &lt;a class="internal" href="{filename}2018-12-20-waves.md"&gt;&lt;code&gt;Amongst the Waves&lt;/code&gt;&lt;/a&gt; and &lt;a class="internal" href="{filename}2018-07-10-sorrow.md"&gt;&lt;code&gt;Sorrow&lt;/code&gt;&lt;/a&gt; with a preface.&lt;/p&gt;
-&lt;p&gt;In preparing my preface I realized something. I am not bad at vulnerability. Van life taught me so much about resiliance. I am not generally capable of holding myself together. I can be vulnerable at the right time with the right people. My body may not like being vulnerable, but I know how to push through it all. &lt;/p&gt;
-&lt;p&gt;It felt good to say those things and be that clear about it. I also grew fonder of the poem Sorrow. I really like it. &lt;/p&gt;
-&lt;p&gt;I got a fist bump and nice words afterwards and a strange conversation outside. The morning after at a coffee shop, someone recognized me from the poetry reading and complimented me. I told him I play my violin so maybe he'll see me tonight. I got two cards because of the poetry reading.&lt;/p&gt;
-&lt;h3 id="street-performing"&gt;Street performing&lt;/h3&gt;
-&lt;p&gt;I setup shop in arguably on of the best spots downtown. Only ten minutes in or so and I had mad ten dollars. A drummer showed up asking when I would leave, but then asked if we could play together. I was into it. Never played with a drummer before. So I played mostly video game music.&lt;/p&gt;
-&lt;p&gt;We drew crowds. Fantastically, Mike Tyson's Punch Out got us the biggest applause. WHAT? Are you serious? I don't really get it. But hey, we made 37 dollars in about a half hour or so. He gave me 20. I left to rest and eat. &lt;/p&gt;
-&lt;p&gt;I stumbled over to my favorite spot. The end of Saint George street. It is very intimate and loads of people pass to go to the parking garages. I doubld my money there.&lt;/p&gt;
-&lt;p&gt;Some interesting things happened:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;A younger woman stopped with a polaroid camera. Turns out she left the picture in my case. That was a nitfty gesture!&lt;/li&gt;
-&lt;li&gt;A woman recorded me for a moment, dropped some money and asked me to play happy birthday. I totally nailed it with double stops and thinking the words in my head.&lt;/li&gt;
-&lt;li&gt;A woman and I made nice eye contact one moment and ten seconds later she comes back to ask what I was playing. She also plays the violin but with effects pedals and performs in other settings. She is only two hours away, on my path, and willing to hang out when I get there!&lt;/li&gt;
-&lt;li&gt;Some girls started dancing in front of me almost celtic like. &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id="the-morning-after"&gt;The morning after&lt;/h3&gt;
-&lt;p&gt;I felt really good after all that success so I stopped by a local place to get drinks. I went there because I know some people who work there. I drank a bit more than I should have so when I got to the van I passed out with a light on! Couple that with a dying batter and alternator issues and the battery was dead by morning. &lt;/p&gt;
-&lt;p&gt;I had someone hooked up to me for 30 minutes, no good. I read the voltage of my battery after and it read 0.4v haha. &lt;/p&gt;
-&lt;p&gt;I am safe where I parked and a friend will hlep me tomorrow. Then I will focus on replacing the alternator geeze.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sun, 30 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-30:/posts/2018-12-30-excitement.html</guid></item><item><title>Jackonsville Beaches Pier [rise]</title><link>https://vanessa-luna.life/posts/2018-12-28-rise.html</link><description>&lt;p&gt;&lt;img alt="" src="/images/sun/2018-12-28-rise-jacksonville-beaches-pier-1.jpg"&gt;&lt;/p&gt;
-&lt;h3 id="9-more"&gt;... +9 more&lt;/h3&gt;
+&lt;p&gt;It felt really nice watching a sunrise, and intentionally too. I went with a new friend. So rare to do this with another person. Thanks friend &amp;lt;3&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/images/sun/2019-07-15-rise-the-fells-bear-tower-2.jpg"&gt;
+&lt;img alt="" src="/images/sun/2019-07-15-rise-the-fells-bear-tower-3.jpg"&gt;
+&lt;img alt="" src="/images/sun/2019-07-15-rise-the-fells-bear-tower-4.jpg"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Mon, 15 Jul 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-07-15:/posts/2019-07-15-rise.html</guid></item><item><title>Fixing the new van's coolant leak</title><link>https://vanessa-luna.life/posts/2019-06-17-fixing-coolant-leak.html</link><description>&lt;p&gt;I totally lucked out. This coolant leak issue really concerned me. Coolant goes everywhere in the van and a leak could be minor or catastrophic. &lt;/p&gt;
+&lt;p&gt;So I added water to the system to fill up the resavoir. Then I got the engine hot, stopped an opened the hood to see the most obvious leak ever coming out of the hose leading in to the auxillary water pump. Yeah these vans have two water pumps because the lines are so long. &lt;/p&gt;
+&lt;p&gt;Essentially, the screw clamp holding the hose on almost slipped off. And because the hose was not cut perfectly straight the clamp wasn't even totally around the hose. My first attempt to reseat it failed. The second time I totally reseated it properly. &lt;/p&gt;
+&lt;p&gt;I put water in the resivoir again and drove. Coolant low showed up again. I checked and no leak. So the thermostat must have opened and pulled in more liquid lowering the tank. I added more water. Things seem fine.&lt;/p&gt;
+&lt;p&gt;Interestingly, the transmission is also less noisy now. I wonder if coolant was never reaching the transmission and that effects the torque converter, or if I am overthinking it. &lt;/p&gt;
+&lt;p&gt;Anyway, I fixed my coolant leak all by myself. Now just time to do a flush and get it all back to normal. Super pumped about it. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Mon, 17 Jun 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-06-17:/posts/2019-06-17-fixing-coolant-leak.html</guid></item><item><title>2 vans to MA...</title><link>https://vanessa-luna.life/posts/2019-06-02-driving-to-ma.html</link><description>&lt;p&gt;I can't get rid of Vanessa yet. I need a place to live while I get the second van rocking. &lt;/p&gt;
+&lt;p&gt;I had a friend fly out to the new van to drive both back to MA. It was a journey.&lt;/p&gt;
+&lt;p&gt;I was mostly exhausted and kept forcing us to stop. I felt a bit dellusional trying to stay focused. The plan was to get to the first RMV and register the new van. We got to the first one and found out this branch does not do registration. DOH. So we go to the next one only to find they don't have a printer service like other RMV locations and its already past 4pm. Dejected and beat up we decide to chill out and not fight to get it done. Instead we get dinner and pack out to the house the van will stay at while I have 2 vans. &lt;/p&gt;
+&lt;p&gt;A brtually long day with a disappointing ending.&lt;/p&gt;
+&lt;p&gt;Some things I felt and experienced during the drive:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Great acceleration, feels clean and smooth.&lt;/li&gt;
+&lt;li&gt;Suspension is awesome despite apparently being original&lt;/li&gt;
+&lt;li&gt;Idling rough(?) concerns me, need info&lt;/li&gt;
+&lt;li&gt;Rear door locking mechanism failed on me!&lt;/li&gt;
+&lt;li&gt;recorded 32.263 mpg ! while Vanessa got 26.912 mpg&lt;/li&gt;
+&lt;li&gt;Can't wait to fix the TCU issues, I can live without AC, but not hot air constantly pushing!&lt;/li&gt;
+&lt;li&gt;Weird being in white versus red&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Okay time to go lots to do. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sun, 02 Jun 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-06-02:/posts/2019-06-02-driving-to-ma.html</guid></item><item><title>I bought my second van!</title><link>https://vanessa-luna.life/posts/2019-05-29-i-bought-a-van.html</link><description>&lt;p&gt;Yikes. I am mostly intimidated and frightened by the whole process. But I feel fairly confident I purchased a van with much better guts than my first van. And! It grew up in South Carolina and has nearly zero rust! &lt;/p&gt;
+&lt;p&gt;2006 172k miles 140" WB 2500 High top &lt;/p&gt;
+&lt;p&gt;Windows on Slider door and rear doors, power windows/locks/mirrors&lt;/p&gt;
+&lt;p&gt;I feel like I did every right. &lt;/p&gt;
+&lt;p&gt;I gave it a solid look over taking notes. I tested everything. I took it for a test drive. I brought it to a mechanic who gave it an excellent look over. I negotiated the price. I left feeling like I was not ripped off. I think I got a deal. But definitely did not get a steal. So I am okay with the outcome I guess. &lt;/p&gt;
+&lt;p&gt;Shock...&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Wed, 29 May 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-05-29:/posts/2019-05-29-i-bought-a-van.html</guid></item><item><title>Risk Therapy: What I still fear</title><link>https://vanessa-luna.life/posts/2019-05-26-risk-what-i-fear.html</link><description>&lt;p&gt;This theme of posts is really about what I fear. If I am afraid of it, doing it will feel like a risk. It is harder to se things I Am comforatable with as taking a risk. So I thought it might be a good exercise to write down what I still fear.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="/images/sun/2018-12-28-rise-jacksonville-beaches-pier-2.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-28-rise-jacksonville-beaches-pier-3.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-28-rise-jacksonville-beaches-pier-4.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-28-rise-jacksonville-beaches-pier-5.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-28-rise-jacksonville-beaches-pier-6.jpg"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 28 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-28:/posts/2018-12-28-rise.html</guid></item><item><title>Crescent Beach Park [set]</title><link>https://vanessa-luna.life/posts/2018-12-25-set.html</link><description>&lt;p&gt;&lt;img alt="" src="/images/sun/2018-12-25-set-crescent-beach-park-1.jpg"&gt;&lt;/p&gt;
-&lt;h3 id="4-more"&gt;... +4 more&lt;/h3&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="/images/sun/2018-12-25-set-crescent-beach-park-2.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-25-set-crescent-beach-park-3.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-25-set-crescent-beach-park-4.jpg"&gt;
-&lt;img alt="" src="/images/sun/2018-12-25-set-crescent-beach-park-5.jpg"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Tue, 25 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-25:/posts/2018-12-25-set.html</guid></item><item><title>Talking with a disabled vet</title><link>https://vanessa-luna.life/posts/2018-12-23-kindness.html</link><description>&lt;p&gt;This afternoon, as I pull into a parking spot to check the squeal in my engine, an old gentleman approached on a bike wearing a military jacket. He was kind, hard to understand, and curious to help. &lt;/p&gt;
-&lt;p&gt;He openly talked about having cancer, living on a boat, being harrassed by police, and of experiences being a sniper.&lt;/p&gt;
-&lt;p&gt;As I listened I began thinking about an old high school thing I used to play with &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I fear the exchange of value&lt;/li&gt;
+&lt;li&gt;I fear losing interest in someone&lt;/li&gt;
+&lt;li&gt;I fear exposing my inner truth&lt;/li&gt;
+&lt;li&gt;I fear exposing contempt for others&lt;/li&gt;
+&lt;li&gt;I fear being given too much power&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The exchange of value&lt;/strong&gt; is hard for me. How much do I value something versus how does the other value it? This is mostly related to trying to buy a new van. How do I stick to my own idea of the value of something even if the other doesn't value it the same? Can I accept gifts of value without feeling compelled to return the favor? &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Losing interest in someone&lt;/strong&gt; is a hard thing to experience. On both sides it can be painful. I specifically am generally capable of being let go. But when I let go of others it hurts me deeply. OF course I know that holding on can be more painful than letting go on time. But it is difficult to know exactly how you want to handle the situation, and what ethics to follow. And to notice your own emotions telling you interest is gone.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exposing my inner truth&lt;/strong&gt;. Shit I hate doing it. Sadly I fear that by exposing my inner truth it will make people like me. IT feels like a different form of fear of power. My inner truth means confidence. MY inner truth means I have a life of my own. My inner truth means being more express of my preferences. Damn all that is scary.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exposing contempt for others&lt;/strong&gt; always makes me feel shitty. I do not like feeling contempt. But sometimes that is how I feel. I know it is not the end of the world, but I do not have a healthy framework for dealing with this emotion when I feel it. I hope to conquer that fear soon. IT always feels ugly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fear of too much power&lt;/strong&gt; reminds me of Batman. In the Christian Bale Batman movies, Ras Al Guhl teaches Bruce he is afraid of his own power and what it can bring. I relate to this. And in turn I fear having more power than I want, and then abusing it. I do not want to abuse my power, but I do think I should be allowed to feel my power. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sun, 26 May 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-05-26:/posts/2019-05-26-risk-what-i-fear.html</guid></item><item><title>Real Day 3 (2 years)</title><link>https://vanessa-luna.life/posts/2019-05-25-real-day-3.html</link><description>&lt;p&gt;Today I am two years a real person (thx DPDR).  But I call it my 3rd real day, since the day I became real was so important. &lt;/p&gt;
+&lt;p&gt;The day I became real I had an epic dream showing me all my traumas and triggers waiting me in a panic nearly crying. I've never had a dream like that before or since.&lt;/p&gt;
+&lt;p&gt;Last year I had a party with some of the very important people who helped me find reality in the place I last tried ending my life. The first time I've had a party for myself in over a decade (?)&lt;/p&gt;
+&lt;p&gt;This year I am getting a tour of the Capitol building in DC. On the precipice of a new chapter thanks to medical professionals and the risks I've taken I am eager yup see where year three will take me. &lt;/p&gt;
+&lt;p&gt;Becoming real too me five years after over a decade of full-time dpdr, but a lifetime of dpdr qualities. At some point I finally found my fire to stop trying to end my life and instead start taking risks. &lt;/p&gt;
+&lt;p&gt;Fear is the original sin, if not the only sin. &lt;/p&gt;
+&lt;p&gt;You must overcome your fears to be real. You must learn to take risks, be vulnerable, and aim for something in the future. &lt;/p&gt;
+&lt;p&gt;Okay strong statement. But that's what got me there. Maybe this kind of thinking could help you get there too. &lt;/p&gt;
+&lt;p&gt;Please be well. In a violent, trying world the best we can do is fight along side it. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sat, 25 May 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-05-25:/posts/2019-05-25-real-day-3.html</guid></item><item><title>Risk Therapy: Talking with Capitol Police</title><link>https://vanessa-luna.life/posts/2019-05-25-risk-capitol-police.html</link><description>&lt;p&gt;Today I woke up to watch the sunrise on capitol hill. Being parked on the eastern side a lone block away from the capitol I decided to search for the right place near the building. As I began my walk I realized I would certainly come by some capitol police and I would talk with them. &lt;/p&gt;
+&lt;p&gt;The first one I encountered was a young man standing in front of the supreme court house. I asked if he knew where good sunrise spots would be. He didn't know the area well. IT was also clear to me I had less anxiety and more will over the situation than he did. I wondered what kind of training he had and how capable he would be. If he could have that job could I? What are the requirements?&lt;/p&gt;
+&lt;p&gt;Moving towards the capitol I found myself gawking at the immense building. While scanning its huse length I saw more bodies in gear than I expected. Since it was me and them and there were no other humans around it was a bit intimidating. I knew they were watching me and I them. &lt;/p&gt;
+&lt;p&gt;First I stopped at the right side of the building where a police hut was located, as well as a few officers. IT took a minute for me to muster the courage to go talk with them. But I wanted to break the ice. Maybe they knew of better spots. They didn't. But what should I expect from the average person? Whenever I spoke with more than one at a time, one always seemed to chirp up and handle the conversation. I appreciated that. Also since I was only interested in banter and maybe some advice. &lt;/p&gt;
+&lt;p&gt;But I felt like I got much more than that. There was something interesting about knowing they were scrupulous of me as I them. And I could be more disarming than they could of me. I knew they carried guns, had training, and if threatened would like come down on me hard. But I could hide my nature from them, being as pleasant and kind as possible to suck information from them. &lt;/p&gt;
+&lt;p&gt;At one point I was walking the length of the building looking for the right spot. At least four officers gathered near the end with construction. I felt their eyes as I passed by, probing me for my intent. I was glancing around a lot and looking intently around, but never at them or at any doors to the building. Then I doubled back and I finally gave them a good glance. I wanted to see what they did how they looked, their stance their energy. As soon as I did one called out from rather far asking if I needed something. Instead of responding immediately I turned my path towards them and took some steps toward so I didn't have to yell the same, full well knowing it might be seen as intimidating. Pleasently, I informed them I was just looking for the best sunrise spot and all this was so fascinating to me. All the eyes of the group were on me, and we managed to mention the cooler weather and the excitement of summer before I disengaged, wishing them a well morning. &lt;/p&gt;
+&lt;p&gt;Not that I ever would or even could, but I considered for a moment what it might feel like if I myself had training. Were I capable of turning a switch and reacting to a threat with violence. I know I do not have that in me now. I have never created it. But speaking with the police charged with protecting our most important buildings really had me thinking about this. Life is violent. Violence never ceases. And were violence to visit me I would have no specific skills trained to protect me. Mostly because I think I would be willing to accept the fate and hopefully die. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sat, 25 May 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-05-25:/posts/2019-05-25-risk-capitol-police.html</guid></item><item><title>Risk Therapy: Asking for coffee help</title><link>https://vanessa-luna.life/posts/2019-05-23-coffee-help.html</link><description>&lt;p&gt;This one I anticipated success, and felt confident about deploying it. &lt;/p&gt;
+&lt;p&gt;In a coffee shop bathroom there was an advertisement. It said something along the lines of "Coffee is not rocket science, and we can help you make good coffee". The ad looked like an old one as a way to prove the company has survived long. Good for them. But I felt like testing them on whether they actually would spend the time to talk about how to make a good coffee. &lt;/p&gt;
+&lt;p&gt;I felt it important to ask because I wanted to let myself be the ignorant one in the setting. I wanted to show up with the vulnerability of "I am not good at this thing, help me be better". &lt;/p&gt;
+&lt;p&gt;Thankfully the baristas were generally ecstatic to discuss making good coffee. They weren't fully aware of the ad which I used as my ice breaker, but nonetheless thought it was a fun thing to talk about. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 23 May 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-05-23:/posts/2019-05-23-coffee-help.html</guid></item><item><title>Risk Therapy: Asking for exactly what I want</title><link>https://vanessa-luna.life/posts/2019-05-23-myofascial-therapy-risk.html</link><description>&lt;p&gt;I suck at asking for exactly what I want. Generaly my psychology says I do not deserve what I want. After all I am a disgusting tranny who is merely allowed to live for fear of imprisonment.&lt;/p&gt;
+&lt;p&gt;Today I told my myofascial therapist exactly what I wanted him to do. But I actually failed at it. I tried to tell him, but I was not blunt enough about it. I felt myself feeling dejected internally despite acting chipper on the outside. I still got great benefit from the session but I feel like I failed.&lt;/p&gt;
+&lt;p&gt;I think a reason I was not blunt enough was because I was afriad of being let down. I wanted to ask him to do a thing he did months ago. And I fear if he did it again it would not feel as good. IF I don't ask, I can't be let down, right? &lt;/p&gt;
+&lt;p&gt;Right.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 23 May 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-05-23:/posts/2019-05-23-myofascial-therapy-risk.html</guid></item><item><title>Risk Therapy: Asking for A High Five</title><link>https://vanessa-luna.life/posts/2019-05-21-high-five.html</link><description>&lt;p&gt;This is a fun one. &lt;/p&gt;
+&lt;p&gt;Tonight while I driving, I encountered an intersection with construction. The street I wanted to enter had two lanes, the outer one shut down for the construction. In the median between the opposing lanes a worker stood there as the light turned green. Approaching the worker I thought of a plan&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Which tense are you in?&lt;/p&gt;
+&lt;p&gt;Excuse me!&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Past, Present, Future, we bring forth each of these into our mind, into the present. This man was obviously trapped by his mind constantly bringing the past into the present. Fill right now with all the horrors of the past. And his horrors would be devilishly hard to let go of. &lt;/p&gt;
-&lt;p&gt;And that's what I found myself talking with him about, letting go. How that old life is not this life. I told him of my journey some about trying to find myself and how that is the best thing in the world. &lt;/p&gt;
-&lt;p&gt;Sadly it got very dark when I asked him this:&lt;/p&gt;
+&lt;p&gt;He looks up and at my direction merely a few feet away&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You had a role to play back in the military, what role do you play now?&lt;/p&gt;
-&lt;p&gt;Dying of cancer.&lt;/p&gt;
+&lt;p&gt;Care for a high five?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Hard to say much after that in the moment. I don't know the extent of his circumstance, and as much as I wanted to inspire hope of survival it didn't seem approrpiate. We hugged. A number of times. &lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;I think to my character sheet. I think about why I am being the way that I am. I feel resolute in this moment. I feel connected to my purpose as designed by the confluence of my experiences and my conscious choices. It is the only way I feel strong enough to keeping moving forward.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sun, 23 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-23:/posts/2018-12-23-kindness.html</guid></item><item><title>Jacksonville Main St. Bridge [set]</title><link>https://vanessa-luna.life/posts/2018-12-21-set.html</link><description>&lt;p&gt;&lt;img alt="" src="/images/sun/2018-12-21-set-jacksonville-main-st-bridge-1.jpg"&gt;&lt;/p&gt;
-&lt;h3 id="1-more"&gt;... +1 more&lt;/h3&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="/images/sun/2018-12-21-set-jacksonville-main-st-bridge-2.jpg"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Fri, 21 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-21:/posts/2018-12-21-set.html</guid></item><item><title>Amongst the waves</title><link>https://vanessa-luna.life/posts/2018-12-20-waves.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Swallow hard, breathe, now hold.
-The tide is shifting and you are ready. 
-Swelling, not only inside, 
-your eyes are wide open this time.
-
-Swayed not by the crash nor pulled by the tow.
-For a moment lament the strength you now hold.
-Not too long ago you&amp;#39;d have been swept away
-as you play amongst the waves.
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Thu, 20 Dec 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2018-12-20:/posts/2018-12-20-waves.html</guid></item></channel></rss>
+&lt;p&gt;&lt;strong&gt;Why?&lt;/strong&gt;  he looks at me confused&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For fun?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;a smirk appears and he steps up to my car. &lt;strong&gt;Sure&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We double high five it. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Have a beautiful night!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;You too. haha&lt;/strong&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Tue, 21 May 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-05-21:/posts/2019-05-21-high-five.html</guid></item><item><title>Risk Therapy</title><link>https://vanessa-luna.life/posts/2019-05-19-risk-therapy.html</link><description>&lt;p&gt;I have been thinking a lot about This Jia Jiang's &lt;a class="external" href="https://www.rejectiontherapy.com/blog/category/100+Days+of+Rejection"&gt;100 days of Rejection Therapy&lt;/a&gt;. Get an overview at his (&lt;a class="external" href="https://www.youtube.com/watch?v=-vZXgApsPCQ"&gt;TED talk video&lt;/a&gt;). OR &lt;a class="external" href="https://youtu.be/zmIeo2bZVoQ"&gt;watch a playlist of every rejection&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;He specifically sought rejection by coming up with requests he hoped would be rejected. I love the idea. &lt;/p&gt;
+&lt;p&gt;My idea is based off of it, and in some ways is exactly the same. The difference is simply the ideas I play with I hope get positive response sometimes. I am not specifically seeking the absurd or obviously rejectionable. &lt;/p&gt;
+&lt;p&gt;Instead I am seeking moments of vulneraibility and risk which are pointed towards my own fears. I hope to really think about processing what I am afriad of and what risks I can take to push beyond them. Let's see if this lasts. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Luna Umbra</dc:creator><pubDate>Sun, 19 May 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:vanessa-luna.life,2019-05-19:/posts/2019-05-19-risk-therapy.html</guid></item></channel></rss>

@@ -35,7 +35,11 @@
         }
         return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
       }
-    </script>    <script type="text/javascript">
+    </script>	
+</head>
+<body>
+	<input type="checkbox" id="theme">
+    <script type="text/javascript">
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -62,11 +66,8 @@
             if (getCookie("dark") == "true") themechk.checked = true;
         }
         document.addEventListener("DOMContentLoaded", applyTheme);
-    </script>
-</head>
-<body>
-	<input type="checkbox" id="theme">
-	<div class="theme-wrapper">
+        applyTheme();
+    </script>	<div class="theme-wrapper">
 	<div class="sidebar">
 		<div id='sidebar-bg' class="sidebar" style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
@@ -206,9 +207,108 @@
   <dl id='period-archives'>
         <!-- <dl><dt class=year>2019</dt>
  -->
+          <dl><dt class=month>July 2019</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">23</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-07-23-recapping.html'>
+Recapping my time in Boston
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">23</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-07-23-self-care.html'>
+Outlive your Haters
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">15</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-07-15-rise.html'>
+The Fells Bear Tower [rise]
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>June 2019</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">17</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-06-17-fixing-coolant-leak.html'>
+Fixing the new van's coolant leak
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">2</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-06-02-driving-to-ma.html'>
+2 vans to MA...
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
+          <dl><dt class=month>May 2019</dt>
+
+            <dd><ul class='days'>
+              <li><span class="box calendar-date">29</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-05-29-i-bought-a-van.html'>
+I bought my second van!
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">26</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-05-26-risk-what-i-fear.html'>
+Risk Therapy: What I still fear
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">25</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-05-25-real-day-3.html'>
+Real Day 3 (2 years)
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">25</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-05-25-risk-capitol-police.html'>
+Risk Therapy: Talking with Capitol Police
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">23</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-05-23-coffee-help.html'>
+Risk Therapy: Asking for coffee help
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">23</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-05-23-myofascial-therapy-risk.html'>
+Risk Therapy: Asking for exactly what I want
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">21</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-05-21-high-five.html'>
+Risk Therapy: Asking for A High Five
+					</a>
+				  </span>
+			  </li>
+              <li><span class="box calendar-date">19</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-05-19-risk-therapy.html'>
+Risk Therapy
+					</a>
+				  </span>
+			  </li>
+            </ul></dd>
+          </dl>
           <dl><dt class=month>April 2019</dt>
 
             <dd><ul class='days'>
+              <li><span class="box calendar-date">30</span> <span class="archives-post-title">
+				    <a href='https://vanessa-luna.life/posts/2019-04-30-a-third-kc.html'>
+Finding KC for a third time
+					</a>
+				  </span>
+			  </li>
               <li><span class="box calendar-date">24</span> <span class="archives-post-title">
 				    <a href='https://vanessa-luna.life/posts/2019-04-24-theme-toggle.html'>
 Creating a css theme toggle

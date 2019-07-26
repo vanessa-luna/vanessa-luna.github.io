@@ -35,7 +35,11 @@
         }
         return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
       }
-    </script>    <script type="text/javascript">
+    </script>	
+</head>
+<body>
+	<input type="checkbox" id="theme">
+    <script type="text/javascript">
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -62,11 +66,8 @@
             if (getCookie("dark") == "true") themechk.checked = true;
         }
         document.addEventListener("DOMContentLoaded", applyTheme);
-    </script>
-</head>
-<body>
-	<input type="checkbox" id="theme">
-	<div class="theme-wrapper">
+        applyTheme();
+    </script>	<div class="theme-wrapper">
 	<div class="sidebar">
 		<div id='sidebar-bg' class="sidebar" style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
@@ -187,7 +188,7 @@
 	<h1>Categories</h1>
 	  <div class="categories">
 	    <a class="category" href="https://vanessa-luna.life/categories/chronograph/">
-	      <div class="category-count">(133)</div>
+	      <div class="category-count">(144)</div>
 	      <div class="box">chronograph<p>journal like entries</p></div>
 	    </a>
 	    <a class="category" href="https://vanessa-luna.life/categories/drawings/">
@@ -195,7 +196,7 @@
 	      <div class="box">drawings<p>stuff I draw</p></div>
 	    </a>
 	    <a class="category" href="https://vanessa-luna.life/categories/media/">
-	      <div class="category-count">(12)</div>
+	      <div class="category-count">(13)</div>
 	      <div class="box">media<p>not my art</p></div>
 	    </a>
 	    <a class="category" href="https://vanessa-luna.life/categories/music/">
@@ -207,7 +208,7 @@
 	      <div class="box">recovery<p>for healing</p></div>
 	    </a>
 	    <a class="category" href="https://vanessa-luna.life/categories/sun/">
-	      <div class="category-count">(17)</div>
+	      <div class="category-count">(18)</div>
 	      <div class="box">sun<p>my earth:porn</p></div>
 	    </a>
 	    <a class="category" href="https://vanessa-luna.life/categories/transition/">
@@ -215,7 +216,7 @@
 	      <div class="box">transition<p>just girl things</p></div>
 	    </a>
 	    <a class="category" href="https://vanessa-luna.life/categories/vandwelling/">
-	      <div class="category-count">(30)</div>
+	      <div class="category-count">(31)</div>
 	      <div class="box">vandwelling<p>about van life</p></div>
 	    </a>
 	    <a class="category" href="https://vanessa-luna.life/categories/web-dev/">

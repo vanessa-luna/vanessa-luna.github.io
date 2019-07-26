@@ -35,7 +35,11 @@
         }
         return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
       }
-    </script>    <script type="text/javascript">
+    </script>	
+</head>
+<body>
+	<input type="checkbox" id="theme">
+    <script type="text/javascript">
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -62,11 +66,8 @@
             if (getCookie("dark") == "true") themechk.checked = true;
         }
         document.addEventListener("DOMContentLoaded", applyTheme);
-    </script>
-</head>
-<body>
-	<input type="checkbox" id="theme">
-	<div class="theme-wrapper">
+        applyTheme();
+    </script>	<div class="theme-wrapper">
 	<div class="sidebar">
 		<div id='sidebar-bg' class="sidebar" style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
@@ -210,6 +211,20 @@ as you play amongst the waves.
 
 
       <div class="pagination">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -35,7 +35,11 @@
         }
         return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
       }
-    </script>    <script type="text/javascript">
+    </script>	
+</head>
+<body>
+	<input type="checkbox" id="theme">
+    <script type="text/javascript">
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -62,11 +66,8 @@
             if (getCookie("dark") == "true") themechk.checked = true;
         }
         document.addEventListener("DOMContentLoaded", applyTheme);
-    </script>
-</head>
-<body>
-	<input type="checkbox" id="theme">
-	<div class="theme-wrapper">
+        applyTheme();
+    </script>	<div class="theme-wrapper">
 	<div class="sidebar">
 		<div id='sidebar-bg' class="sidebar" style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
@@ -187,6 +188,28 @@
   <span class="category-description"> <p>When I find art and work by other humans I find worth sharing, I post them here. A lot of it is focused on recovery, however I chose to keep them separate.</p> </span></h1>
 	<div class="index pad-content">
 		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.life/posts/2019-07-23-self-care.html">
+					<div class='post-meta'><div class="inner-meta box">
+						media<br>
+						<time class="post-date" datetime=2019-07-23 00:00:00-04:00 title="2019-07-23">2019-07-23</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.life/posts/2019-07-23-self-care.html">Outlive your Haters</a>
+				</h1>
+				<p>
+					<h3 class="text-center">What happens when you love yourself?</h3>
+
+<p><span class="block text-center">
+<a href="{filename}2019-0-123-self-care.md">
+ <img width="360" height="200" class="cover center inline-block" src="https://i.ytimg.com/vi/6wlFFuL8wrs/hqdefault.jpg?custom=true&w=250">
+</a>
+</span>
+
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.life/posts/2019-07-23-self-care.html">continue »</a>
+				</div>
+			</div>
 			<div class="post">
 				<h1 class="post-title" href="https://vanessa-luna.life/posts/2018-10-18-high-tide.html">
 					<div class='post-meta'><div class="inner-meta box">

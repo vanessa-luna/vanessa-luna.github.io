@@ -35,7 +35,11 @@
         }
         return "url(https://res.cloudinary.com/vanessa-luna/image/upload/thumb/" + chosenSize.name + "/" + filename;
       }
-    </script>    <script type="text/javascript">
+    </script>	
+</head>
+<body>
+	<input type="checkbox" id="theme">
+    <script type="text/javascript">
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -62,11 +66,8 @@
             if (getCookie("dark") == "true") themechk.checked = true;
         }
         document.addEventListener("DOMContentLoaded", applyTheme);
-    </script>
-</head>
-<body>
-	<input type="checkbox" id="theme">
-	<div class="theme-wrapper">
+        applyTheme();
+    </script>	<div class="theme-wrapper">
 	<div class="sidebar">
 		<div id='sidebar-bg' class="sidebar" style="background-image:url('https://res.cloudinary.com/vanessa-luna/image/upload/thumb/huge/backgrounds/26cover.jpg')">
 			<!-- dynamically load a different bg image -->
@@ -187,6 +188,23 @@
   <span class="category-description"> <p>Chasing sun[set:rise] is a hobby I never lost in life. I've been a chaser since my mid teens. I also seem to like clouds. </p> </span></h1>
 	<div class="index pad-content">
 		<div class="posts">
+			<div class="post">
+				<h1 class="post-title" href="https://vanessa-luna.life/posts/2019-07-15-rise.html">
+					<div class='post-meta'><div class="inner-meta box">
+						sun<br>
+						<time class="post-date" datetime=2019-07-15 00:00:00-04:00 title="2019-07-15">2019-07-15</time>
+					</div></div>
+					<a class="post-title-a" href="https://vanessa-luna.life/posts/2019-07-15-rise.html">The Fells Bear Tower [rise]</a>
+				</h1>
+				<p>
+					<p><img alt="" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/sun/2019-07-15-rise-the-fells-bear-tower-1.jpg"></p>
+<h3 id="3-more">... +3 more</h3>
+<p>
+				</p>
+				<div style="text-align:right;">
+					<a class="read-more box" href="https://vanessa-luna.life/posts/2019-07-15-rise.html">continue »</a>
+				</div>
+			</div>
 			<div class="post">
 				<h1 class="post-title" href="https://vanessa-luna.life/posts/2018-12-28-rise.html">
 					<div class='post-meta'><div class="inner-meta box">
@@ -391,18 +409,6 @@
 				<div style="text-align:right;">
 					<a class="read-more box" href="https://vanessa-luna.life/posts/2017-12-23.html">continue »</a>
 				</div>
-			</div>
-			<div class="post">
-				<h1 class="post-title" href="https://vanessa-luna.life/posts/2017-12-17.html">
-					<div class='post-meta'><div class="inner-meta box">
-						sun<br>
-						<time class="post-date" datetime=2017-12-17 00:00:00-05:00 title="2017-12-17">2017-12-17</time>
-					</div></div>
-					<a class="post-title-a" href="https://vanessa-luna.life/posts/2017-12-17.html">Orlando FL Resort [set]</a>
-				</h1>
-				<p>
-					<p><img alt="" src="https://res.cloudinary.com/vanessa-luna/image/upload/images/sun/IMG_20171217_174854541_HDR.jpg"></p>
-				</p>
 			</div>
 		</div>
 
